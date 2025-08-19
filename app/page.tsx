@@ -15,7 +15,7 @@ export default function PaperShaderPage() {
     const timer = setTimeout(() => {
       setShowBlackOverlay(true)
       setTimeout(() => {
-        window.location.href = "https://blog.wanfung.me"
+        window.location.href = "https://blog.yflong.dev"
       }, 3000)
     }, 15000)
 
@@ -24,7 +24,7 @@ export default function PaperShaderPage() {
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText("pnpm i v0-cli")
+      await navigator.clipboard.writeText("https://blog.yflong.dev")
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {
@@ -159,10 +159,10 @@ export default function PaperShaderPage() {
         {/* Central Text Block */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center items-center font-mono text-xs text-white/40">
-            <div>...This main site is under construction...</div>
-            <div>You may visit blog site by</div>
+            <div>...This site is under construction...</div>
+            <div>You may visit blog by</div>
             <div className="mt-1 flex items-center justify-center gap-2">
-              <span>blog.wanfung.me</span>
+              <span>https://blog.yflong.devblog.yflong.dev</span>
               <button
                 onClick={copyToClipboard}
                 className="pointer-events-auto opacity-30 hover:opacity-60 transition-opacity text-white/60 hover:text-white/80"

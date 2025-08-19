@@ -162,7 +162,7 @@ export default function PaperShaderPage() {
             <div>...This site is under construction...</div>
             <div>You may visit blog by</div>
             <div className="mt-1 flex items-center justify-center gap-2">
-              <span>https://blog.yflong.devblog.yflong.dev</span>
+              <span>blog.yflong.dev</span>
               <button
                 onClick={copyToClipboard}
                 className="pointer-events-auto opacity-30 hover:opacity-60 transition-opacity text-white/60 hover:text-white/80"

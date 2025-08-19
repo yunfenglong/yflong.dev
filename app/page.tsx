@@ -115,8 +115,11 @@ export default function PaperShaderPage() {
               <a href="https://github.com/yunfenglong/wanfung.me/blob/main/CHANGELOG.md" className="hover:text-white transition-colors">
                 changelogs
               </a>
-              <a href="https://blog.wanfung.me" className="hover:text-white transition-colors">
+              <a href="https://blog.yflong.dev" className="hover:text-white transition-colors">
                 blogs
+              </a>
+              <a href="https://dine.yflong.dev" className="hover:text-white transition-colors">
+                dines
               </a>
               <a
                 href="https://github.com/yunfenglong/wanfung.me"

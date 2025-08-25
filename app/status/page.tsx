@@ -1,12 +1,16 @@
 "use client"
 
 import { motion } from "framer-motion"
+import BackgroundLight from "@/components/BackgroundLight"
 import CyberGrid from "@/components/CyberGrid"
 import StatusDashboard from "@/components/StatusDashboard"
 
 export default function StatusPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white font-mono overflow-hidden relative">
+    <div className="min-h-screen text-white font-mono overflow-hidden relative">
+      {/* Background Light Effect */}
+      <BackgroundLight />
+
       {/* Subtle Grid Background */}
       <CyberGrid />
 

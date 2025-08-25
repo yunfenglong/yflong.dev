@@ -357,6 +357,76 @@
   display: none;  /* Safari and Chrome */
 }
 
+/* Hide scrollbar globally */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Mobile Background Light Animations */
+@keyframes pulse-light {
+  0% {
+    opacity: 0.85;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.95;
+    transform: scale(1.02) rotate(0.5deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04) rotate(0deg);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(1.01) rotate(-0.3deg);
+  }
+  100% {
+    opacity: 0.88;
+    transform: scale(0.99) rotate(0deg);
+  }
+}
+
+@keyframes shimmer-light {
+  0% {
+    opacity: 0.7;
+    transform: rotate(0deg) scale(1) translateX(0px) translateY(0px);
+  }
+  20% {
+    opacity: 0.85;
+    transform: rotate(0.8deg) scale(1.01) translateX(1px) translateY(-1px);
+  }
+  40% {
+    opacity: 0.9;
+    transform: rotate(-0.5deg) scale(1.03) translateX(-1px) translateY(1px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: rotate(0.3deg) scale(0.99) translateX(1px) translateY(0px);
+  }
+  80% {
+    opacity: 0.75;
+    transform: rotate(-0.2deg) scale(1.01) translateX(0px) translateY(-1px);
+  }
+  100% {
+    opacity: 0.82;
+    transform: rotate(0deg) scale(1) translateX(0px) translateY(0px);
+  }
+}
+
 /* Selection Styling */
 ::selection {
   background: rgba(255, 255, 255, 0.2);

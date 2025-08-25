@@ -140,7 +140,7 @@ const StatusDashboard: React.FC = () => {
       >
         <p className="text-gray-500 text-xs font-mono">
           last updated: {new Date().toLocaleString()}
-          {/* <a href="https://github.com/yunfenglong/wanfung.me" className="ml-2 text-white/60 hover:text-white transition-colors">
+          {/* <a href="https://github.com/yunfenglong/yflong.dev" className="ml-2 text-white/60 hover:text-white transition-colors">
             view source
           </a> */}
         </p>

@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Wifi, Shield, Lock, Code2, Database, Cpu, Zap } from 'lucide-react';
 import { TerminalLine } from '@/types/terminal';
-import { fileSystem, bootMessages, availableCommands, fileContents, systemOutputs } from '@/config/terminal';
+import { bootMessages, availableCommands } from '@/config/terminal';
+import { runCommand } from '@/lib/terminal/commands';
 import { getCurrentIP } from '@/utils/network';
 
 const NativeTerminal: React.FC = () => {
@@ -105,14 +106,6 @@ const NativeTerminal: React.FC = () => {
     setLines(prev => [...prev, newLine]);
   }, []);
 
-  const formatFileSize = (bytes: number): string => {
-    if (bytes === 0) return '0 B';
-    const k = 1024;
-    const sizes = ['B', 'K', 'M', 'G', 'T'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + sizes[i];
-  };
-
   const executeCommand = useCallback((command: string) => {
     const trimmedCommand = command.trim();
     if (!trimmedCommand) return;
@@ -129,235 +122,16 @@ const NativeTerminal: React.FC = () => {
 
     const [cmd, ...args] = trimmedCommand.split(' ');
 
-    switch (cmd.toLowerCase()) {
-      case 'help':
-        addLine('output', `Available commands:
-  help          - Show this help message
-  ls [options]  - List directory contents (-l for detailed, -la for all)
-  pwd           - Print working directory
-  cd <dir>      - Change directory (.. for parent, ~ for home)
-  cat <file>    - Display file contents
-  whoami        - Display current user
-  date          - Show current date and time
-  uname [-a]    - System information (-a for all)
-  ps            - Show running processes
-  clear         - Clear terminal
-  history       - Show command history
-  echo <text>   - Display text
-  mkdir <dir>   - Create directory
-  touch <file>  - Create empty file
-  rm <file>     - Remove file
-  tree          - Show directory tree
-  neofetch      - System information display
-  uptime        - Show system uptime
-  df            - Show disk usage
-  free          - Show memory usage
-  top           - Show system processes
-  exit          - Close terminal session`);
-        break;
-
-      case 'ls':
-        const currentItems = fileSystem[currentDirectory] || [];
-        if (currentItems.length === 0) {
-          addLine('output', 'Directory is empty');
-        } else {
-          const hasLongFlag = args.includes('-l') || args.includes('-la');
-          const showHidden = args.includes('-la') || args.includes('-a');
-
-          let itemsToShow = currentItems;
-          if (!showHidden) {
-            itemsToShow = currentItems.filter(item => !item.name.startsWith('.'));
-          }
-
-          if (hasLongFlag) {
-            addLine('output', `total ${itemsToShow.length}`);
-            itemsToShow.forEach(item => {
-              const size = item.size ? formatFileSize(item.size).padStart(8) : '     4.0K';
-              const date = item.modified?.toLocaleDateString('en-US', {
-                month: 'short',
-                day: '2-digit'
-              }) || 'Jan 15';
-              const time = item.modified?.toLocaleTimeString('en-US', {
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false
-              }) || '12:00';
-              const permissions = item.permissions || (item.type === 'directory' ? 'drwxr-xr-x' : '-rw-r--r--');
-              addLine('output', `${permissions} 1 yflong yflong ${size} ${date} ${time} ${item.name}`);
-            });
-          } else {
-            const itemNames = itemsToShow.map(item =>
-              item.type === 'directory' ? `${item.name}/` : item.name
-            ).join('  ');
-            addLine('output', itemNames);
-          }
-        }
-        break;
-
-      case 'pwd':
-        addLine('output', currentDirectory);
-        break;
-
-      case 'cd':
-        const targetDir = args[0];
-        if (!targetDir || targetDir === '~') {
-          setCurrentDirectory('/home/yflong');
-          addLine('success', 'Changed to home directory');
-        } else if (targetDir === '..') {
-          const pathParts = currentDirectory.split('/').filter(Boolean);
-          if (pathParts.length > 1) {
-            pathParts.pop();
-            const parentDir = '/' + pathParts.join('/');
-            setCurrentDirectory(parentDir);
-            addLine('success', `Changed to ${parentDir}`);
-          } else {
-            setCurrentDirectory('/');
-            addLine('success', 'Changed to root directory');
-          }
-        } else if (targetDir.startsWith('/')) {
-          if (fileSystem[targetDir]) {
-            setCurrentDirectory(targetDir);
-            addLine('success', `Changed to ${targetDir}`);
-          } else {
-            addLine('error', `cd: ${targetDir}: No such file or directory`);
-          }
-        } else {
-          const newPath = currentDirectory === '/' ? `/${targetDir}` : `${currentDirectory}/${targetDir}`;
-          if (fileSystem[newPath]) {
-            setCurrentDirectory(newPath);
-            addLine('success', `Changed to ${newPath}`);
-          } else {
-            const currentItems = fileSystem[currentDirectory] || [];
-            const dirExists = currentItems.some(item => item.name === targetDir && item.type === 'directory');
-            if (dirExists) {
-              setCurrentDirectory(newPath);
-              addLine('success', `Changed to ${newPath}`);
-            } else {
-              addLine('error', `cd: ${targetDir}: No such file or directory`);
-            }
-          }
-        }
-        break;
-
-      case 'cat':
-        const filename = args[0];
-        if (!filename) {
-          addLine('error', 'cat: missing file operand');
-        } else {
-          const currentItems = fileSystem[currentDirectory] || [];
-          const file = currentItems.find(item => item.name === filename && item.type === 'file');
-          if (file) {
-            const content = fileContents[filename];
-            if (content) {
-              addLine('output', content);
-            } else {
-              addLine('output', `File contents of ${filename}...
-Welcome to yflong's secure terminal.
-You are not authorized to view this file.
-Try 'sudo' or contact the person who own this file.`);
-            }
-          } else {
-            addLine('error', `cat: ${filename}: No such file or directory`);
-          }
-        }
-        break;
-
-      case 'whoami':
-        addLine('output', 'Yunfeng Long');
-        break;
-
-      case 'date':
-        addLine('output', new Date().toString());
-        break;
-
-      case 'uname':
-        const hasAllFlag = args.includes('-a');
-        addLine('output', hasAllFlag ? systemOutputs.unameAll : systemOutputs.uname);
-        break;
-
-      case 'ps':
-        addLine('output', systemOutputs.ps);
-        break;
-
-      case 'top':
-        addLine('output', systemOutputs.top(new Date().toLocaleTimeString()));
-        break;
-
-      case 'free':
-        addLine('output', systemOutputs.free);
-        break;
-
-      case 'df':
-        addLine('output', systemOutputs.df);
-        break;
-
-      case 'uptime':
-        addLine('output', systemOutputs.uptime(new Date().toLocaleTimeString()));
-        break;
-
-      case 'clear':
-        setLines([]);
-        break;
-
-      case 'history':
-        commandHistory.forEach((cmd, index) => {
-          addLine('output', `${(index + 1).toString().padStart(4)} ${cmd}`);
-        });
-        break;
-
-      case 'echo':
-        addLine('output', args.join(' '));
-        break;
-
-      case 'mkdir':
-        const dirName = args[0];
-        if (!dirName) {
-          addLine('error', 'mkdir: missing operand');
-        } else {
-          addLine('success', `Directory '${dirName}' created successfully`);
-        }
-        break;
-
-      case 'touch':
-        const fileName = args[0];
-        if (!fileName) {
-          addLine('error', 'touch: missing file operand');
-        } else {
-          addLine('success', `File '${fileName}' created successfully`);
-        }
-        break;
-
-      case 'rm':
-        const rmFile = args[0];
-        if (!rmFile) {
-          addLine('error', 'rm: missing operand');
-        } else {
-          addLine('success', `File '${rmFile}' removed successfully`);
-        }
-        break;
-
-      case 'tree':
-        addLine('output', systemOutputs.tree(currentDirectory));
-        break;
-
-      case 'neofetch':
-        addLine('output', systemOutputs.neofetch);
-        break;
-
-      case 'exit':
-        addLine('warning', 'Terminal session ended. Refresh page to restart.');
-        setIsTerminalActive(false);
-        setTimeout(() => {
-          if (inputRef.current) {
-            inputRef.current.disabled = true;
-          }
-        }, 100);
-        break;
-
-      default:
-        addLine('error', `Command not found: ${cmd}. Type 'help' for available commands.`);
-    }
-  }, [currentDirectory, commandHistory, addLine]);
+    runCommand(cmd.toLowerCase(), args, {
+      currentDirectory,
+      setCurrentDirectory,
+      addLine,
+      commandHistory,
+      setLines,
+      setIsTerminalActive,
+      inputRef,
+    });
+  }, [addLine, commandHistory, currentDirectory, setCurrentDirectory, setLines, setIsTerminalActive]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!isTerminalActive || isBooting) return;

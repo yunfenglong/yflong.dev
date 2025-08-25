@@ -1,4 +1,4 @@
-# wanfung.me
+# yflong.dev
 
 A personal site where code goes to look cool.
 

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "WANFUNG.ME",
+  title: "YFLONG.DEV",
   description: "My Personal Website",
     generator: 'v0.app',
   icons: {

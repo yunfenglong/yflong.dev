@@ -10,9 +10,39 @@ const CyberGrid: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    let accentLines: { orientation: 'h' | 'v'; position: number; gradient: CanvasGradient }[] = [];
+
+    const generateAccentLines = () => {
+      accentLines = [
+        {
+          orientation: 'h',
+          position: Math.random() * canvas.height,
+          gradient: (() => {
+            const g = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            g.addColorStop(0, 'rgba(59, 130, 246, 0)');
+            g.addColorStop(0.5, 'rgba(59, 130, 246, 0.08)');
+            g.addColorStop(1, 'rgba(59, 130, 246, 0)');
+            return g;
+          })()
+        },
+        {
+          orientation: 'v',
+          position: Math.random() * canvas.width,
+          gradient: (() => {
+            const g = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            g.addColorStop(0, 'rgba(139, 92, 246, 0)');
+            g.addColorStop(0.5, 'rgba(139, 92, 246, 0.06)');
+            g.addColorStop(1, 'rgba(139, 92, 246, 0)');
+            return g;
+          })()
+        }
+      ];
+    };
+
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      generateAccentLines();
     };
 
     resizeCanvas();
@@ -48,35 +78,20 @@ const CyberGrid: React.FC = () => {
         ctx.stroke();
       }
 
-      // Subtle accent lines - very rare
-      if (Math.random() > 0.998) {
-        const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-        gradient.addColorStop(0, 'rgba(59, 130, 246, 0)');
-        gradient.addColorStop(0.5, 'rgba(59, 130, 246, 0.08)');
-        gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
-        
-        ctx.strokeStyle = gradient;
+      // Precomputed accent lines
+      accentLines.forEach((line) => {
+        ctx.strokeStyle = line.gradient;
         ctx.lineWidth = 0.8;
         ctx.beginPath();
-        ctx.moveTo(0, Math.random() * canvas.height);
-        ctx.lineTo(canvas.width, Math.random() * canvas.height);
+        if (line.orientation === 'h') {
+          ctx.moveTo(0, line.position);
+          ctx.lineTo(canvas.width, line.position);
+        } else {
+          ctx.moveTo(line.position, 0);
+          ctx.lineTo(line.position, canvas.height);
+        }
         ctx.stroke();
-      }
-
-      // Vertical accent lines - very rare
-      if (Math.random() > 0.999) {
-        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-        gradient.addColorStop(0, 'rgba(139, 92, 246, 0)');
-        gradient.addColorStop(0.5, 'rgba(139, 92, 246, 0.06)');
-        gradient.addColorStop(1, 'rgba(139, 92, 246, 0)');
-        
-        ctx.strokeStyle = gradient;
-        ctx.lineWidth = 0.8;
-        ctx.beginPath();
-        ctx.moveTo(Math.random() * canvas.width, 0);
-        ctx.lineTo(Math.random() * canvas.width, canvas.height);
-        ctx.stroke();
-      }
+      });
 
       time += 16;
     };

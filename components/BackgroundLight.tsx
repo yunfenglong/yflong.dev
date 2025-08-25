@@ -2,9 +2,11 @@
 
 import React, { useEffect, useState } from 'react'
 import { useIsMobile } from '@/components/ui/use-mobile'
+import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion'
 
 const BackgroundLight: React.FC = () => {
   const isMobile = useIsMobile()
+  const prefersReducedMotion = usePrefersReducedMotion()
   const [lightPositions, setLightPositions] = useState({
     main: { x: 50, y: 50 },
     accent1: { x: 45, y: 40 },
@@ -14,7 +16,7 @@ const BackgroundLight: React.FC = () => {
 
   // Generate random light positions periodically
   useEffect(() => {
-    if (!isMobile) return
+    if (!isMobile || prefersReducedMotion) return
 
     const updateLightPositions = () => {
       setLightPositions({
@@ -46,7 +48,7 @@ const BackgroundLight: React.FC = () => {
     }, 3000 + Math.random() * 4000)
 
     return () => clearInterval(interval)
-  }, [isMobile])
+  }, [isMobile, prefersReducedMotion])
 
   return (
     <div className="fixed inset-0 w-full h-full pointer-events-none z-0">

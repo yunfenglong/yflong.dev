@@ -9,6 +9,13 @@ import SystemMetrics from '@/components/status/SystemMetrics'
 import OverallStatus from '@/components/status/OverallStatus'
 
 const StatusDashboard: React.FC = () => {
+  const days = React.useMemo(() => (
+    Array.from({ length: 90 }, () => {
+      const roll = Math.random()
+      return roll < 0.02 ? 'down' : roll < 0.07 ? 'partial' : 'up'
+    })
+  ), [])
+
   return (
     <div className="w-full max-w-4xl mx-auto px-4 space-y-6 pt-20">
       {/* Header */}
@@ -44,21 +51,19 @@ const StatusDashboard: React.FC = () => {
       >
         <h2 className="text-sm font-mono font-medium text-white">90 days uptime</h2>
         <div className="flex items-center gap-0.5 w-full">
-          {Array.from({ length: 90 }, (_, i) => {
-            const isDown = Math.random() < 0.02 // 2% chance of downtime
-            const isPartial = Math.random() < 0.05 // 5% chance of partial outage
-            return (
-              <div
-                key={i}
-                className={`flex-1 h-8 rounded-sm ${
-                  isDown ? 'bg-red-500' :
-                  isPartial ? 'bg-yellow-500' :
-                  'bg-green-500'
-                }`}
-                title={`Day ${90 - i}: ${isDown ? 'Major outage' : isPartial ? 'Partial outage' : 'Operational'}`}
-              />
-            )
-          })}
+          {days.map((state, i) => (
+            <div
+              key={i}
+              className={`flex-1 h-8 rounded-sm ${
+                state === 'down'
+                  ? 'bg-red-500'
+                  : state === 'partial'
+                    ? 'bg-yellow-500'
+                    : 'bg-green-500'
+              }`}
+              title={`Day ${90 - i}: ${state === 'down' ? 'Major outage' : state === 'partial' ? 'Partial outage' : 'Operational'}`}
+            />
+          ))}
         </div>
         <div className="flex justify-between text-xs text-gray-500 font-mono">
           <span>90 days ago</span>

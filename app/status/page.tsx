@@ -26,7 +26,7 @@ export default function StatusPage() {
 
       {/* Navigation */}
       <div className="fixed inset-0 z-30 pointer-events-none">
-        <nav className="absolute top-0 left-0 right-0 z-10 pointer-events-auto">
+        <nav aria-label="primary" className="absolute top-0 left-0 right-0 z-10 pointer-events-auto">
           <div className="flex justify-between items-center px-4 sm:px-8 py-6">
             <div className="flex items-center space-x-4">
               {/* <a href="/" className="text-white/80 hover:text-white transition-colors font-mono text-sm">

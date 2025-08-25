@@ -70,7 +70,7 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000`,
   'README.md': 'Full Stack, GUI, Web development, Automation, ML, Data integration, BB & etc.',
-  'mail.txt': 'odium@yflong.dev',
+  'mail.txt': 'teur@yflong.dev',
   'pypi.whl': 'https://pypi.org/user/ivuxy',
   'source-code.txt': 'https://github.com/yunfenglong/yflong.dev',
   'config.py': 'class Production(Config): LOGGER = True',

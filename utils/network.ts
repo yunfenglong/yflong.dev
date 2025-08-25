@@ -28,11 +28,11 @@ export const getCurrentIP = async (): Promise<string> => {
         // Timeout fallback
         setTimeout(() => {
           pc.close();
-          resolve('192.168.1.x');
+          resolve('10.0.0.1');
         }, 3000);
       });
     } catch (fallbackError) {
-      return '192.168.1.x';
+      return '10.0.0.1';
     }
   }
 };

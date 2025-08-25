@@ -35,6 +35,7 @@ export default function PaperShaderPage() {
       {/* Navigation preserved from original design */}
       <div className="fixed inset-0 z-30 pointer-events-none">
         <nav aria-label="global navigation" className="absolute top-0 left-0 right-0 z-10 pointer-events-auto">
+          v1.0.0
           <div className="flex justify-end items-center px-8 py-6">
             <div className="flex items-center space-x-8 font-mono text-sm text-white/80">
               <a href="https://github.com/yunfenglong/yflong.dev/blob/main/CHANGELOG.md" className="hover:text-white transition-colors">

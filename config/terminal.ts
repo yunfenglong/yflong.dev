@@ -153,5 +153,5 @@ tmpfs           16777216      1234  16775982   1% /run`,
   unameAll: `Linux yflong-procrastination-station
 1.9.9-beta-rc42-duct-tape #40~22.04.1-Arch-BTW 
 AGGRESSIVE_GARBAGE_COLLECTION Way Past 
-Thu Nov 16 10:53:04 UTC 2023 x86_64 x86_64 x86_64 GNU/Plus/A-Dash-Of-Systemd`
+Mon Aug 09 16:27:01 EDT 2021 x86_64 x86_64 x86_64 GNU/Plus/A-Dash-Of-Systemd`
 };

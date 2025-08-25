@@ -37,7 +37,7 @@ export default function PaperShaderPage() {
         <nav className="absolute top-0 left-0 right-0 z-10 pointer-events-auto">
           <div className="flex justify-end items-center px-8 py-6">
             <div className="flex items-center space-x-8 font-mono text-sm text-white/80">
-              <a href="https://github.com/yunfenglong/wanfung.me/blob/main/CHANGELOG.md" className="hover:text-white transition-colors">
+              <a href="https://github.com/yunfenglong/yflong.dev/blob/main/CHANGELOG.md" className="hover:text-white transition-colors">
                 changelogs
               </a>
               <a href="https://blog.yflong.dev" className="hover:text-white transition-colors">
@@ -47,7 +47,7 @@ export default function PaperShaderPage() {
                 dines
               </a>
               <a
-                href="https://github.com/yunfenglong/wanfung.me"
+                href="https://github.com/yunfenglong/yflong.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors"

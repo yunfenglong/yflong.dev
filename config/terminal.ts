@@ -41,12 +41,6 @@ export const bootMessages: BootMessage[] = [
   { content: '', delay: 200 }
 ];
 
-export const availableCommands = [
-  'help', 'ls', 'pwd', 'cd', 'cat', 'whoami', 'date', 'uname', 'ps', 
-  'top', 'free', 'df', 'uptime', 'clear', 'history', 'echo', 'mkdir', 
-  'touch', 'rm', 'tree', 'neofetch', 'exit'
-];
-
 export const fileContents: Record<string, string> = {
   '.bashrc': `# ~/.bashrc: executed by bash(1) for non-login shells.
 

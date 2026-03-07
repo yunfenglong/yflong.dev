@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { useIsMobile } from '@/components/ui/use-mobile'
+import { useIsMobile } from '@/hooks/use-mobile'
 import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion'
 
 const BackgroundLight: React.FC = () => {

@@ -65,7 +65,7 @@ const ServiceStatus: React.FC<ServiceStatusProps> = ({ service, index }) => {
           <h3 className="font-semibold text-[#3f372e] text-sm truncate pr-2">{service.name}</h3>
           <div className={`flex items-center gap-1 px-2 py-1 rounded-full border ${config.bgColor} ${config.borderColor}`}>
             <Icon className={`w-3 h-3 ${config.color}`} />
-            <span className={`text-[11px] font-semibold ${config.color}`}>{config.label}</span>
+            <span className={`text-[0.6875rem] font-semibold ${config.color}`}>{config.label}</span>
           </div>
         </div>
 
@@ -73,11 +73,11 @@ const ServiceStatus: React.FC<ServiceStatusProps> = ({ service, index }) => {
 
         <div className="grid grid-cols-2 gap-3 pt-2 border-t border-[#d7ccbc]">
           <div>
-            <div className="text-[10px] text-[#8f8475] uppercase tracking-[0.12em]">uptime</div>
+            <div className="text-[0.625rem] text-[#8f8475] uppercase tracking-[0.12em]">uptime</div>
             <div className="text-xs font-medium text-[#3f372e]">{service.uptime.toFixed(2)}%</div>
           </div>
           <div>
-            <div className="text-[10px] text-[#8f8475] uppercase tracking-[0.12em]">response</div>
+            <div className="text-[0.625rem] text-[#8f8475] uppercase tracking-[0.12em]">response</div>
             <div className="text-xs font-medium text-[#3f372e]">{service.responseTime}ms</div>
           </div>
         </div>

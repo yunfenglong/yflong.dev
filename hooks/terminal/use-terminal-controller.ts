@@ -2,12 +2,19 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import type { KeyboardEvent } from "react"
+import { ctfUnlockStorageKey } from "@/config/ctf"
 import { bootMessages } from "@/config/terminal"
 import { availableCommands, runCommand } from "@/lib/terminal/commands"
+import type { CtfProgress } from "@/lib/terminal/commands"
 import type { TerminalLine } from "@/types/terminal"
 
 const HOME_DIRECTORY = "/home/yflong"
 const MAX_COMMAND_HISTORY = 100
+const DEFAULT_CTF_PROGRESS: CtfProgress = {
+  started: false,
+  step: 1,
+  solved: false,
+}
 
 const sleep = (ms: number) =>
   new Promise<void>((resolve) => {
@@ -30,6 +37,7 @@ export function useTerminalController() {
   const [isTerminalActive, setIsTerminalActive] = useState(true)
   const [hasInitialized, setHasInitialized] = useState(false)
   const [isBooting, setIsBooting] = useState(true)
+  const [ctfProgress, setCtfProgress] = useState<CtfProgress>(DEFAULT_CTF_PROGRESS)
 
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -62,6 +70,13 @@ export function useTerminalController() {
     }, 100)
   }, [])
 
+  const unlockVault = useCallback(() => {
+    if (typeof window === "undefined") {
+      return
+    }
+    window.localStorage.setItem(ctfUnlockStorageKey, "true")
+  }, [])
+
   const executeCommand = useCallback(
     (command: string) => {
       const trimmedCommand = command.trim()
@@ -84,9 +99,12 @@ export function useTerminalController() {
         commandHistory: nextHistory,
         clearLines: () => setLines([]),
         terminateSession,
+        ctfProgress,
+        setCtfProgress,
+        unlockVault,
       })
     },
-    [addLine, currentDirectory, terminateSession],
+    [addLine, ctfProgress, currentDirectory, terminateSession, unlockVault],
   )
 
   const handleKeyDown = useCallback(

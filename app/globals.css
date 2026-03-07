@@ -10,7 +10,7 @@
   --surface: #f8f4ec;
   --surface-strong: #fbf8f2;
   --surface-border: #d7ccbc;
-  --surface-shadow: 0 28px 42px -36px rgba(30, 24, 17, 0.45);
+  --surface-shadow: 0 1.75rem 2.625rem -2.25rem rgba(30, 24, 17, 0.45);
   --ring: rgba(125, 104, 73, 0.3);
   --accent: #8a7451;
   --accent-soft: #b09570;
@@ -18,7 +18,7 @@
   --warning: #9b7441;
   --danger: #914840;
   --info: #75614b;
-  --radius: 10px;
+  --radius: 0.625rem;
   --font-display-stack: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
   --font-sans-stack: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono-stack: "SF Mono", "ui-monospace", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
@@ -32,10 +32,10 @@
   --color-muted: var(--muted);
   --color-ring: var(--ring);
   --color-border: var(--surface-border);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 0.125rem);
 }
 
 @layer base {
@@ -73,23 +73,23 @@
 
 .swift-surface {
   background: var(--surface);
-  border: 1px solid var(--surface-border);
+  border: 0.0625rem solid var(--surface-border);
   box-shadow: var(--surface-shadow);
 }
 
 .swift-surface-strong {
   background: var(--surface-strong);
-  border: 1px solid var(--surface-border);
-  box-shadow: 0 36px 56px -46px rgba(30, 24, 17, 0.55);
+  border: 0.0625rem solid var(--surface-border);
+  box-shadow: 0 2.25rem 3.5rem -2.875rem rgba(30, 24, 17, 0.55);
 }
 
 .swift-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.32rem;
-  border-radius: 999px;
+  border-radius: 999rem;
   padding: 0.24rem 0.62rem;
-  border: 1px solid #d6cab9;
+  border: 0.0625rem solid #d6cab9;
   background: #f5efe5;
   color: #4f4538;
   font-size: 0.62rem;
@@ -113,7 +113,7 @@
   left: 0;
   bottom: -0.2rem;
   width: 100%;
-  height: 1px;
+  height: 0.0625rem;
   background: #92806a;
   transform: scaleX(0);
   transform-origin: left;
@@ -125,7 +125,7 @@
 }
 
 .swift-nav {
-  border-bottom: 1px solid #d2c4b1;
+  border-bottom: 0.0625rem solid #d2c4b1;
   background: transparent;
 }
 
@@ -135,9 +135,9 @@
 }
 
 .macos-traffic-light {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
+  width: 0.5625rem;
+  height: 0.5625rem;
+  border-radius: 999rem;
 }
 
 .macos-traffic-light.close {

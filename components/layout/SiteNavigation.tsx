@@ -37,7 +37,7 @@ function DesktopLinks({ page }: SiteNavigationProps) {
       : { href: "/", label: "terminal" }
 
   return (
-    <div className="hidden sm:flex items-center gap-6 text-[11px] font-medium text-[#5f5446]">
+    <div className="hidden sm:flex items-center gap-6 text-[0.6875rem] font-medium text-[#5f5446]">
       <Link href={primaryRoute.href} className="swift-pill hover:text-[#2f2a24] transition-colors">
         {primaryRoute.label}
       </Link>
@@ -70,24 +70,26 @@ export default function SiteNavigation({ page }: SiteNavigationProps) {
     <div className="fixed inset-x-0 top-0 z-30 pointer-events-none">
       <nav
         aria-label="global navigation"
-        className="pointer-events-auto max-w-6xl mx-auto px-4 sm:px-8 pt-6"
+        className="pointer-events-auto w-full px-[5%] pt-[calc(env(safe-area-inset-top)+1rem)]"
       >
-        <div className="swift-nav flex items-center justify-between pb-3">
-          <Link
-            href="/"
-            className="aman-display text-lg text-[#3b342c] tracking-[0.08em] uppercase"
-          >
-            yflong
-          </Link>
+        <div className="w-full max-w-[61.25rem] mx-auto">
+          <div className="swift-nav flex items-center justify-between pb-3">
+            <Link
+              href="/"
+              className="aman-display text-lg text-[#3b342c] tracking-[0.08em] uppercase"
+            >
+              yflong
+            </Link>
 
-          <DesktopLinks page={page} />
+            <DesktopLinks page={page} />
 
-          <Link
-            href={page === "home" ? "/status" : "/"}
-            className="sm:hidden swift-pill hover:text-[#2f2a24] transition-colors"
-          >
-            {page === "home" ? "status" : "home"}
-          </Link>
+            <Link
+              href={page === "home" ? "/status" : "/"}
+              className="sm:hidden swift-pill hover:text-[#2f2a24] transition-colors"
+            >
+              {page === "home" ? "status" : "home"}
+            </Link>
+          </div>
         </div>
       </nav>
     </div>

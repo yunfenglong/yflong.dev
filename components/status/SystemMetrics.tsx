@@ -74,7 +74,7 @@ const SystemMetrics: React.FC<SystemMetricsProps> = ({ metrics }) => {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-[11px] uppercase tracking-[0.12em] text-[#8f8475]">{metric.name}</h3>
+                  <h3 className="text-[0.6875rem] uppercase tracking-[0.12em] text-[#8f8475]">{metric.name}</h3>
                   <div className={`p-1 rounded-full border ${statusConf.bgColor} ${statusConf.borderColor}`}>
                     <StatusIcon className={`w-3 h-3 ${statusConf.color}`} />
                   </div>

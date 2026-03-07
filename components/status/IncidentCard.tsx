@@ -78,10 +78,10 @@ const IncidentCard: React.FC<IncidentCardProps> = ({ incident, index }) => {
             <div className="flex items-center flex-wrap gap-2">
               <div className={`flex items-center gap-1 px-2 py-1 rounded-full border ${statusConf.bgColor} ${statusConf.borderColor}`}>
                 <StatusIcon className={`w-3 h-3 ${statusConf.color}`} />
-                <span className={`text-[11px] font-semibold ${statusConf.color}`}>{statusConf.label}</span>
+                <span className={`text-[0.6875rem] font-semibold ${statusConf.color}`}>{statusConf.label}</span>
               </div>
               <div className={`px-2 py-1 rounded-full ${impactConf.bgColor}`}>
-                <span className={`text-[11px] font-semibold ${impactConf.color}`}>{impactConf.label} impact</span>
+                <span className={`text-[0.6875rem] font-semibold ${impactConf.color}`}>{impactConf.label} impact</span>
               </div>
             </div>
 

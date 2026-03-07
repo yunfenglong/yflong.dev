@@ -1,4 +1,5 @@
 import { fileSystem, fileContents, systemOutputs } from "@/config/terminal"
+import { ctfFinalFlag, ctfSourceToken } from "@/config/ctf"
 import { TerminalLine } from "@/types/terminal"
 
 const HOME_DIRECTORY = "/home/yflong"
@@ -49,10 +50,23 @@ const commandCatalog: CommandDefinition[] = [
     usage: "neofetch",
     description: "System information display",
   },
+  {
+    name: "ctf",
+    usage: "ctf <start|status|hint|submit>",
+    description: "Mini CTF challenge",
+  },
   { name: "exit", usage: "exit", description: "Close terminal session" },
 ]
 
 export const availableCommands = commandCatalog.map((command) => command.name)
+
+export interface CtfProgress {
+  started: boolean
+  step: 1 | 2 | 3
+  solved: boolean
+  stepOneAnswer?: string
+  stepTwoAnswer?: string
+}
 
 export interface CommandContext {
   currentDirectory: string
@@ -61,6 +75,9 @@ export interface CommandContext {
   commandHistory: string[]
   clearLines: () => void
   terminateSession: () => void
+  ctfProgress: CtfProgress
+  setCtfProgress: (next: CtfProgress) => void
+  unlockVault: () => void
 }
 
 type CommandHandler = (args: string[], ctx: CommandContext) => void
@@ -104,6 +121,70 @@ const renderHelpOutput = (): string => {
     return `  ${command.usage.padEnd(14)} - ${command.description}`
   })
   return `Available commands:\n${rows.join("\n")}`
+}
+
+const CTF_STEP_ONE_ANSWER = "true"
+
+const normalizeSubmission = (value: string): string => value.trim().toLowerCase()
+
+const renderCtfStepOnePrompt = (): string =>
+  [
+    "[1/3] Recon objective",
+    "Inspect ~/config.py and extract the value after LOGGER =",
+    "Submit with: ctf submit <value>",
+  ].join("\n")
+
+const renderCtfStepTwoPrompt = (): string =>
+  [
+    "[2/3] Source objective",
+    "Inspect the homepage source (or DOM) and find `data-ctf-token` on the main element.",
+    "Submit with: ctf submit <token>",
+  ].join("\n")
+
+const renderCtfStepThreePrompt = (progress: CtfProgress): string => {
+  const stepOne = progress.stepOneAnswer ?? "STEP_1_ANSWER"
+  const stepTwo = progress.stepTwoAnswer ?? "STEP_2_TOKEN"
+
+  return [
+    "[3/3] Logic objective",
+    "Compute the final flag with:",
+    "seal(a, b) = `${a.slice(0, 2).toLowerCase()}-${b.split('-').map((word) => word[0]).join('')}-${a.length + b.length}`",
+    `a = ${stepOne}`,
+    `b = ${stepTwo}`,
+    "Submit with: ctf submit <flag>",
+  ].join("\n")
+}
+
+const renderCtfStatus = (progress: CtfProgress): string => {
+  if (!progress.started) {
+    return "CTF status: idle\nRun `trace` or `ctf start` to begin."
+  }
+
+  if (progress.solved) {
+    return "CTF status: solved\nVault access granted at /vault."
+  }
+
+  return `CTF status: active\nCurrent step: ${progress.step}/3\nUse \`ctf hint\` or \`ctf submit <answer>\`.`
+}
+
+const renderCtfHint = (progress: CtfProgress): string => {
+  if (!progress.started) {
+    return "No active challenge. Run `ctf start`."
+  }
+
+  if (progress.solved) {
+    return "Challenge complete. Open /vault."
+  }
+
+  if (progress.step === 1) {
+    return "Hint 1: `cat config.py` from your home directory."
+  }
+
+  if (progress.step === 2) {
+    return "Hint 2: The token is a lowercase phrase joined by hyphens."
+  }
+
+  return "Hint 3: The middle chunk is the initials of every hyphen-separated word in step 2."
 }
 
 const commandHandlers: Record<string, CommandHandler> = {
@@ -312,6 +393,120 @@ const commandHandlers: Record<string, CommandHandler> = {
 
   neofetch: (_, ctx) => {
     ctx.addLine("output", systemOutputs.neofetch)
+  },
+
+  ctf: (args, ctx) => {
+    const action = args[0]?.toLowerCase() || "status"
+
+    if (action === "start") {
+      if (ctx.ctfProgress.solved) {
+        ctx.addLine("success", "CTF already solved. Vault is open at /vault.")
+        return
+      }
+
+      ctx.setCtfProgress({
+        ...ctx.ctfProgress,
+        started: true,
+        step: 1,
+        solved: false,
+      })
+      ctx.addLine("success", "CTF protocol initialized.")
+      ctx.addLine("output", renderCtfStepOnePrompt())
+      return
+    }
+
+    if (action === "status") {
+      ctx.addLine("output", renderCtfStatus(ctx.ctfProgress))
+      return
+    }
+
+    if (action === "hint") {
+      ctx.addLine("output", renderCtfHint(ctx.ctfProgress))
+      return
+    }
+
+    if (action === "submit") {
+      if (!ctx.ctfProgress.started) {
+        ctx.addLine("error", "CTF is not active. Run `ctf start` first.")
+        return
+      }
+
+      const submissionInput = args.slice(1).join(" ")
+      if (!submissionInput.trim()) {
+        ctx.addLine("error", "Usage: ctf submit <answer>")
+        return
+      }
+
+      const submission = normalizeSubmission(submissionInput)
+
+      if (ctx.ctfProgress.step === 1) {
+        if (submission !== CTF_STEP_ONE_ANSWER) {
+          ctx.addLine("error", "Incorrect step 1 answer. Run `ctf hint` if needed.")
+          return
+        }
+
+        const nextProgress: CtfProgress = {
+          ...ctx.ctfProgress,
+          started: true,
+          step: 2,
+          solved: false,
+          stepOneAnswer: submission.toUpperCase(),
+        }
+
+        ctx.setCtfProgress(nextProgress)
+        ctx.addLine("success", "Step 1 cleared.")
+        ctx.addLine("output", renderCtfStepTwoPrompt())
+        return
+      }
+
+      if (ctx.ctfProgress.step === 2) {
+        if (submission !== ctfSourceToken) {
+          ctx.addLine("error", "Incorrect step 2 token. Run `ctf hint` if needed.")
+          return
+        }
+
+        const nextProgress: CtfProgress = {
+          ...ctx.ctfProgress,
+          started: true,
+          step: 3,
+          solved: false,
+          stepTwoAnswer: submission,
+        }
+
+        ctx.setCtfProgress(nextProgress)
+        ctx.addLine("success", "Step 2 cleared.")
+        ctx.addLine("output", renderCtfStepThreePrompt(nextProgress))
+        return
+      }
+
+      if (ctx.ctfProgress.step === 3) {
+        if (submission !== ctfFinalFlag) {
+          ctx.addLine("error", "Flag mismatch. Re-check the formula and values.")
+          return
+        }
+
+        ctx.setCtfProgress({
+          ...ctx.ctfProgress,
+          solved: true,
+        })
+        ctx.unlockVault()
+        ctx.addLine("success", "Flag accepted. Vault access granted.")
+        ctx.addLine("output", "Open /vault to claim the easter egg.")
+        return
+      }
+    }
+
+    ctx.addLine("error", "Usage: ctf <start|status|hint|submit>")
+  },
+
+  trace: (_, ctx) => {
+    if (!ctx.ctfProgress.started && !ctx.ctfProgress.solved) {
+      ctx.addLine("warning", "Trace route enabled. Dropping you into the CTF protocol...")
+      commandHandlers.ctf(["start"], ctx)
+      return
+    }
+
+    ctx.addLine("output", renderCtfStatus(ctx.ctfProgress))
   },
 
   exit: (_, ctx) => {

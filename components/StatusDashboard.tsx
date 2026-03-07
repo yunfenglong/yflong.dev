@@ -21,7 +21,7 @@ const StatusDashboard: React.FC = () => {
   const activeIncidents = incidents.filter((incident) => incident.status !== "resolved")
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-2 sm:px-4 space-y-7">
+    <div className="w-full max-w-5xl mx-auto px-0 space-y-7">
       <motion.div
         initial={{ opacity: 0, y: -14 }}
         animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ const StatusDashboard: React.FC = () => {
           {days.map((state, i) => (
             <div
               key={i}
-              className={`flex-1 h-7 rounded-[3px] ${
+              className={`flex-1 h-7 rounded-[0.1875rem] ${
                 state === "down" ? "bg-[#b77970]" : state === "partial" ? "bg-[#bf9560]" : "bg-[#8ba17b]"
               }`}
               title={`Day ${90 - i}: ${state === "down" ? "Major outage" : state === "partial" ? "Partial outage" : "Operational"}`}

@@ -17,6 +17,8 @@ interface DesktopTerminalProps {
   currentDirectory: string
   isTerminalActive: boolean
   isBooting: boolean
+  terminalBodyHeightRem: number
+  shellRef: RefObject<HTMLDivElement | null>
   terminalRef: RefObject<HTMLDivElement | null>
   inputRef: RefObject<HTMLInputElement | null>
   currentIP: string
@@ -33,20 +35,14 @@ const lineTypeClassName: Record<TerminalLine["type"], string> = {
   warning: "terminal-warning",
 }
 
-const introLines = [
-  "Yunfeng Long",
-  "Second-year student at Monash University.",
-  "Front-end development, automation, web technologies.",
-  "React, TypeScript, Next.js, ML integration.",
-  "Focused on modern web development practices.",
-]
-
 export default function DesktopTerminal({
   lines,
   currentInput,
   currentDirectory,
   isTerminalActive,
   isBooting,
+  terminalBodyHeightRem,
+  shellRef,
   terminalRef,
   inputRef,
   currentIP,
@@ -55,14 +51,15 @@ export default function DesktopTerminal({
   onInputKeyDown,
 }: DesktopTerminalProps) {
   return (
-    <div className="w-full max-w-[980px] mx-auto px-3 sm:px-4">
+    <div className="w-full max-w-[45.9375rem] mx-auto px-0">
       <motion.div
+        ref={shellRef}
         className="swift-surface-strong w-full rounded-lg overflow-hidden"
         initial={{ y: 18, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="flex items-center justify-between px-5 py-3 border-b border-[#d7ccbc]">
+        <div className="flex items-center justify-between px-4 py-2 border-b border-[#d7ccbc]">
           <div className="macos-traffic-lights" aria-hidden="true">
             <div className="macos-traffic-light close" />
             <div className="macos-traffic-light minimize" />
@@ -103,21 +100,11 @@ export default function DesktopTerminal({
         </div>
 
         <div
-          className="p-4 sm:p-6 h-[62vh] min-h-[340px] max-h-[620px] overflow-y-auto font-mono text-[0.9rem] leading-relaxed text-[#4a4033] cursor-text scrollbar-hide"
+          className="p-3 sm:p-4 overflow-y-auto font-mono text-[0.8rem] leading-relaxed text-[#4a4033] cursor-text scrollbar-hide"
+          style={{ height: `${terminalBodyHeightRem}rem` }}
           ref={terminalRef}
           onClick={() => inputRef.current?.focus()}
         >
-          <div className="mb-4 pb-4 border-b border-[#d7ccbc]">
-            <p className="text-[11px] uppercase tracking-[0.14em] text-[#8f8475] mb-2">
-              intro
-            </p>
-            <div className="space-y-1 text-[12px] text-[#5f5446]">
-              {introLines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
-            </div>
-          </div>
-
           <div className="space-y-1">
             <AnimatePresence>
               {lines.map((line) => (
@@ -143,7 +130,7 @@ export default function DesktopTerminal({
           </div>
 
           {isTerminalActive && !isBooting && (
-            <div className="terminal-line mt-4">
+            <div className="terminal-line mt-3">
               <div className="flex items-center">
                 <span className="terminal-prompt flex-shrink-0">{currentDirectory} $</span>
                 <div className="flex items-center ml-2 relative">
@@ -154,7 +141,7 @@ export default function DesktopTerminal({
                     value={currentInput}
                     onChange={(event) => onInputChange(event.target.value)}
                     onKeyDown={onInputKeyDown}
-                    className="absolute bg-transparent border-none outline-none font-mono text-[0.9rem] text-[#40372d] w-full"
+                    className="absolute bg-transparent border-none outline-none font-mono text-[0.8rem] text-[#40372d] w-full"
                     style={{ width: `${Math.max(1, currentInput.length + 1)}ch` }}
                     autoFocus
                     spellCheck={false}

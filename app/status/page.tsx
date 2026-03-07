@@ -1,16 +1,15 @@
 "use client"
 
-import SceneLayout from "@/components/layout/SceneLayout"
 import SiteNavigation from "@/components/layout/SiteNavigation"
 import StatusDashboard from "@/components/StatusDashboard"
 
 export default function StatusPage() {
   return (
-    <SceneLayout
-      contentClassName="min-h-screen p-4 sm:p-6 lg:p-8"
-      navigation={<SiteNavigation page="status" />}
-    >
-      <StatusDashboard />
-    </SceneLayout>
+    <div className="min-h-screen bg-background text-foreground">
+      <SiteNavigation page="status" />
+      <main className="min-h-screen p-4 sm:p-6 lg:p-8 pt-28 sm:pt-32">
+        <StatusDashboard />
+      </main>
+    </div>
   )
 }

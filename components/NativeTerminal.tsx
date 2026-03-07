@@ -1,15 +1,10 @@
 "use client"
 
-import { useIsMobile } from "@/hooks/use-mobile"
 import DesktopTerminal from "@/components/terminal/DesktopTerminal"
-import MobileTerminalIntro from "@/components/terminal/MobileTerminalIntro"
 import { useTerminalBadges } from "@/hooks/terminal/use-terminal-badges"
 import { useTerminalController } from "@/hooks/terminal/use-terminal-controller"
 
-const TERMINAL_MOBILE_BREAKPOINT = 1024
-
 function NativeTerminal() {
-  const isMobile = useIsMobile(TERMINAL_MOBILE_BREAKPOINT)
   const {
     lines,
     currentInput,
@@ -23,10 +18,6 @@ function NativeTerminal() {
   } = useTerminalController()
 
   const { currentIP, showBadges } = useTerminalBadges()
-
-  if (isMobile) {
-    return <MobileTerminalIntro />
-  }
 
   return (
     <DesktopTerminal

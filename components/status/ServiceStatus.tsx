@@ -1,9 +1,9 @@
 "use client"
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { CheckCircle, AlertTriangle, XCircle, Wrench, Clock } from 'lucide-react'
-import type { Service } from '@/config/status'
+import React from "react"
+import { motion } from "framer-motion"
+import { CheckCircle, AlertTriangle, XCircle, Wrench, Clock } from "lucide-react"
+import type { Service } from "@/config/status"
 
 interface ServiceStatusProps {
   service: Service
@@ -13,38 +13,38 @@ interface ServiceStatusProps {
 const statusConfig = {
   operational: {
     icon: CheckCircle,
-    color: 'text-green-400',
-    bgColor: 'bg-green-400/10',
-    borderColor: 'border-green-400/20',
-    label: 'Operational',
+    color: "text-[#607758]",
+    bgColor: "bg-[#eef2ea]",
+    borderColor: "border-[#c9d4c1]",
+    label: "Operational",
   },
   degraded: {
     icon: AlertTriangle,
-    color: 'text-yellow-400',
-    bgColor: 'bg-yellow-400/10',
-    borderColor: 'border-yellow-400/20',
-    label: 'Degraded',
+    color: "text-[#9b7441]",
+    bgColor: "bg-[#f5ecdf]",
+    borderColor: "border-[#e4d3bb]",
+    label: "Degraded",
   },
   partial_outage: {
     icon: AlertTriangle,
-    color: 'text-orange-400',
-    bgColor: 'bg-orange-400/10',
-    borderColor: 'border-orange-400/20',
-    label: 'Partial Outage',
+    color: "text-[#9a6442]",
+    bgColor: "bg-[#f4e8df]",
+    borderColor: "border-[#dfc8b4]",
+    label: "Partial outage",
   },
   major_outage: {
     icon: XCircle,
-    color: 'text-red-400',
-    bgColor: 'bg-red-400/10',
-    borderColor: 'border-red-400/20',
-    label: 'Major Outage',
+    color: "text-[#914840]",
+    bgColor: "bg-[#f2e5e3]",
+    borderColor: "border-[#d9bdb9]",
+    label: "Major outage",
   },
   maintenance: {
     icon: Wrench,
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-400/10',
-    borderColor: 'border-blue-400/20',
-    label: 'Maintenance',
+    color: "text-[#75614b]",
+    bgColor: "bg-[#f1ece5]",
+    borderColor: "border-[#d9cdbf]",
+    label: "Maintenance",
   },
 }
 
@@ -56,59 +56,36 @@ const ServiceStatus: React.FC<ServiceStatusProps> = ({ service, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-      whileHover={{ scale: 1.02, y: -2 }}
-      className={`
-        relative overflow-hidden rounded-lg border backdrop-blur-xl
-        bg-black/20 border-white/10 hover:border-white/20
-        p-4 transition-all duration-300
-      `}
+      transition={{ duration: 0.35, delay: index * 0.08 }}
+      whileHover={{ scale: 1.01, y: -2 }}
+      className="swift-surface rounded-lg p-4 transition-all duration-300"
     >
-      {/* Glass morphism effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-      
-      <div className="relative z-10 space-y-3">
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <h3 className="font-mono font-medium text-white text-sm truncate pr-2">
-            {service.name}
-          </h3>
-          <div className={`flex items-center space-x-1 px-2 py-1 rounded-full ${config.bgColor} ${config.borderColor} border`}>
+      <div className="space-y-3">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="font-semibold text-[#3f372e] text-sm truncate pr-2">{service.name}</h3>
+          <div className={`flex items-center gap-1 px-2 py-1 rounded-full border ${config.bgColor} ${config.borderColor}`}>
             <Icon className={`w-3 h-3 ${config.color}`} />
-            <span className={`text-xs font-medium ${config.color}`}>
-              {config.label}
-            </span>
+            <span className={`text-[11px] font-semibold ${config.color}`}>{config.label}</span>
           </div>
         </div>
 
-        {/* Description */}
-        <p className="text-gray-400 text-xs font-mono">
-          {service.description}
-        </p>
+        <p className="text-[#6f6558] text-xs">{service.description}</p>
 
-        {/* Metrics */}
-        <div className="grid grid-cols-2 gap-3 pt-2 border-t border-white/10">
+        <div className="grid grid-cols-2 gap-3 pt-2 border-t border-[#d7ccbc]">
           <div>
-            <div className="text-xs text-gray-500 uppercase tracking-wide font-mono">uptime</div>
-            <div className="text-xs font-mono text-white">
-              {service.uptime.toFixed(2)}%
-            </div>
+            <div className="text-[10px] text-[#8f8475] uppercase tracking-[0.12em]">uptime</div>
+            <div className="text-xs font-medium text-[#3f372e]">{service.uptime.toFixed(2)}%</div>
           </div>
           <div>
-            <div className="text-xs text-gray-500 uppercase tracking-wide font-mono">response</div>
-            <div className="text-xs font-mono text-white">
-              {service.responseTime}ms
-            </div>
+            <div className="text-[10px] text-[#8f8475] uppercase tracking-[0.12em]">response</div>
+            <div className="text-xs font-medium text-[#3f372e]">{service.responseTime}ms</div>
           </div>
         </div>
 
-        {/* Last Incident */}
         {service.lastIncident && (
-          <div className="flex items-center space-x-2 pt-2 border-t border-white/10">
-            <Clock className="w-3 h-3 text-gray-500" />
-            <span className="text-xs text-gray-500 font-mono">
-              last incident: {service.lastIncident}
-            </span>
+          <div className="flex items-center gap-1.5 pt-2 border-t border-[#d7ccbc]">
+            <Clock className="w-3 h-3 text-[#8f8475]" />
+            <span className="text-xs text-[#8f8475]">last incident: {service.lastIncident}</span>
           </div>
         )}
       </div>

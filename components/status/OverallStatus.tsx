@@ -1,12 +1,12 @@
 "use client"
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { CheckCircle, AlertTriangle, XCircle, Wrench } from 'lucide-react'
+import React from "react"
+import { motion } from "framer-motion"
+import { CheckCircle, AlertTriangle, XCircle, Wrench } from "lucide-react"
 
 interface OverallStatusProps {
   status: {
-    status: 'operational' | 'degraded' | 'partial_outage' | 'major_outage' | 'maintenance'
+    status: "operational" | "degraded" | "partial_outage" | "major_outage" | "maintenance"
     message: string
     lastUpdated: Date
   }
@@ -15,38 +15,43 @@ interface OverallStatusProps {
 const statusConfig = {
   operational: {
     icon: CheckCircle,
-    color: 'text-green-400',
-    bgColor: 'bg-green-400/10',
-    borderColor: 'border-green-400/20',
-    label: 'All Systems Operational',
+    color: "text-[#607758]",
+    bgColor: "bg-[#eef2ea]",
+    borderColor: "border-[#c9d4c1]",
+    dotColor: "bg-[#7c9270]",
+    label: "All systems operational",
   },
   degraded: {
     icon: AlertTriangle,
-    color: 'text-yellow-400',
-    bgColor: 'bg-yellow-400/10',
-    borderColor: 'border-yellow-400/20',
-    label: 'Degraded Performance',
+    color: "text-[#9b7441]",
+    bgColor: "bg-[#f5ecdf]",
+    borderColor: "border-[#e4d3bb]",
+    dotColor: "bg-[#b48752]",
+    label: "Degraded performance",
   },
   partial_outage: {
     icon: AlertTriangle,
-    color: 'text-orange-400',
-    bgColor: 'bg-orange-400/10',
-    borderColor: 'border-orange-400/20',
-    label: 'Partial Service Outage',
+    color: "text-[#9a6442]",
+    bgColor: "bg-[#f4e8df]",
+    borderColor: "border-[#dfc8b4]",
+    dotColor: "bg-[#b5784f]",
+    label: "Partial service outage",
   },
   major_outage: {
     icon: XCircle,
-    color: 'text-red-400',
-    bgColor: 'bg-red-400/10',
-    borderColor: 'border-red-400/20',
-    label: 'Major Service Outage',
+    color: "text-[#914840]",
+    bgColor: "bg-[#f2e5e3]",
+    borderColor: "border-[#d9bdb9]",
+    dotColor: "bg-[#ac6259]",
+    label: "Major service outage",
   },
   maintenance: {
     icon: Wrench,
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-400/10',
-    borderColor: 'border-blue-400/20',
-    label: 'Scheduled Maintenance',
+    color: "text-[#75614b]",
+    bgColor: "bg-[#f1ece5]",
+    borderColor: "border-[#d9cdbf]",
+    dotColor: "bg-[#8a7451]",
+    label: "Scheduled maintenance",
   },
 }
 
@@ -56,39 +61,27 @@ const OverallStatus: React.FC<OverallStatusProps> = ({ status }) => {
 
   return (
     <motion.div
-      className={`
-        relative overflow-hidden rounded-xl border backdrop-blur-xl
-        ${config.bgColor} ${config.borderColor}
-        p-6 md:p-8
-      `}
-      whileHover={{ scale: 1.02 }}
+      className="swift-surface-strong rounded-lg p-6 md:p-7"
+      whileHover={{ scale: 1.01 }}
       transition={{ duration: 0.2 }}
     >
-      {/* Glass morphism effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-      
-      <div className="relative z-10 flex items-start justify-between">
-        <div className="flex items-center space-x-4 flex-1 min-w-0">
-          <div className={`p-3 rounded-full ${config.bgColor} ${config.borderColor} border flex-shrink-0`}>
-            <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${config.color}`} />
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex items-start gap-4 min-w-0">
+          <div className={`p-3 rounded-md border ${config.bgColor} ${config.borderColor} flex-shrink-0`}>
+            <Icon className={`w-6 h-6 ${config.color}`} />
           </div>
-          <div className="min-w-0 flex-1">
-            <h3 className={`text-base font-mono font-bold ${config.color}`}>
-              {config.label}
-            </h3>
-            <p className="text-gray-300 mt-1 text-sm font-mono">
-              {status.message}
-            </p>
-            <p className="text-gray-500 text-xs font-mono mt-2">
+          <div className="min-w-0">
+            <h3 className={`aman-display text-xl ${config.color}`}>{config.label}</h3>
+            <p className="text-[#4f4538] mt-1.5 text-sm">{status.message}</p>
+            <p className="text-[#8f8475] text-xs mt-2 uppercase tracking-[0.12em]">
               last updated: {status.lastUpdated.toLocaleString()}
             </p>
           </div>
         </div>
 
-        {/* Status indicator */}
-        <div className="flex items-center space-x-2 flex-shrink-0 ml-4">
-          <div className={`w-3 h-3 rounded-full ${config.color.replace('text-', 'bg-')} animate-pulse`} />
-          <span className="text-gray-400 text-sm font-mono whitespace-nowrap">LIVE</span>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <div className={`w-2.5 h-2.5 rounded-full ${config.dotColor} animate-pulse`} />
+          <span className="text-[#8f8475] text-xs font-semibold tracking-[0.16em] uppercase">live</span>
         </div>
       </div>
     </motion.div>

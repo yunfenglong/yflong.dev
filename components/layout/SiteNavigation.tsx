@@ -2,10 +2,6 @@
 
 import Link from "next/link"
 
-interface SiteNavigationProps {
-  page: "home" | "status"
-}
-
 const externalLinks = [
   {
     label: "journal",
@@ -30,17 +26,9 @@ function GithubIcon() {
   )
 }
 
-function DesktopLinks({ page }: SiteNavigationProps) {
-  const primaryRoute =
-    page === "home"
-      ? { href: "/status", label: "status" }
-      : { href: "/", label: "terminal" }
-
+function DesktopLinks() {
   return (
     <div className="hidden sm:flex items-center gap-6 text-[0.6875rem] font-medium text-[#5f5446]">
-      <Link href={primaryRoute.href} className="swift-pill hover:text-[#2f2a24] transition-colors">
-        {primaryRoute.label}
-      </Link>
       {externalLinks.map((link) => (
         <a
           key={link.href}
@@ -65,7 +53,7 @@ function DesktopLinks({ page }: SiteNavigationProps) {
   )
 }
 
-export default function SiteNavigation({ page }: SiteNavigationProps) {
+export default function SiteNavigation() {
   return (
     <div className="fixed inset-x-0 top-0 z-30 pointer-events-none">
       <nav
@@ -81,14 +69,9 @@ export default function SiteNavigation({ page }: SiteNavigationProps) {
               yflong
             </Link>
 
-            <DesktopLinks page={page} />
+            <DesktopLinks />
 
-            <Link
-              href={page === "home" ? "/status" : "/"}
-              className="sm:hidden swift-pill hover:text-[#2f2a24] transition-colors"
-            >
-              {page === "home" ? "status" : "home"}
-            </Link>
+            <div className="sm:hidden" aria-hidden="true" />
           </div>
         </div>
       </nav>

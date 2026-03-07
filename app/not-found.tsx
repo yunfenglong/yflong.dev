@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import SiteNavigation from "@/components/layout/SiteNavigation"
+import SiteFooter from "@/components/layout/SiteFooter"
 
 interface FixOption {
   id: string
@@ -68,9 +69,9 @@ export default function NotFound() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <SiteNavigation page="home" />
-      <main className="min-h-screen px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <SiteNavigation />
+      <main className="flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center">
         <section className="w-full max-w-[45.9375rem] swift-surface-strong rounded-lg p-5 sm:p-7 space-y-5">
           <header className="space-y-2">
             <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-[#8f8475]">404 debug mission</p>
@@ -145,6 +146,7 @@ export default function NotFound() {
           )}
         </section>
       </main>
+      <SiteFooter />
     </div>
   )
 }

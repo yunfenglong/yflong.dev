@@ -10,6 +10,8 @@ import type { TerminalLine } from "@/types/terminal"
 
 const HOME_DIRECTORY = "/home/yflong"
 const MAX_COMMAND_HISTORY = 100
+const TERMINAL_SESSION_STORAGE_KEY = "yflong_terminal_session"
+const TERMINAL_SESSION_TTL_MS = 2 * 60 * 60 * 1000
 const DEFAULT_CTF_PROGRESS: CtfProgress = {
   started: false,
   step: 1,
@@ -28,6 +30,53 @@ const getBootLineType = (content: string): TerminalLine["type"] => {
   return "output"
 }
 
+const generateSessionCode = (): string => {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID()
+  }
+
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`
+}
+
+const readSessionCode = (): string | null => {
+  if (typeof window === "undefined") return null
+
+  try {
+    const rawSession = window.sessionStorage.getItem(TERMINAL_SESSION_STORAGE_KEY)
+    if (!rawSession) return null
+
+    const parsed = JSON.parse(rawSession) as {
+      code?: unknown
+      expiresAt?: unknown
+    }
+
+    if (typeof parsed.code !== "string" || typeof parsed.expiresAt !== "number") {
+      window.sessionStorage.removeItem(TERMINAL_SESSION_STORAGE_KEY)
+      return null
+    }
+
+    if (Date.now() > parsed.expiresAt) {
+      window.sessionStorage.removeItem(TERMINAL_SESSION_STORAGE_KEY)
+      return null
+    }
+
+    return parsed.code
+  } catch {
+    window.sessionStorage.removeItem(TERMINAL_SESSION_STORAGE_KEY)
+    return null
+  }
+}
+
+const writeSessionCode = (code: string) => {
+  if (typeof window === "undefined") return
+
+  const payload = {
+    code,
+    expiresAt: Date.now() + TERMINAL_SESSION_TTL_MS,
+  }
+  window.sessionStorage.setItem(TERMINAL_SESSION_STORAGE_KEY, JSON.stringify(payload))
+}
+
 export function useTerminalController() {
   const [lines, setLines] = useState<TerminalLine[]>([])
   const [currentInput, setCurrentInput] = useState("")
@@ -42,7 +91,6 @@ export function useTerminalController() {
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const lineIdRef = useRef(0)
-  const bootSequenceStarted = useRef(false)
   const commandHistoryRef = useRef<string[]>([])
 
   useEffect(() => {
@@ -187,8 +235,14 @@ export function useTerminalController() {
   }, [lines])
 
   useEffect(() => {
-    if (hasInitialized || !isBooting || bootSequenceStarted.current) return
-    bootSequenceStarted.current = true
+    if (hasInitialized || !isBooting) return
+
+    const existingSession = readSessionCode()
+    if (existingSession) {
+      setIsBooting(false)
+      setHasInitialized(true)
+      return
+    }
 
     let isCancelled = false
 
@@ -224,6 +278,7 @@ export function useTerminalController() {
 
       setIsBooting(false)
       setHasInitialized(true)
+      writeSessionCode(generateSessionCode())
     }
 
     void runBootSequence()

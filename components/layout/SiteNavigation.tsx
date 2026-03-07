@@ -11,6 +11,8 @@ const externalLinks = [
   { label: "dine", href: "https://dine.yflong.dev" },
 ]
 
+const githubRepoUrl = "https://github.com/yunfenglong/yflong.dev"
+
 function GithubIcon() {
   return (
     <svg
@@ -41,7 +43,7 @@ function DesktopLinks() {
         </a>
       ))}
       <a
-        href="https://github.com/yunfenglong/yflong.dev"
+        href={githubRepoUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="swift-pill hover:text-[#2f2a24] transition-colors"
@@ -50,6 +52,20 @@ function DesktopLinks() {
         <GithubIcon />
       </a>
     </div>
+  )
+}
+
+function MobileGithubLink() {
+  return (
+    <a
+      href={githubRepoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="sm:hidden text-[#5f5446] p-1 -m-1"
+      aria-label="GitHub"
+    >
+      <GithubIcon />
+    </a>
   )
 }
 
@@ -72,7 +88,7 @@ export default function SiteNavigation() {
 
             <DesktopLinks />
 
-            <div className="sm:hidden" aria-hidden="true" />
+            <MobileGithubLink />
           </div>
         </div>
       </nav>

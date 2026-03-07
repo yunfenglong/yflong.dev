@@ -12,7 +12,7 @@ export default function HomePage() {
       <main
         data-layout-main
         data-ctf-token={ctfSourceToken}
-        className="flex-1 flex items-start justify-center px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[5dvh]"
+        className="flex-1 flex items-start justify-center px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[2dvh]"
       >
         <NativeTerminal />
       </main>

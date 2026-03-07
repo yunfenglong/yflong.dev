@@ -6,7 +6,7 @@ import DesktopTerminal from "@/components/terminal/DesktopTerminal"
 import { useTerminalBadges } from "@/hooks/terminal/use-terminal-badges"
 import { useTerminalController } from "@/hooks/terminal/use-terminal-controller"
 
-const introTitle = "Yunfeng Long"
+const introTitle = "Hey, I'm Yunfeng Long"
 
 const introLines = [
   "Front-end development, automation, web technologies.",
@@ -18,7 +18,7 @@ const TERMINAL_MAX_HEIGHT_REM = 26
 const TERMINAL_MIN_VIEWPORT_WIDTH_REM = 61.25
 const TERMINAL_TARGET_VIEWPORT_RATIO = 0.44
 const STACK_GAP_REM = 2.5
-const VIEWPORT_BOTTOM_GAP_RATIO = 0.05
+const VIEWPORT_BOTTOM_GAP_RATIO = 0.02
 const HEIGHT_SAFETY_BUFFER_REM = 0.25
 const DEFAULT_TERMINAL_CHROME_REM = 4.5
 

@@ -6,7 +6,10 @@ export default function SiteFooter() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="px-[5%] pb-[max(1rem,env(safe-area-inset-bottom))] pt-6">
+    <footer
+      data-layout-footer
+      className="px-[5%] pb-[max(2rem,env(safe-area-inset-bottom))] pt-6"
+    >
       <div className="w-full max-w-[61.25rem] mx-auto">
         <div className="swift-nav flex items-center justify-between pt-3">
           <p className="text-[0.64rem] uppercase tracking-[0.14em] text-[#7e7364]">

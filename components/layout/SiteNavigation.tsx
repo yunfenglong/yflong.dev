@@ -57,6 +57,7 @@ export default function SiteNavigation() {
   return (
     <div className="fixed inset-x-0 top-0 z-30 pointer-events-none">
       <nav
+        data-layout-header
         aria-label="global navigation"
         className="pointer-events-auto w-full px-[5%] pt-[calc(env(safe-area-inset-top)+1rem)]"
       >
@@ -66,7 +67,7 @@ export default function SiteNavigation() {
               href="/"
               className="aman-display text-lg text-[#3b342c] tracking-[0.08em] uppercase"
             >
-              yflong
+              yunfenglong
             </Link>
 
             <DesktopLinks />

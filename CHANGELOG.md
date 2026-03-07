@@ -2,6 +2,26 @@
 
 All notable shenanigans in this project will be documented here.
 
+## Unreleased
+
+### ✨ Added
+- Added a new `/vault` CTF experience with terminal-integrated challenge commands and dedicated challenge config.
+- Added standalone `/privacy` and custom `not-found` pages.
+- Added shared `SiteFooter` and `SiteNavigation` layout components for consistent page structure.
+- Added dedicated terminal hooks (`use-terminal-controller`, `use-terminal-badges`) and a focused `DesktopTerminal` component.
+
+### 🔧 Changed
+- Refined terminal behavior and command handling in `NativeTerminal` and `lib/terminal/commands`.
+- Updated page layouts across home, status, vault, privacy, and not-found routes to use a unified shell.
+- Refreshed status dashboard visuals and card components (`IncidentCard`, `OverallStatus`, `ServiceStatus`, `SystemMetrics`).
+- Consolidated global styling into `app/globals.css` and removed legacy `styles/globals.css`.
+- Updated terminal configuration and supporting docs (`config/terminal.ts`, `README.md`).
+
+### 🧹 Removed
+- Removed unused visual layers and helpers (`BackgroundLight`, `CyberGrid`, shader effects, theme provider).
+- Removed unused UI primitives and hooks under `components/ui` and legacy hooks/utilities.
+- Simplified dependency footprint in `package.json` and lockfile after component cleanup.
+
 ## 1.0.0 - 2025-08-25
 
 ### 🎉 Major Features
@@ -44,10 +64,6 @@ All notable shenanigans in this project will be documented here.
 - Added cyberpunk-inspired visual elements
 - Enhanced mobile user experience with optimized layouts
 - Introduced dynamic background effects and animations
-
-## Unreleased
-- Added a README so future-me isn't confused.
-- Wrote this changelog because memory is hard.
 
 ## 0.1.0
 - Initial commit. It worked on my machine.

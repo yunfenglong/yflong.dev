@@ -54,12 +54,21 @@ export const services: Service[] = [
   },
   {
     id: 'dine-service',
-    name: 'Dine Service',
+    name: "Wan's Dine",
     status: 'degraded',
-    description: 'Restaurant discovery platform',
+    description: "Restaurant discovery platform at dine.yflong.dev",
     uptime: 98.2,
     responseTime: 890,
     lastIncident: '2 hours ago',
+  },
+  {
+    id: 'travel-service',
+    name: 'Travel Service',
+    status: 'operational',
+    description:
+      'Been There Series app for exploring luxury hotels around the world at travel.yflong.dev',
+    uptime: 99.93,
+    responseTime: 312,
   },
   {
     id: 'api-gateway',
@@ -99,31 +108,35 @@ export const services: Service[] = [
 export const incidents: Incident[] = [
   {
     id: 'inc-001',
-    title: 'Elevated response times on Dine Service',
+    title: "Elevated response times on Wan's Dine",
     status: 'monitoring',
     impact: 'minor',
     createdAt: new Date('2025-01-25T14:30:00Z'),
     updatedAt: new Date('2025-01-25T16:15:00Z'),
-    description: 'Users may experience slower loading times when searching for restaurants.',
+    description:
+      "Users may experience slower loading times when searching for restaurants on Wan's Dine.",
     affectedServices: ['dine-service'],
     updates: [
       {
         id: 'upd-001',
         timestamp: new Date('2025-01-25T16:15:00Z'),
         status: 'monitoring',
-        message: 'We have implemented a fix and are monitoring the service. Response times have improved significantly.',
+        message:
+          "We have implemented a fix and are monitoring Wan's Dine. Response times have improved significantly.",
       },
       {
         id: 'upd-002',
         timestamp: new Date('2025-01-25T15:45:00Z'),
         status: 'identified',
-        message: 'We have identified the root cause as a database query optimization issue and are deploying a fix.',
+        message:
+          "We identified the root cause as a database query optimization issue and are deploying a fix for Wan's Dine.",
       },
       {
         id: 'upd-003',
         timestamp: new Date('2025-01-25T14:30:00Z'),
         status: 'investigating',
-        message: 'We are investigating reports of elevated response times on the Dine Service.',
+        message:
+          "We are investigating reports of elevated response times on Wan's Dine at dine.yflong.dev.",
       },
     ],
   },

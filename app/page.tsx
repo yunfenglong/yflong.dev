@@ -10,6 +10,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <SiteNavigation />
       <main
+        data-layout-main
         data-ctf-token={ctfSourceToken}
         className="flex-1 flex items-start justify-center px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[5dvh]"
       >

@@ -55,6 +55,11 @@ const commandCatalog: CommandDefinition[] = [
     usage: "ctf <start|status|hint|submit>",
     description: "Mini CTF challenge",
   },
+  {
+    name: "blog",
+    usage: "blog [open|latest]",
+    description: "Show blog routes and latest post hint",
+  },
   { name: "exit", usage: "exit", description: "Close terminal session" },
 ]
 
@@ -507,6 +512,13 @@ const commandHandlers: Record<string, CommandHandler> = {
     }
 
     ctx.addLine("output", renderCtfStatus(ctx.ctfProgress))
+  },
+
+  blog: (_, ctx) => {
+    ctx.addLine("output", "Blog routes:")
+    ctx.addLine("output", "  - /blog")
+    ctx.addLine("output", "  - /blog/building-terminal-style-portfolio")
+    ctx.addLine("output", "Tip: open /blog in a new tab.")
   },
 
   exit: (_, ctx) => {

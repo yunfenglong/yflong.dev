@@ -2,7 +2,21 @@
 
 All notable shenanigans in this project will be documented here.
 
-## Unreleased
+## 1.1.1 - 2026-03-08
+
+### ✨ Added
+- Introduced a native blog system with a dedicated `/blog` listing page and statically generated `/blog/[slug]` article pages.
+- Added markdown-based blog content pipeline (`content/blog/*.md`) with frontmatter parsing, reading-time metadata, and HTML rendering.
+
+### 🔧 Changed
+- Added an internal `/journal` page that renders `CHANGELOG.md` directly.
+- Updated site navigation so both new content sections (`/blog` and `/journal`) are first-party internal routes.
+- Added `/journal` to sitemap output.
+- Updated status dashboard data to reflect the blog/journal first-party rollout and current operational state.
+- Fixed markdown heading rendering so section titles like `###` display correctly.
+- Includes current uncommitted local updates as part of this patch release.
+
+## 1.1.0 - 2026-03-07
 
 ### ✨ Added
 - Added a new `/vault` CTF experience with terminal-integrated challenge commands and dedicated challenge config.

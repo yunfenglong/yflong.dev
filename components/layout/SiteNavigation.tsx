@@ -1,14 +1,19 @@
 "use client"
 
 import Link from "next/link"
+import localFont from "next/font/local"
+import { useEffect, useRef, useState } from "react"
 
-const externalLinks = [
-  {
-    label: "journal",
-    href: "https://github.com/yunfenglong/yflong.dev/blob/main/CHANGELOG.md",
-  },
-  { label: "blog", href: "https://blog.yflong.dev" },
-  { label: "dine", href: "https://dine.yflong.dev" },
+const shadowsIntoLight = localFont({
+  src: "../../lib/ShadowsIntoLight-Regular.ttf",
+  display: "swap",
+  weight: "400",
+  style: "normal",
+})
+
+const internalLinks = [
+  { label: "blog", href: "/blog" },
+  { label: "journal", href: "/journal" },
 ]
 
 const githubRepoUrl = "https://github.com/yunfenglong/yflong.dev"
@@ -31,16 +36,14 @@ function GithubIcon() {
 function DesktopLinks() {
   return (
     <div className="hidden sm:flex items-center gap-6 text-[0.6875rem] font-medium text-[#5f5446]">
-      {externalLinks.map((link) => (
-        <a
+      {internalLinks.map((link) => (
+        <Link
           key={link.href}
           href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
           className="swift-pill hover:text-[#2f2a24] transition-colors"
         >
           {link.label}
-        </a>
+        </Link>
       ))}
       <a
         href={githubRepoUrl}
@@ -55,17 +58,77 @@ function DesktopLinks() {
   )
 }
 
-function MobileGithubLink() {
+function MobileMenu() {
+  const [isOpen, setIsOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!isOpen) {
+      return
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!menuRef.current?.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    window.addEventListener("pointerdown", handlePointerDown)
+    return () => window.removeEventListener("pointerdown", handlePointerDown)
+  }, [isOpen])
+
   return (
-    <a
-      href={githubRepoUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="sm:hidden text-[#5f5446] p-1 -m-1"
-      aria-label="GitHub"
-    >
-      <GithubIcon />
-    </a>
+    <div ref={menuRef} className="relative sm:hidden">
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls="mobile-navigation-menu"
+        onClick={() => setIsOpen((open) => !open)}
+        className="swift-pill inline-flex items-center gap-2 text-[0.6875rem] font-medium text-[#5f5446] hover:text-[#2f2a24] transition-colors"
+      >
+        menu
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          fill="none"
+          className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
+          aria-hidden="true"
+        >
+          <path d="M1.5 3.5 5 7l3.5-3.5" stroke="currentColor" strokeWidth="1.2" />
+        </svg>
+      </button>
+
+      {isOpen ? (
+        <div
+          id="mobile-navigation-menu"
+          className="absolute right-0 top-[calc(100%+0.6rem)] min-w-[10rem] rounded-md border border-[#d2c4b1] bg-[#f8f4ec] px-4 py-3 shadow-[0_1rem_2rem_-1rem_rgba(30,24,17,0.45)]"
+        >
+          <div className="flex flex-col items-start gap-3 text-[0.6875rem] font-medium text-[#5f5446]">
+            {internalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="swift-pill hover:text-[#2f2a24] transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <a
+              href={githubRepoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="swift-pill inline-flex items-center gap-2 whitespace-nowrap hover:text-[#2f2a24] transition-colors"
+            >
+              github 
+              <GithubIcon />
+            </a>
+          </div>
+        </div>
+      ) : null}
+    </div>
   )
 }
 
@@ -81,14 +144,14 @@ export default function SiteNavigation() {
           <div className="swift-nav flex items-center justify-between pb-3">
             <Link
               href="/"
-              className="aman-display text-lg text-[#3b342c] tracking-[0.08em] uppercase"
+              className={`${shadowsIntoLight.className} text-lg text-[#3b342c] tracking-[0.08em]`}
             >
-              yunfenglong
+              wAn
             </Link>
 
             <DesktopLinks />
 
-            <MobileGithubLink />
+            <MobileMenu />
           </div>
         </div>
       </nav>

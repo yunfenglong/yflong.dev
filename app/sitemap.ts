@@ -4,7 +4,16 @@ import { siteConfig } from "@/config/site"
 
 export const dynamic = "force-static"
 
-const staticRoutes = ["", "/blog", "/journal", "/status", "/privacy", "/vault"]
+const staticRoutes = [
+  "",
+  "/blog",
+  "/projects",
+  "/contact",
+  "/journal",
+  "/status",
+  "/privacy",
+  "/vault",
+]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedBlogPosts()

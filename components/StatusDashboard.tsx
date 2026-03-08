@@ -322,7 +322,8 @@ const StatusDashboard: React.FC = () => {
           <div className="space-y-1">
             <h1 className="aman-display text-3xl sm:text-4xl text-[#3b342c]">System Status</h1>
             <p className="text-sm text-[#6f6558] max-w-[48ch]">
-              Real-time availability, performance metrics, incidents, and maintenance updates.
+              Demonstration telemetry: availability, performance metrics, incidents, and maintenance
+              updates for portfolio projects.
             </p>
           </div>
           <div

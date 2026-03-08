@@ -1,17 +1,16 @@
 "use client"
 
+import Link from "next/link"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { AppWindow, Atom, BrainCircuit, Braces, Linkedin } from "lucide-react"
 import DesktopTerminal from "@/components/terminal/DesktopTerminal"
+import { profileConfig, projectCaseStudies } from "@/config/profile"
 import { useTerminalBadges } from "@/hooks/terminal/use-terminal-badges"
 import { useTerminalController } from "@/hooks/terminal/use-terminal-controller"
 
-const introTitle = "Hey, I'm Yunfeng Long"
+const introTitle = `Hey, I'm ${profileConfig.name}`
 
-const introLines = [
-  "Front-end development, automation, web technologies.",
-  "Focused on modern web development practices.",
-]
+const introLines = [profileConfig.headline, `Targeting ${profileConfig.targetRole}.`]
 
 const TERMINAL_MIN_HEIGHT_REM = 15
 const TERMINAL_MAX_HEIGHT_REM = 26
@@ -157,7 +156,7 @@ function NativeTerminal() {
             <span className="text-[#8a7451]">Connect with me on</span>
             <Linkedin className="w-4 h-4 text-[#8a7451]" />
             <a
-              href="https://www.linkedin.com/in/yunfeng-l/"
+              href={profileConfig.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4 text-[#8a7451] transition-colors"
@@ -199,6 +198,32 @@ function NativeTerminal() {
           onInputChange={setCurrentInput}
           onInputKeyDown={handleKeyDown}
         />
+      )}
+
+      {!showTerminal && (
+        <section className="w-full max-w-[45.9375rem] mx-auto swift-surface rounded-lg p-5 sm:p-6 space-y-4">
+          <div className="space-y-1">
+            <p className="text-[0.67rem] uppercase tracking-[0.14em] text-[#8f8475]">quick overview</p>
+            <h2 className="aman-display text-[1.35rem] leading-tight text-[#3b342c]">
+              Portfolio Snapshot
+            </h2>
+            <p className="text-sm text-[#5f5446] leading-relaxed">
+              Use the quick links below to review projects and contact details.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            {projectCaseStudies.slice(0, 2).map((project) => (
+              <article key={project.id} className="rounded-md border border-[#d7ccbc] bg-[#f7f2e9] p-3">
+                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-[#8f8475]">
+                  {project.status}
+                </p>
+                <p className="text-sm font-medium text-[#3f372e]">{project.title}</p>
+                <p className="text-xs text-[#5f5446] mt-1">{project.summary}</p>
+              </article>
+            ))}
+          </div>
+        </section>
       )}
     </div>
   )

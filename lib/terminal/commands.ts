@@ -1,5 +1,6 @@
 import { fileSystem, fileContents, systemOutputs } from "@/config/terminal"
 import { ctfFinalFlag, ctfSourceToken } from "@/config/ctf"
+import { profileConfig, projectCaseStudies } from "@/config/profile"
 import { TerminalLine } from "@/types/terminal"
 
 const HOME_DIRECTORY = "/home/yflong"
@@ -27,6 +28,13 @@ const commandCatalog: CommandDefinition[] = [
   },
   { name: "cat", usage: "cat <file>", description: "Display file contents" },
   { name: "whoami", usage: "whoami", description: "Display current user" },
+  { name: "about", usage: "about", description: "Show profile summary" },
+  {
+    name: "projects",
+    usage: "projects",
+    description: "Show project highlights and route",
+  },
+  { name: "contact", usage: "contact", description: "Show contact channels" },
   { name: "date", usage: "date", description: "Show current date and time" },
   {
     name: "uname",
@@ -55,6 +63,7 @@ const commandCatalog: CommandDefinition[] = [
     usage: "ctf <start|status|hint|submit>",
     description: "Mini CTF challenge",
   },
+  { name: "trace", usage: "trace", description: "Shortcut into CTF flow" },
   {
     name: "blog",
     usage: "blog [open|latest]",
@@ -127,6 +136,29 @@ const renderHelpOutput = (): string => {
   })
   return `Available commands:\n${rows.join("\n")}`
 }
+
+const renderAboutOutput = (): string =>
+  [
+    `${profileConfig.name}`,
+    `${profileConfig.elevatorPitch}`,
+    `Role target: ${profileConfig.targetRole}`,
+    `Location: ${profileConfig.location} (${profileConfig.timezone})`,
+    "Key stack: Next.js, React, TypeScript, automation, observability",
+  ].join("\n")
+
+const renderProjectsOutput = (): string => {
+  const lines = projectCaseStudies.map((project) => `  - ${project.title} [${project.status}]`)
+  return ["Project highlights:", ...lines, "Open full breakdown: /projects"].join("\n")
+}
+
+const renderContactOutput = (): string =>
+  [
+    "Contact channels:",
+    `  - email: ${profileConfig.email}`,
+    `  - linkedin: ${profileConfig.linkedin}`,
+    `  - github: ${profileConfig.github}`,
+    "Contact page: /contact",
+  ].join("\n")
 
 const CTF_STEP_ONE_ANSWER = "true"
 
@@ -320,6 +352,18 @@ const commandHandlers: Record<string, CommandHandler> = {
 
   whoami: (_, ctx) => {
     ctx.addLine("output", "Yunfeng Long")
+  },
+
+  about: (_, ctx) => {
+    ctx.addLine("output", renderAboutOutput())
+  },
+
+  projects: (_, ctx) => {
+    ctx.addLine("output", renderProjectsOutput())
+  },
+
+  contact: (_, ctx) => {
+    ctx.addLine("output", renderContactOutput())
   },
 
   date: (_, ctx) => {

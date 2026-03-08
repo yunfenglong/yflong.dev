@@ -1,30 +1,76 @@
 # yflong.dev
 
-Terminal-style portfolio and status dashboard built with Next.js.
+Portfolio site for Yunfeng Long built with Next.js, TypeScript, and Tailwind CSS.
+
+## Overview
+
+This project combines:
+
+- Terminal-style homepage interaction
+- Structured project case studies (`/projects`)
+- Recruiter-friendly contact route (`/contact`)
+- Content routes for blog and changelog journal (`/blog`, `/journal`)
+- Status dashboard for service reliability storytelling (`/status`)
+
+## Technical Stack
+
+- Framework: Next.js (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS v4 + custom design tokens
+- Motion: Framer Motion
+- Icons: Lucide React
+
+## Architecture
+
+Core design principles used in this codebase:
+
+- Single Responsibility:
+  - `components/` for presentation
+  - `hooks/` for local UI/state behavior
+  - `lib/` for domain logic (terminal command execution, blog parsing)
+  - `config/` for typed static domain content
+  - `types/` for shared contracts
+- Open/Closed:
+  - Terminal command registry can be extended by adding handler definitions.
+- Data-driven UI:
+  - Profile, contact, and project case studies are centralized in typed config.
+
+## Route Map
+
+- `/` Home + terminal
+- `/projects` Case-study project portfolio
+- `/contact` Contact channels and availability
+- `/blog` and `/blog/[slug]` Engineering posts
+- `/journal` Changelog-driven journal
+- `/status` Service status dashboard
+- `/privacy` Privacy notice
+- `/vault` CTF vault route
 
 ## Project Structure
 
-- `app/`: route entrypoints and layout.
-- `components/`: presentation components grouped by concern (`layout`, `status`, `terminal`).
-- `hooks/`: reusable behavior hooks (`terminal` domain hooks and shared hooks).
-- `config/`: static domain data (`terminal`, `status`).
-- `lib/terminal/commands.ts`: terminal command engine and command registry.
-- `types/`: shared TypeScript types.
-- `utils/`: small external/service utilities.
+- `app/`: route entrypoints, metadata routes (`sitemap`, `robots`), and root layout
+- `components/`: UI composition (`layout`, `terminal`, `status`, `blog`)
+- `config/`: typed static data (`profile`, `terminal`, `status`, `site`)
+- `hooks/`: reusable state logic for terminal behavior
+- `lib/`: domain utilities (`terminal` command engine, blog content pipeline)
+- `types/`: TypeScript domain interfaces
+- `content/blog`: markdown blog content
+- `docs/`: project planning and improvement docs
 
-## Engineering Notes
-
-This codebase is refactored with SOLID-oriented boundaries:
-
-- Single Responsibility: command execution, UI rendering, and side effects are split across dedicated modules.
-- Open/Closed: terminal commands use a registry map, so new commands can be added without changing dispatcher flow.
-- Dependency Inversion: terminal domain logic depends on a small runtime interface instead of React internals.
-
-## Scripts
+## Local Development
 
 ```bash
 pnpm install
 pnpm dev
+```
+
+Open `http://localhost:3000`.
+
+## Quality Gates
+
+```bash
 pnpm lint
 pnpm build
 ```
+
+Use both commands before deploying to keep the project in a production-safe state.

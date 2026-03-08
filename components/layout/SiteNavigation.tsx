@@ -3,6 +3,7 @@
 import Link from "next/link"
 import localFont from "next/font/local"
 import { useEffect, useRef, useState } from "react"
+import { profileConfig } from "@/config/profile"
 
 const shadowsIntoLight = localFont({
   src: "../../lib/ShadowsIntoLight-Regular.ttf",
@@ -13,10 +14,11 @@ const shadowsIntoLight = localFont({
 
 const internalLinks = [
   { label: "blog", href: "/blog" },
+  { label: "projects", href: "/projects" },
   { label: "journal", href: "/journal" },
 ]
 
-const githubRepoUrl = "https://github.com/yunfenglong/yflong.dev"
+const githubRepoUrl = profileConfig.github
 
 function GithubIcon() {
   return (

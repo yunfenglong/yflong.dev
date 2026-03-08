@@ -2,6 +2,20 @@
 
 All notable shenanigans in this project will be documented here.
 
+## 1.2.0 - 2026-03-08
+
+### ✨ Added
+- Added a new `/alg` Algorithms page with SEO metadata, canonical URL, and a learning-focused hero section.
+- Added an interactive `AlgorithmVisualizer` with category filtering, step controls (play/pause/prev/next/reset), playback speed options, progress tracking, and pseudocode/state explanations.
+- Added algorithm data and simulation logic in `config/algorithms.ts` for Bubble Sort, Selection Sort, Insertion Sort, and Binary Search.
+- Added shared algorithm domain types in `types/algorithm.ts` for strongly typed definitions and replay steps.
+- Added mobile device rotation hint animation styles (`mobile-device-rotate`, `.mobile-rotate-device`) for the algorithm page experience.
+
+### 🔧 Changed
+- Updated site navigation to include an internal `algorithm` link to `/alg`.
+- Added `/alg` to sitemap generation so the new page is discoverable by crawlers.
+- Increased the navigation brand text size for improved visual balance.
+
 ## 1.1.1 - 2026-03-08
 
 ### ✨ Added

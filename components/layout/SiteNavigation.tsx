@@ -14,6 +14,7 @@ const shadowsIntoLight = localFont({
 
 const internalLinks = [
   { label: "blog", href: "/blog" },
+  { label: "algorithm", href: "/alg" },
   { label: "projects", href: "/projects" },
   { label: "journal", href: "/journal" },
 ]
@@ -146,7 +147,7 @@ export default function SiteNavigation() {
           <div className="swift-nav flex items-center justify-between pb-3">
             <Link
               href="/"
-              className={`${shadowsIntoLight.className} text-lg text-[#3b342c] tracking-[0.08em]`}
+              className={`${shadowsIntoLight.className} text-xl text-[#3b342c] tracking-[0.08em]`}
             >
               wAn
             </Link>

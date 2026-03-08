@@ -129,6 +129,34 @@
   background: transparent;
 }
 
+@keyframes mobile-device-rotate {
+  0%,
+  18% {
+    transform: rotate(0deg);
+  }
+
+  38%,
+  72% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.mobile-rotate-device {
+  animation: mobile-device-rotate 2.8s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-rotate-device {
+    animation: none;
+  }
+}
+
 .macos-traffic-lights {
   display: flex;
   gap: 0.35rem;

@@ -151,6 +151,43 @@
   will-change: transform;
 }
 
+.alg-scrubber {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.55rem;
+  border-radius: 999rem;
+  background: linear-gradient(90deg, #a88d6a 0%, #a88d6a var(--alg-progress), #e8dece var(--alg-progress), #e8dece 100%);
+}
+
+.alg-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999rem;
+  border: 0.125rem solid #fbf8f2;
+  background: #8c7150;
+  box-shadow: 0 0.3rem 0.8rem -0.45rem rgba(30, 24, 17, 0.55);
+  cursor: pointer;
+}
+
+.alg-scrubber::-moz-range-track {
+  height: 0.55rem;
+  border: none;
+  border-radius: 999rem;
+  background: linear-gradient(90deg, #a88d6a 0%, #a88d6a var(--alg-progress), #e8dece var(--alg-progress), #e8dece 100%);
+}
+
+.alg-scrubber::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border: 0.125rem solid #fbf8f2;
+  border-radius: 999rem;
+  background: #8c7150;
+  box-shadow: 0 0.3rem 0.8rem -0.45rem rgba(30, 24, 17, 0.55);
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mobile-rotate-device {
     animation: none;

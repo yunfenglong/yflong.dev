@@ -20,7 +20,7 @@ export default function SiteFooter() {
             <Link href="/contact" className="swift-pill hover:text-[#2f2a24] transition-colors">
               contact
             </Link>
-            <Link href="/status" className="swift-pill hover:text-[#2f2a24] transition-colors">
+            <Link href="/status" className="swift-pill hover:text-[#2f2a24] transition-colors hidden sm:inline-flex">
               status
             </Link>
             <Link href="/privacy" className="swift-pill hover:text-[#2f2a24] transition-colors">

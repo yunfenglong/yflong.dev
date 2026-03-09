@@ -35,11 +35,11 @@ export default function AlgorithmPage() {
               algorithm, step through each state, and watch how the idea unfolds over time.
             </p>
             <div className="flex flex-wrap items-center gap-2 text-[0.7rem] uppercase tracking-[0.14em] text-[#8f8475]">
+              <span>custom inputs</span>
+              <span className="text-[#c3b39e]">•</span>
+              <span>compare and replay</span>
+              <span className="text-[#c3b39e]">•</span>
               <span>interactive walkthroughs</span>
-              <span className="text-[#c3b39e]">•</span>
-              <span>sorting and searching</span>
-              <span className="text-[#c3b39e]">•</span>
-              <span>learning-focused design</span>
             </div>
           </header>
 
@@ -59,7 +59,7 @@ export default function AlgorithmPage() {
                   best mobile view
                 </p>
                 <p className="text-sm leading-relaxed text-[#4f4538]">
-                  Rotate your phone for more horizontal space while stepping through the chart.
+                  Rotate your device for more horizontal space while stepping through the chart.
                 </p>
                 <p className="text-sm leading-relaxed text-[#5f5446]">
                   Tablet or desktop gives the best experience for the full visualizer layout.

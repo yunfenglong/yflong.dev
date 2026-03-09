@@ -2,6 +2,21 @@
 
 All notable shenanigans in this project will be documented here.
 
+## 1.2.1 - 2026-03-09
+
+### ✨ Added
+- Expanded the `/alg` experience with custom dataset input, randomize controls, and target selection for supported search and graph algorithms.
+- Added more replayable algorithms in the visualizer, including Merge Sort, Quick Sort, Heap Sort, Linear Search, BFS, DFS, and Dijkstra.
+- Added grouped browsing by category or difficulty, compare mode, quiz mode, and a draggable step scrubber for step-by-step review.
+- Added richer learning aids across the visualizer, including pseudocode highlighting, simpler step explanations, live counters, complexity summaries, and algorithm notes.
+
+### 🔧 Changed
+- Improved the algorithm visualizer UX with responsive visual modes for bars, search cards, and graph views, plus swipe gestures for mobile step navigation.
+- Persisted algorithm preferences through local storage and shareable URL state so sessions can be resumed and compared more easily.
+- Refined the `/alg` mobile chart layout so algorithm bars stay within the viewport, use a bounded horizontal scroller, and avoid label overflow on smaller screens.
+- Adjusted algorithm visualizer counters and action labels to wrap more safely on mobile devices.
+- Updated the privacy notice to document the algorithm visualizer's local storage key and URL-based state sharing behavior.
+
 ## 1.2.0 - 2026-03-08
 
 ### ✨ Added

@@ -335,3 +335,65 @@
   background: rgba(138, 116, 81, 0.22);
   color: #2a2015;
 }
+
+
+.alg-flow .react-flow__pane,
+.alg-flow .react-flow__renderer,
+.alg-flow .react-flow__viewport {
+  cursor: default;
+}
+
+.alg-flow .react-flow__node {
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: auto;
+  box-shadow: none;
+}
+
+.alg-flow .react-flow__handle {
+  opacity: 0;
+}
+
+.alg-flow .react-flow__edge-path {
+  transition: stroke 180ms ease, stroke-width 180ms ease;
+}
+
+.alg-flow-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.alg-flow-node-tag,
+.alg-flow-cost-tag,
+.alg-flow-edge-label {
+  justify-content: center;
+  border-width: 0.0625rem;
+  box-shadow: 0 0.85rem 1.7rem -1.25rem rgba(30, 24, 17, 0.3);
+}
+
+.alg-flow-node-tag {
+  min-width: 3.55rem;
+  padding: 0.34rem 0.96rem;
+  font-size: 1.24rem;
+}
+
+.alg-flow-cost-tag,
+.alg-flow-edge-label {
+  padding: 0.22rem 0.64rem;
+  font-size: 0.86rem;
+  color: #4f4538;
+}
+
+.alg-flow-cost-tag {
+  min-width: 2.4rem;
+}
+
+.alg-flow-edge-label {
+  position: absolute;
+  z-index: 5;
+  white-space: nowrap;
+  pointer-events: none;
+}

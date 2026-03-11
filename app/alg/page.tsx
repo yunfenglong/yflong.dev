@@ -2,17 +2,18 @@ import type { Metadata } from "next"
 import SiteNavigation from "@/components/layout/SiteNavigation"
 import SiteFooter from "@/components/layout/SiteFooter"
 import AlgorithmVisualizer from "@/components/algorithms/AlgorithmVisualizer"
+import { algorithmCatalog, algorithmCategories } from "@/config/algorithms"
 import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
-  title: "Algorithms",
-  description: "Interactive route for replaying core algorithms step by step.",
+  title: "Algorithm Visualizer",
+  description: "Interactive algorithms lab for replaying sorting, searching, and graph algorithms step by step.",
   alternates: {
     canonical: "/alg",
   },
   openGraph: {
     title: "Algorithm Visualizer | YFLONG.DEV",
-    description: "Interactive route for replaying core algorithms step by step.",
+    description: "Interactive algorithms lab for replaying sorting, searching, and graph algorithms step by step.",
     url: `${siteConfig.url}/alg`,
     siteName: siteConfig.name,
     type: "website",
@@ -31,8 +32,9 @@ export default function AlgorithmPage() {
               Algorithms
             </h1>
             <p className="w-full max-w-3xl text-sm sm:text-[0.95rem] leading-relaxed text-[#554b3e]">
-              A small learning lab for replaying algorithms I&apos;ve already studied. Pick an
-              algorithm, step through each state, and watch how the idea unfolds over time.
+              An interactive algorithms lab I built to turn textbook ideas into replayable,
+              inspectable traces. Pick an algorithm, step through each state, compare
+              approaches, and see how every decision changes the run.
             </p>
             <div className="flex flex-wrap items-center gap-2 text-[0.7rem] uppercase tracking-[0.14em] text-[#8f8475]">
               <span>custom inputs</span>
@@ -56,13 +58,15 @@ export default function AlgorithmPage() {
 
               <div className="space-y-1.5">
                 <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[#8f8475]">
-                  best mobile view
+                  mobile tips
                 </p>
                 <p className="text-sm leading-relaxed text-[#4f4538]">
-                  Rotate your device for more horizontal space while stepping through the chart.
+                  Portrait keeps the controls compact. Rotate for wider charts, and swipe left or
+                  right on touch devices to move between steps.
                 </p>
                 <p className="text-sm leading-relaxed text-[#5f5446]">
-                  Tablet or desktop gives the best experience for the full visualizer layout.
+                  Compare mode still works on mobile — the panels simply stack so each run stays
+                  readable.
                 </p>
               </div>
             </div>

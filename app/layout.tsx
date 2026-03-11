@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { profileConfig } from "@/config/profile"
 import { siteConfig } from "@/config/site"
+import "@xyflow/react/dist/style.css"
 import "./globals.css"
 
 const personStructuredData = {

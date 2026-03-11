@@ -7,7 +7,7 @@ Portfolio site for Yunfeng Long built with Next.js, TypeScript, and Tailwind CSS
 This project combines:
 
 - Terminal-style homepage interaction
-- Structured project case studies (`/projects`)
+- Structured project case studies (`/project`)
 - Recruiter-friendly contact route (`/contact`)
 - Content routes for blog and changelog journal (`/blog`, `/journal`)
 - Status dashboard for service reliability storytelling (`/status`)
@@ -38,7 +38,7 @@ Core design principles used in this codebase:
 ## Route Map
 
 - `/` Home + terminal
-- `/projects` Case-study project portfolio
+- `/project` Case-study project portfolio
 - `/contact` Contact channels and availability
 - `/blog` and `/blog/[slug]` Engineering posts
 - `/journal` Changelog-driven journal

@@ -12,15 +12,15 @@ const statusClassName: Record<(typeof projectCaseStudies)[number]["status"], str
 }
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Project",
   description: "Case-study breakdown of software projects by Yunfeng Long.",
   alternates: {
-    canonical: "/projects",
+    canonical: "/project",
   },
   openGraph: {
-    title: "Projects | YFLONG.DEV",
+    title: "Project | YFLONG.DEV",
     description: "Case-study breakdown of software projects by Yunfeng Long.",
-    url: `${siteConfig.url}/projects`,
+    url: `${siteConfig.url}/project`,
     siteName: siteConfig.name,
     type: "website",
   },
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
       <main className="flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center">
         <section className="w-full max-w-[61.25rem] space-y-5 sm:space-y-6">
           <header className="swift-surface-strong rounded-lg p-6 sm:p-8 space-y-3">
-            <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-[#8f8475]">projects</p>
+            <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-[#8f8475]">project</p>
             <h1 className="aman-display text-[1.9rem] sm:text-[2.25rem] leading-none text-[#3b342c]">
               Engineering Case Studies
             </h1>

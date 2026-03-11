@@ -17,7 +17,7 @@ const browserStorageItems = [
     retention: "Persists until you clear site data in your browser.",
   },
   {
-    keyName: "localStorage:alg-visualizer-preferences-v3",
+    keyName: "localStorage:yflong:alg:visualizer:preferences:v3",
     purpose:
       "Remembers algorithm visualizer settings such as the selected algorithm, compare mode, quiz mode, custom dataset values, target value, and graph target.",
     retention: "Persists until you clear site data in your browser.",

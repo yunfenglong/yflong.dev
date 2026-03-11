@@ -15,7 +15,7 @@ const shadowsIntoLight = localFont({
 const internalLinks = [
   { label: "blog", href: "/blog" },
   { label: "algorithm", href: "/alg" },
-  { label: "projects", href: "/projects" },
+  { label: "project", href: "/project" },
   { label: "journal", href: "/journal" },
 ]
 

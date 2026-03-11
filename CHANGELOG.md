@@ -2,6 +2,21 @@
 
 All notable shenanigans in this project will be documented here.
 
+## 1.2.2 - 2026-03-11
+
+### ✨ Added
+- Added dedicated algorithm detail routes under `/alg/[algorithmId]`, with statically generated visualizer pages and page-specific SEO metadata for each supported algorithm.
+- Added a curated `/alg` landing experience that acts as a launchpad for focused demos, curated presets, and dedicated walkthrough pages.
+- Added a node-link graph canvas for BFS, DFS, and Dijkstra so graph traversals can show highlighted nodes, active paths, edge weights, and live distance updates more clearly.
+- Added richer status reporting on `/status`, including 90-day uptime history, response-time rollups, open/resolved incident views, and scheduled maintenance windows.
+
+### 🔧 Changed
+- Reworked the algorithm visualizer into smaller focused components and improved compare-mode matching so visitors only compare like-for-like algorithms with compatible inputs.
+- Split algorithm definitions into dedicated sorting, searching, graph, and shared config modules to better support the new detail pages and graph-specific interactions.
+- Renamed the case-study route from `/projects` to `/project` and updated navigation, terminal output, and sitemap entries to match.
+- Improved terminal onboarding with a clearer boot hint that points visitors to `help` and `blog`, and refined responsive terminal layout behavior.
+- Polished typography, spacing, and copy consistency across the home page, blog, journal, privacy, vault, status, and not-found experiences.
+
 ## 1.2.1 - 2026-03-09
 
 ### ✨ Added

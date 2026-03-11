@@ -26,12 +26,12 @@ export default function AlgorithmPage() {
       <SiteNavigation />
       <main className="flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center">
         <section className="w-full max-w-[61.25rem] space-y-5 sm:space-y-6">
-          <header className="swift-surface-strong rounded-lg p-6 sm:p-8 space-y-3">
-            <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-muted">alg</p>
-            <h1 className="aman-display text-[1.9rem] sm:text-[2.25rem] leading-none text-text-primary">
+          <header className="space-y-3">
+            <p className="aman-eyebrow">alg</p>
+            <h1 className="aman-display text-3xl sm:text-4xl text-text-primary">
               Algorithms
             </h1>
-            <p className="w-full max-w-3xl text-sm sm:text-[0.95rem] leading-relaxed text-text-body">
+            <p className="w-full max-w-3xl text-sm text-text-body leading-relaxed">
               An interactive algorithms lab I built to turn textbook ideas into replayable,
               inspectable traces. Browse the catalog, jump into a focused scenario, and open a
               dedicated visualizer page when you want the full chart, canvas, and controls.

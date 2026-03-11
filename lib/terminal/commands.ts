@@ -148,7 +148,7 @@ const renderAboutOutput = (): string =>
 
 const renderProjectsOutput = (): string => {
   const lines = projectCaseStudies.map((project) => `  - ${project.title} [${project.status}]`)
-  return ["Project highlights:", ...lines, "Open full breakdown: /projects"].join("\n")
+  return ["Project highlights:", ...lines, "Open full breakdown: /project"].join("\n")
 }
 
 const renderContactOutput = (): string =>

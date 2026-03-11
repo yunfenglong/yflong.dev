@@ -1,7 +1,22 @@
-"use client"
-
+import type { Metadata } from "next"
 import SiteNavigation from "@/components/layout/SiteNavigation"
 import SiteFooter from "@/components/layout/SiteFooter"
+import { siteConfig } from "@/config/site"
+
+export const metadata: Metadata = {
+  title: "Privacy Notice",
+  description: "Privacy and data processing notice for yflong.dev.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "Privacy Notice | YFLONG.DEV",
+    description: "Privacy and data processing notice for yflong.dev.",
+    url: `${siteConfig.url}/privacy`,
+    siteName: siteConfig.name,
+    type: "website",
+  },
+}
 
 const lastUpdated = "March 9, 2026"
 
@@ -42,18 +57,17 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <SiteNavigation />
       <main className="flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center">
-        <article className="w-full max-w-[45.9375rem] swift-surface-strong rounded-lg p-6 sm:p-8 space-y-6">
-          <header className="space-y-2">
-            <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-[#8f8475]">
-              privacy
-            </p>
-            <h1 className="aman-display text-[1.7rem] leading-none text-[#3b342c]">
+        <div className="w-full max-w-[45.9375rem] space-y-6">
+          <header className="space-y-3">
+            <p className="aman-eyebrow">privacy</p>
+            <h1 className="aman-display text-3xl sm:text-4xl text-text-primary">
               Privacy Notice
             </h1>
             <p className="text-sm text-[#5f5446]">Last updated: {lastUpdated}</p>
           </header>
 
-          <section className="space-y-2">
+          <article className="swift-surface-strong rounded-lg p-6 sm:p-8 space-y-6">
+            <section className="space-y-2">
             <h2 className="text-xs uppercase tracking-[0.14em] text-[#8f8475]">Overview</h2>
             <p className="text-sm text-[#4f4538] leading-relaxed">
               This notice describes what data may be processed when you use yflong.dev, why it is
@@ -202,29 +216,15 @@ export default function PrivacyPage() {
           </section>
 
           <section className="space-y-2">
-            <h2 className="text-xs uppercase tracking-[0.14em] text-[#8f8475]">
-              Changes to This Notice
-            </h2>
-            <p className="text-sm text-[#4f4538] leading-relaxed">
-              This notice may be updated when site features or legal requirements change. The date
-              above shows the latest revision.
-            </p>
-          </section>
-
-          <section className="space-y-2">
             <h2 className="text-xs uppercase tracking-[0.14em] text-[#8f8475]">Contact</h2>
             <p className="text-sm text-[#4f4538] leading-relaxed">
-              For privacy-related questions, contact me at{" "}
-              <a
-                href="mailto:privacy@yflong.dev"
-                className="underline underline-offset-4 text-[#8a7451] transition-colors"
-              >
-                privacy@yflong.dev
-              </a>
-              .
+              If you have questions about this notice or data practices, you can contact me via
+              email or LinkedIn using the links provided on the main terminal screen or contact
+              page.
             </p>
           </section>
-        </article>
+          </article>
+        </div>
       </main>
       <SiteFooter />
     </div>

@@ -40,12 +40,12 @@ export default function ContactPage() {
       <SiteNavigation />
       <main className="flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center">
         <section className="w-full max-w-[45.9375rem] space-y-5 sm:space-y-6">
-          <header className="swift-surface-strong rounded-lg p-6 sm:p-8 space-y-3">
-            <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-[#8f8475]">contact</p>
-            <h1 className="aman-display text-[1.8rem] sm:text-[2.2rem] leading-none text-[#3b342c]">
+          <header className="space-y-3">
+            <p className="aman-eyebrow">contact</p>
+            <h1 className="aman-display text-3xl sm:text-4xl text-text-primary">
               Let&apos;s Build Something Useful
             </h1>
-            <p className="text-sm text-[#5f5446] leading-relaxed">
+            <p className="max-w-[48ch] text-sm text-[#5f5446] leading-relaxed">
               Open to internship opportunities, software engineering collaborations, and technical
               project discussions.
             </p>

@@ -1,7 +1,8 @@
 {
   "name": "yflong.dev",
-  "version": "1.0.0",
+  "version": "1.2.2",
   "private": true,
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "build": "next build",
     "dev": "next dev",

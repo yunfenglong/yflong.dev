@@ -5,6 +5,7 @@ import { useMemo } from "react"
 import {
   algorithmCatalog,
   algorithmCatalogById,
+  graphTargetOptions,
 } from "@/config/algorithms"
 import { AlgorithmRunPanel } from "./AlgorithmRunPanel"
 import { ToggleControl } from "./AlgorithmVisualizerControls"
@@ -294,16 +295,27 @@ export default function AlgorithmVisualizer({ initialAlgorithmId }: AlgorithmVis
 
   return (
     <div className="space-y-5 sm:space-y-6">
-      <section className="swift-surface-strong rounded-lg p-6 sm:p-8 space-y-4">
+      <header className="space-y-3">
         <Link
           href="/alg"
-          className="inline-flex text-[0.6875rem] uppercase tracking-[0.14em] text-muted transition-colors hover:text-text-muted-dark"
+          className="inline-flex aman-eyebrow hover:text-text-muted-dark transition-colors"
         >
           ← back to algorithms
         </Link>
 
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-[0.68rem] uppercase tracking-[0.14em] text-muted">
+        <div className="space-y-2 pt-1">
+          <p className="aman-eyebrow">dedicated visualizer</p>
+          <h1 className="aman-display text-3xl sm:text-4xl text-text-primary">
+            {primaryAlgorithm.name}
+          </h1>
+          <p className="max-w-[48ch] text-sm text-text-body leading-relaxed">
+            {primaryAlgorithm.description} This page keeps the runner, chart, and controls focused on a
+            single algorithm so the walkthrough feels calmer than the overview page.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 pt-2">
+          <span className="aman-eyebrow normal-case tracking-normal font-medium">
             {formatCategoryLabel(primaryAlgorithm.category)}
           </span>
           <span className="swift-chip">{formatDifficultyLabel(primaryAlgorithm.difficulty)}</span>
@@ -312,25 +324,14 @@ export default function AlgorithmVisualizer({ initialAlgorithmId }: AlgorithmVis
           <span className="swift-chip">space {primaryAlgorithm.complexity.space}</span>
         </div>
 
-        <div className="space-y-2">
-          <p className="text-[0.68rem] uppercase tracking-[0.14em] text-muted">dedicated visualizer</p>
-          <h1 className="aman-display text-[1.8rem] sm:text-[2.2rem] leading-none text-text-primary">
-            {primaryAlgorithm.name}
-          </h1>
-          <p className="max-w-3xl text-sm sm:text-[0.95rem] leading-relaxed text-text-body">
-            {primaryAlgorithm.description} This page keeps the runner, chart, and controls focused on a
-            single algorithm so the walkthrough feels calmer than the overview page.
-          </p>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 pt-1">
           {primaryAlgorithm.concepts.map((concept) => (
             <span key={concept} className="swift-chip normal-case tracking-normal font-medium">
               {concept}
             </span>
           ))}
         </div>
-      </section>
+      </header>
 
       <section className="swift-surface rounded-lg p-5 space-y-4">
         <div className="grid gap-4 xl:grid-cols-[1.15fr_0.95fr]">

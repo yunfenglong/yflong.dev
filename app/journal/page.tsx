@@ -76,14 +76,14 @@ export default async function JournalPage() {
       <main className="flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center">
         <article className="w-full max-w-[45.9375rem] space-y-5 sm:space-y-6">
           <header className="swift-surface-strong rounded-lg p-6 sm:p-8 space-y-3">
-            <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-[#8f8475]">journal</p>
-            <h1 className="aman-display text-[1.8rem] sm:text-[2.2rem] leading-none text-[#3b342c]">
+            <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-muted">journal</p>
+            <h1 className="aman-display text-[1.8rem] sm:text-[2.2rem] leading-none text-text-primary">
               Build Journal
             </h1>
-            <p className="text-sm text-[#5f5446] leading-relaxed">
+            <p className="text-sm text-text-muted-dark leading-relaxed">
               Release notes and project updates synced from <code>CHANGELOG.md</code>.
             </p>
-            <p className="text-[0.67rem] uppercase tracking-[0.14em] text-[#8f8475]">
+            <p className="text-[0.67rem] uppercase tracking-[0.14em] text-muted">
               Last updated: {journal.updatedAtLabel}
             </p>
           </header>
@@ -91,11 +91,11 @@ export default async function JournalPage() {
           <section className="swift-surface rounded-lg p-6 sm:p-8">
             {journal.hasEntries ? (
               <div
-                className="blog-content text-[0.97rem] leading-relaxed text-[#4f4538]"
+                className="blog-content text-[0.97rem] leading-relaxed text-text-secondary"
                 dangerouslySetInnerHTML={{ __html: journal.contentHtml }}
               />
             ) : (
-              <p className="text-sm text-[#5f5446]">No journal entries available yet.</p>
+              <p className="text-sm text-text-muted-dark">No journal entries available yet.</p>
             )}
           </section>
         </article>

@@ -106,16 +106,16 @@ export default function PrivacyPage() {
               URL-Based Feature State
             </h2>
             <p className="text-sm text-[#4f4538] leading-relaxed">
-              The <span className="font-mono text-[0.92em]">/alg</span> page can mirror some of
-              your current visualizer settings into the address bar so the experience can be
+              The algorithm visualizer pages under <span className="font-mono text-[0.92em]">/alg</span>
+              can mirror some of your current settings into the address bar so the experience can be
               restored after refresh and optionally shared with others.
             </p>
             <p className="text-sm text-[#4f4538] leading-relaxed">
-              Depending on how you use the feature, the URL may include the selected algorithm,
-              filters, grouping, compare mode, quiz mode, custom numeric input data, target value,
-              and graph target node. Because these values become part of the page address, they may
-              appear in your browser history, bookmarks, copied links, and standard infrastructure
-              request logs when that URL is loaded.
+              Depending on how you use the feature, the URL may include compare mode, quiz mode,
+              custom numeric input data, target value, and graph target node, while the selected
+              algorithm itself may also appear in the page path. Because these values become part of
+              the page address, they may appear in your browser history, bookmarks, copied links,
+              and standard infrastructure request logs when that URL is loaded.
             </p>
           </section>
 

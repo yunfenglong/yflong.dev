@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next"
 import { getPublishedBlogPosts } from "@/lib/blog"
 import { siteConfig } from "@/config/site"
+import { algorithmCatalog } from "@/config/algorithms"
 
 export const dynamic = "force-static"
 
@@ -26,6 +27,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === "" ? 1 : 0.6,
   }))
 
+  const algorithmEntries: MetadataRoute.Sitemap = algorithmCatalog.map((algorithm) => ({
+    url: `${siteConfig.url}/alg/${algorithm.id}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.65,
+  }))
+
   const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: new Date(post.date),
@@ -33,5 +41,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  return [...routeEntries, ...postEntries]
+  return [...routeEntries, ...algorithmEntries, ...postEntries]
 }

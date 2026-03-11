@@ -6,7 +6,7 @@ export const profileConfig: ProfileConfig = {
   elevatorPitch:
     "Third-year CS student focused on frontend engineering, reliability, and practical automation.",
   university: "Monash University",
-  targetRole: "Frontend Engineer and Test Engineer",
+  targetRole: "Frontend Engineer",
   location: "Greater Kuala Lumpur, Malaysia",
   timezone: "UTC+08:00",
   email: "teur@yflong.dev",

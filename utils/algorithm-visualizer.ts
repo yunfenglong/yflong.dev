@@ -99,7 +99,9 @@ export function getCompareCandidates(primaryAlgorithm: AlgorithmDefinition) {
   return algorithmCatalog.filter(
     (algorithmDefinition) =>
       algorithmDefinition.id !== primaryAlgorithm.id &&
-      algorithmDefinition.datasetKind === primaryAlgorithm.datasetKind,
+      algorithmDefinition.datasetKind === primaryAlgorithm.datasetKind &&
+      algorithmDefinition.category === primaryAlgorithm.category &&
+      algorithmDefinition.targetType === primaryAlgorithm.targetType,
   )
 }
 

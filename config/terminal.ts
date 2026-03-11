@@ -38,7 +38,8 @@ export const bootMessages: BootMessage[] = [
   { content: '', delay: 400 },
   { content: 'Welcome to yflong secure terminal', delay: 600 },
   { content: 'Connecting to yflong-server.local:22...', delay: 0 },
-  { content: '', delay: 200 }
+  { content: '', delay: 200 },
+  { content: "Type 'help' for commands. Try 'blog' to see recent writing.", delay: 400 }
 ];
 
 export const fileContents: Record<string, string> = {

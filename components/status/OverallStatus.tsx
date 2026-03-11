@@ -72,8 +72,8 @@ const OverallStatus: React.FC<OverallStatusProps> = ({ status }) => {
           </div>
           <div className="min-w-0">
             <h3 className={`aman-display text-xl ${config.color}`}>{config.label}</h3>
-            <p className="text-[#4f4538] mt-1.5 text-sm">{status.message}</p>
-            <p className="text-[#8f8475] text-xs mt-2 uppercase tracking-[0.12em]">
+            <p className="text-text-secondary mt-1.5 text-sm">{status.message}</p>
+            <p className="text-muted text-xs mt-2 uppercase tracking-[0.12em]">
               last updated: {status.lastUpdated.toLocaleString()}
             </p>
           </div>
@@ -81,7 +81,7 @@ const OverallStatus: React.FC<OverallStatusProps> = ({ status }) => {
 
         <div className="flex items-center gap-2 flex-shrink-0">
           <div className={`w-2.5 h-2.5 rounded-full ${config.dotColor} animate-pulse`} />
-          <span className="text-[#8f8475] text-xs font-semibold tracking-[0.16em] uppercase">live</span>
+          <span className="text-muted text-xs font-semibold tracking-[0.16em] uppercase">live</span>
         </div>
       </div>
     </motion.div>

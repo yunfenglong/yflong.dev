@@ -1,9 +1,24 @@
-"use client"
-
+import type { Metadata } from "next"
 import SiteNavigation from "@/components/layout/SiteNavigation"
 import SiteFooter from "@/components/layout/SiteFooter"
 import NativeTerminal from "@/components/NativeTerminal"
 import { ctfSourceToken } from "@/config/ctf"
+import { siteConfig } from "@/config/site"
+
+export const metadata: Metadata = {
+  title: "Terminal | Yunfeng Long",
+  description: "Interactive terminal portfolio of Yunfeng Long.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Terminal | Yunfeng Long",
+    description: "Interactive terminal portfolio of Yunfeng Long.",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: "website",
+  },
+}
 
 export default function HomePage() {
   return (

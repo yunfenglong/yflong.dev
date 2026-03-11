@@ -71,21 +71,21 @@ const ServiceStatus: React.FC<ServiceStatusProps> = ({ service, index }) => {
 
         <p className="text-[#6f6558] text-xs">{service.description}</p>
 
-        <div className="grid grid-cols-2 gap-3 pt-2 border-t border-[#d7ccbc]">
+        <div className="grid grid-cols-2 gap-3 pt-2 border-t border-border">
           <div>
-            <div className="text-[0.625rem] text-[#8f8475] uppercase tracking-[0.12em]">uptime</div>
+            <div className="text-[0.625rem] text-muted uppercase tracking-[0.12em]">uptime</div>
             <div className="text-xs font-medium text-[#3f372e]">{service.uptime.toFixed(2)}%</div>
           </div>
           <div>
-            <div className="text-[0.625rem] text-[#8f8475] uppercase tracking-[0.12em]">response</div>
+            <div className="text-[0.625rem] text-muted uppercase tracking-[0.12em]">response</div>
             <div className="text-xs font-medium text-[#3f372e]">{service.responseTime}ms</div>
           </div>
         </div>
 
         {service.lastIncident && (
-          <div className="flex items-center gap-1.5 pt-2 border-t border-[#d7ccbc]">
-            <Clock className="w-3 h-3 text-[#8f8475]" />
-            <span className="text-xs text-[#8f8475]">last incident: {service.lastIncident}</span>
+          <div className="flex items-center gap-1.5 pt-2 border-t border-border">
+            <Clock className="w-3 h-3 text-muted" />
+            <span className="text-xs text-muted">last incident: {service.lastIncident}</span>
           </div>
         )}
       </div>

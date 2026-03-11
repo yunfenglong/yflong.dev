@@ -29,12 +29,12 @@ export default async function BlogPage() {
       <SiteNavigation />
       <main className="flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center">
         <section className="w-full max-w-[61.25rem] space-y-6 sm:space-y-8">
-          <header className="swift-surface-strong rounded-lg p-6 sm:p-8 space-y-3">
-            <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-[#8f8475]">blog</p>
-            <h1 className="aman-display text-[1.9rem] sm:text-[2.3rem] leading-none text-[#3b342c]">
+          <header className="space-y-3">
+            <p className="aman-eyebrow">blog</p>
+            <h1 className="aman-display text-3xl sm:text-4xl text-text-primary">
               Field Notes
             </h1>
-            <p className="max-w-[44rem] text-sm sm:text-[0.95rem] leading-relaxed text-[#554b3e]">
+            <p className="max-w-[48ch] text-sm text-[#554b3e] leading-relaxed">
               Build decisions, reliability notes, and practical implementation details from work in
               progress.
             </p>

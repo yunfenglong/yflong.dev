@@ -1,7 +1,8 @@
 {
   "name": "yflong.dev",
-  "version": "1.0.0",
+  "version": "1.2.2",
   "private": true,
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -9,6 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@xyflow/react": "^12.10.1",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.454.0",
     "next": "15.2.4",

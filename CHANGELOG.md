@@ -2,6 +2,50 @@
 
 All notable shenanigans in this project will be documented here.
 
+## 1.2.2 - 2026-03-11
+
+### ✨ Added
+- Added dedicated algorithm detail routes under `/alg/[algorithmId]`, with statically generated visualizer pages and page-specific SEO metadata for each supported algorithm.
+- Added a curated `/alg` landing experience that acts as a launchpad for focused demos, curated presets, and dedicated walkthrough pages.
+- Added a node-link graph canvas for BFS, DFS, and Dijkstra so graph traversals can show highlighted nodes, active paths, edge weights, and live distance updates more clearly.
+- Added richer status reporting on `/status`, including 90-day uptime history, response-time rollups, open/resolved incident views, and scheduled maintenance windows.
+
+### 🔧 Changed
+- Reworked the algorithm visualizer into smaller focused components and improved compare-mode matching so visitors only compare like-for-like algorithms with compatible inputs.
+- Split algorithm definitions into dedicated sorting, searching, graph, and shared config modules to better support the new detail pages and graph-specific interactions.
+- Renamed the case-study route from `/projects` to `/project` and updated navigation, terminal output, and sitemap entries to match.
+- Improved terminal onboarding with a clearer boot hint that points visitors to `help` and `blog`, and refined responsive terminal layout behavior.
+- Polished typography, spacing, and copy consistency across the home page, blog, journal, privacy, vault, status, and not-found experiences.
+
+## 1.2.1 - 2026-03-09
+
+### ✨ Added
+- Expanded the `/alg` experience with custom dataset input, randomize controls, and target selection for supported search and graph algorithms.
+- Added more replayable algorithms in the visualizer, including Merge Sort, Quick Sort, Heap Sort, Linear Search, BFS, DFS, and Dijkstra.
+- Added grouped browsing by category or difficulty, compare mode, quiz mode, and a draggable step scrubber for step-by-step review.
+- Added richer learning aids across the visualizer, including pseudocode highlighting, simpler step explanations, live counters, complexity summaries, and algorithm notes.
+
+### 🔧 Changed
+- Improved the algorithm visualizer UX with responsive visual modes for bars, search cards, and graph views, plus swipe gestures for mobile step navigation.
+- Persisted algorithm preferences through local storage and shareable URL state so sessions can be resumed and compared more easily.
+- Refined the `/alg` mobile chart layout so algorithm bars stay within the viewport, use a bounded horizontal scroller, and avoid label overflow on smaller screens.
+- Adjusted algorithm visualizer counters and action labels to wrap more safely on mobile devices.
+- Updated the privacy notice to document the algorithm visualizer's local storage key and URL-based state sharing behavior.
+
+## 1.2.0 - 2026-03-08
+
+### ✨ Added
+- Added a new `/alg` Algorithms page with SEO metadata, canonical URL, and a learning-focused hero section.
+- Added an interactive `AlgorithmVisualizer` with category filtering, step controls (play/pause/prev/next/reset), playback speed options, progress tracking, and pseudocode/state explanations.
+- Added algorithm data and simulation logic in `config/algorithms.ts` for Bubble Sort, Selection Sort, Insertion Sort, and Binary Search.
+- Added shared algorithm domain types in `types/algorithm.ts` for strongly typed definitions and replay steps.
+- Added mobile device rotation hint animation styles (`mobile-device-rotate`, `.mobile-rotate-device`) for the algorithm page experience.
+
+### 🔧 Changed
+- Updated site navigation to include an internal `algorithm` link to `/alg`.
+- Added `/alg` to sitemap generation so the new page is discoverable by crawlers.
+- Increased the navigation brand text size for improved visual balance.
+
 ## 1.1.1 - 2026-03-08
 
 ### ✨ Added

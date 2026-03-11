@@ -235,3 +235,111 @@ export const overallStatus = {
   message: "Wan's Dine is currently down. Other services remain operational.",
   lastUpdated: new Date('2026-03-08T08:18:00Z'),
 }
+
+
+export type UptimeState = 'operational' | 'degraded' | 'outage'
+
+export interface UptimeDay {
+  date: Date
+  state: UptimeState
+}
+
+export interface MaintenanceWindow {
+  id: string
+  title: string
+  startsAt: Date
+  durationMinutes: number
+  components: string[]
+  detail: string
+}
+
+export const serviceStatusConfig: Record<
+  Service['status'],
+  { label: string; badge: string; text: string; dot: string; rank: number }
+> = {
+  operational: {
+    label: 'Operational',
+    badge: 'bg-[#eef2ea] border border-[#c9d4c1]',
+    text: 'text-[#607758]',
+    dot: 'bg-[#7c9270]',
+    rank: 0,
+  },
+  degraded: {
+    label: 'Degraded',
+    badge: 'bg-[#f5ecdf] border border-[#e4d3bb]',
+    text: 'text-[#9b7441]',
+    dot: 'bg-[#b48752]',
+    rank: 1,
+  },
+  partial_outage: {
+    label: 'Partial Outage',
+    badge: 'bg-[#f4e8df] border border-[#dfc8b4]',
+    text: 'text-[#9a6442]',
+    dot: 'bg-[#b5784f]',
+    rank: 2,
+  },
+  major_outage: {
+    label: 'Major Outage',
+    badge: 'bg-[#f2e5e3] border border-[#d9bdb9]',
+    text: 'text-[#914840]',
+    dot: 'bg-[#ac6259]',
+    rank: 3,
+  },
+  maintenance: {
+    label: 'Maintenance',
+    badge: 'bg-[#f1ece5] border border-[#d9cdbf]',
+    text: 'text-[#75614b]',
+    dot: 'bg-[#8a7451]',
+    rank: 1,
+  },
+}
+
+export const incidentStatusConfig: Record<
+  Incident['status'],
+  { label: string; badge: string; text: string }
+> = {
+  investigating: {
+    label: 'Investigating',
+    badge: 'bg-[#f5ecdf] border border-[#e4d3bb]',
+    text: 'text-[#9b7441]',
+  },
+  identified: {
+    label: 'Identified',
+    badge: 'bg-[#f4e8df] border border-[#dfc8b4]',
+    text: 'text-[#9a6442]',
+  },
+  monitoring: {
+    label: 'Monitoring',
+    badge: 'bg-[#f1ece5] border border-[#d9cdbf]',
+    text: 'text-[#75614b]',
+  },
+  resolved: {
+    label: 'Resolved',
+    badge: 'bg-[#eef2ea] border border-[#c9d4c1]',
+    text: 'text-[#607758]',
+  },
+}
+
+export const impactConfig: Record<Incident['impact'], { label: string; tone: string }> = {
+  minor: { label: 'Minor', tone: 'text-[#9b7441] bg-[#efe2d3]' },
+  major: { label: 'Major', tone: 'text-[#9a6442] bg-[#efddce]' },
+  critical: { label: 'Critical', tone: 'text-[#914840] bg-[#edd8d5]' },
+}
+
+export const uptimeConfig: Record<UptimeState, { label: string; block: string; availability: number }> = {
+  operational: {
+    label: 'Operational',
+    block: 'bg-[#8ba17b]',
+    availability: 1,
+  },
+  degraded: {
+    label: 'Degraded',
+    block: 'bg-[#bf9560]',
+    availability: 0.996,
+  },
+  outage: {
+    label: 'Outage',
+    block: 'bg-[#b77970]',
+    availability: 0.92,
+  },
+}

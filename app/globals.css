@@ -19,6 +19,15 @@
   --danger: #914840;
   --info: #75614b;
   --radius: 0.625rem;
+  --text-primary: #3b342c;
+  --text-body: #554b3e;
+  --text-secondary: #4f4538;
+  --text-muted-dark: #5f5446;
+  --surface-inner: #f8f3eb;
+  --surface-inner-strong: #f6f1e8;
+  --surface-hover: #eee5d7;
+  --surface-hover-alt: #f2eadf;
+  --border-inner: #ddd2c1;
   --font-display-stack: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
   --font-sans-stack: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono-stack: "SF Mono", "ui-monospace", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
@@ -36,6 +45,17 @@
   --radius-md: calc(var(--radius) - 0.125rem);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 0.125rem);
+  --color-text-primary: var(--text-primary);
+  --color-text-body: var(--text-body);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted-dark: var(--text-muted-dark);
+  --color-surface-inner: var(--surface-inner);
+  --color-surface-inner-strong: var(--surface-inner-strong);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-hover-alt: var(--surface-hover-alt);
+  --color-border-inner: var(--border-inner);
+  --color-surface-strong: var(--surface-strong);
+  --color-muted-soft: var(--muted-soft);
 }
 
 @layer base {
@@ -127,6 +147,71 @@
 .swift-nav {
   border-bottom: 0.0625rem solid #d2c4b1;
   background: transparent;
+}
+
+@keyframes mobile-device-rotate {
+  0%,
+  18% {
+    transform: rotate(0deg);
+  }
+
+  38%,
+  72% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.mobile-rotate-device {
+  animation: mobile-device-rotate 2.8s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.alg-scrubber {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.55rem;
+  border-radius: 999rem;
+  background: linear-gradient(90deg, #a88d6a 0%, #a88d6a var(--alg-progress), #e8dece var(--alg-progress), #e8dece 100%);
+}
+
+.alg-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999rem;
+  border: 0.125rem solid #fbf8f2;
+  background: #8c7150;
+  box-shadow: 0 0.3rem 0.8rem -0.45rem rgba(30, 24, 17, 0.55);
+  cursor: pointer;
+}
+
+.alg-scrubber::-moz-range-track {
+  height: 0.55rem;
+  border: none;
+  border-radius: 999rem;
+  background: linear-gradient(90deg, #a88d6a 0%, #a88d6a var(--alg-progress), #e8dece var(--alg-progress), #e8dece 100%);
+}
+
+.alg-scrubber::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border: 0.125rem solid #fbf8f2;
+  border-radius: 999rem;
+  background: #8c7150;
+  box-shadow: 0 0.3rem 0.8rem -0.45rem rgba(30, 24, 17, 0.55);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-rotate-device {
+    animation: none;
+  }
 }
 
 .macos-traffic-lights {
@@ -269,4 +354,66 @@
 ::selection {
   background: rgba(138, 116, 81, 0.22);
   color: #2a2015;
+}
+
+
+.alg-flow .react-flow__pane,
+.alg-flow .react-flow__renderer,
+.alg-flow .react-flow__viewport {
+  cursor: default;
+}
+
+.alg-flow .react-flow__node {
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: auto;
+  box-shadow: none;
+}
+
+.alg-flow .react-flow__handle {
+  opacity: 0;
+}
+
+.alg-flow .react-flow__edge-path {
+  transition: stroke 180ms ease, stroke-width 180ms ease;
+}
+
+.alg-flow-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.alg-flow-node-tag,
+.alg-flow-cost-tag,
+.alg-flow-edge-label {
+  justify-content: center;
+  border-width: 0.0625rem;
+  box-shadow: 0 0.85rem 1.7rem -1.25rem rgba(30, 24, 17, 0.3);
+}
+
+.alg-flow-node-tag {
+  min-width: 3.55rem;
+  padding: 0.34rem 0.96rem;
+  font-size: 1.24rem;
+}
+
+.alg-flow-cost-tag,
+.alg-flow-edge-label {
+  padding: 0.22rem 0.64rem;
+  font-size: 0.86rem;
+  color: #4f4538;
+}
+
+.alg-flow-cost-tag {
+  min-width: 2.4rem;
+}
+
+.alg-flow-edge-label {
+  position: absolute;
+  z-index: 5;
+  white-space: nowrap;
+  pointer-events: none;
 }

@@ -72,18 +72,19 @@ export default function NotFound() {
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <SiteNavigation />
       <main className="flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center">
-        <section className="w-full max-w-[45.9375rem] swift-surface-strong rounded-lg p-5 sm:p-7 space-y-5">
-          <header className="space-y-2">
-            <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-[#8f8475]">404 debug mission</p>
-            <h1 className="aman-display text-[1.6rem] leading-none text-[#3b342c]">
+        <div className="w-full max-w-[45.9375rem] space-y-5">
+          <header className="space-y-3">
+            <p className="aman-eyebrow">404 debug mission</p>
+            <h1 className="aman-display text-3xl sm:text-4xl text-text-primary">
               Route Not Found
             </h1>
-            <p className="text-sm text-[#5f5446]">
+            <p className="text-sm text-[#5f5446] max-w-[48ch]">
               Recover this route by selecting the best patch. Permanent hacks do not count.
             </p>
           </header>
 
-          <pre className="rounded-md border border-[#d7ccbc] bg-[#f7f2e9] p-3 text-[0.75rem] leading-relaxed text-[#4f4538] overflow-x-auto whitespace-pre-wrap">
+          <section className="swift-surface-strong rounded-lg p-5 sm:p-7 space-y-5">
+            <pre className="rounded-md border border-[#d7ccbc] bg-[#f7f2e9] p-3 text-[0.75rem] leading-relaxed text-[#4f4538] overflow-x-auto whitespace-pre-wrap">
             {stackTrace}
           </pre>
 
@@ -144,7 +145,8 @@ export default function NotFound() {
               Return home
             </Link>
           )}
-        </section>
+          </section>
+        </div>
       </main>
       <SiteFooter />
     </div>

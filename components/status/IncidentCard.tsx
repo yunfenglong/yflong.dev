@@ -88,7 +88,7 @@ const IncidentCard: React.FC<IncidentCardProps> = ({ incident, index }) => {
             <h3 className="font-semibold text-[#3f372e] text-sm">{incident.title}</h3>
             <p className="text-[#6f6558] text-xs">{incident.description}</p>
 
-            <div className="flex flex-wrap items-center gap-3 text-xs text-[#8f8475]">
+            <div className="flex flex-wrap items-center gap-3 text-xs text-muted">
               <span>started: {incident.createdAt.toLocaleString()}</span>
               <span>updated: {incident.updatedAt.toLocaleString()}</span>
             </div>
@@ -100,7 +100,7 @@ const IncidentCard: React.FC<IncidentCardProps> = ({ incident, index }) => {
             className="p-1"
             aria-hidden="true"
           >
-            <ChevronDown className="w-5 h-5 text-[#8f8475]" />
+            <ChevronDown className="w-5 h-5 text-muted" />
           </motion.div>
         </div>
       </div>
@@ -112,7 +112,7 @@ const IncidentCard: React.FC<IncidentCardProps> = ({ incident, index }) => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="border-t border-[#d7ccbc]"
+            className="border-t border-border"
           >
             <div className="p-4 space-y-4">
               {incident.affectedServices.length > 0 && (
@@ -150,7 +150,7 @@ const IncidentCard: React.FC<IncidentCardProps> = ({ incident, index }) => {
                         <div className="flex-1 space-y-1">
                           <div className="flex items-center gap-2">
                             <span className={`text-xs font-semibold ${updateStatusConf.color}`}>{updateStatusConf.label}</span>
-                            <span className="text-xs text-[#8f8475]">{update.timestamp.toLocaleString()}</span>
+                            <span className="text-xs text-muted">{update.timestamp.toLocaleString()}</span>
                           </div>
                           <p className="text-xs text-[#6f6558]">{update.message}</p>
                         </div>

@@ -1,0 +1,173 @@
+1:"$Sreact.fragment"
+2:I[4611,[],""]
+3:I[4559,[],""]
+4:I[6648,["455","static/chunks/455-5bafb7305499e134.js","345","static/chunks/app/not-found-ceb49a3cd7bd3ee8.js"],"default"]
+6:I[3729,[],"OutletBoundary"]
+9:I[3729,[],"ViewportBoundary"]
+b:I[3729,[],"MetadataBoundary"]
+d:I[6134,[],""]
+:HL["/_next/static/css/f9685b75e38a0995.css","style"]
+:HL["/_next/static/media/fe05483fa773983d-s.p.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/_next/static/css/dddbbddd587fbcf9.css","style"]
+0:{"P":null,"b":"8Q278CBYqwqoAaP3vuoEK","p":"","c":["","blog","hdfs-introduction-architecture-components-best-practices"],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","hdfs-introduction-architecture-components-best-practices","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f9685b75e38a0995.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"antialiased","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"name\":\"Yunfeng Long\",\"jobTitle\":\"Frontend Engineer\",\"url\":\"https://yflong.dev\",\"alumniOf\":\"Monash University\",\"email\":\"teur@yflong.dev\",\"sameAs\":[\"https://www.linkedin.com/in/yunfeng-l/\",\"https://github.com/yunfenglong\"]}"}}],["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L4",null,{}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dddbbddd587fbcf9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","hdfs-introduction-architecture-components-best-practices","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5","$undefined",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dddbbddd587fbcf9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L6",null,{"children":["$L7","$L8",null]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","mrGdGf3uop6Lwcs3H7kv6",{"children":[["$","$L9",null,{"children":"$La"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],["$","$Lb",null,{"children":"$Lc"}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+8:null
+c:[["$","title","0",{"children":"HDFS Introduction: Architecture, Components, and Best Practices | YFLONG.DEV"}],["$","meta","1",{"name":"description","content":"A practical HDFS overview covering architecture, storage model, common commands, configuration, tuning, security, and maintenance."}],["$","meta","2",{"name":"application-name","content":"YFLONG.DEV"}],["$","link","3",{"rel":"author","href":"https://yflong.dev"}],["$","meta","4",{"name":"author","content":"Yunfeng Long"}],["$","meta","5",{"name":"generator","content":"Next.js"}],["$","meta","6",{"name":"keywords","content":"computer science student,software engineer portfolio,next.js portfolio,typescript,web engineering"}],["$","meta","7",{"name":"creator","content":"Yunfeng Long"}],["$","meta","8",{"name":"robots","content":"index, follow"}],["$","link","9",{"rel":"canonical","href":"https://yflong.dev/blog/hdfs-introduction-architecture-components-best-practices"}],["$","meta","10",{"property":"og:title","content":"HDFS Introduction: Architecture, Components, and Best Practices | YFLONG.DEV"}],["$","meta","11",{"property":"og:description","content":"A practical HDFS overview covering architecture, storage model, common commands, configuration, tuning, security, and maintenance."}],["$","meta","12",{"property":"og:url","content":"https://yflong.dev/blog/hdfs-introduction-architecture-components-best-practices"}],["$","meta","13",{"property":"og:site_name","content":"YFLONG.DEV"}],["$","meta","14",{"property":"og:type","content":"article"}],["$","meta","15",{"property":"article:published_time","content":"2025-04-07T00:00:00.000Z"}],["$","meta","16",{"property":"article:tag","content":"hadoop"}],["$","meta","17",{"property":"article:tag","content":"hdfs"}],["$","meta","18",{"property":"article:tag","content":"big data"}],["$","meta","19",{"property":"article:tag","content":"distributed systems"}],["$","meta","20",{"name":"twitter:card","content":"summary"}],["$","meta","21",{"name":"twitter:title","content":"YFLONG.DEV"}],["$","meta","22",{"name":"twitter:description","content":"Portfolio of Yunfeng Long, a computer science student building production-minded software with Next.js and TypeScript."}],["$","link","23",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","24",{"rel":"icon","href":"/favicon.svg"}],["$","link","25",{"rel":"apple-touch-icon","href":"/favicon.svg"}]]
+e:I[2939,["455","static/chunks/455-5bafb7305499e134.js","953","static/chunks/app/blog/%5Bslug%5D/page-36cc9e945634ea79.js"],"default"]
+f:I[8410,["455","static/chunks/455-5bafb7305499e134.js","953","static/chunks/app/blog/%5Bslug%5D/page-36cc9e945634ea79.js"],""]
+11:I[9468,["455","static/chunks/455-5bafb7305499e134.js","953","static/chunks/app/blog/%5Bslug%5D/page-36cc9e945634ea79.js"],"default"]
+10:T17ec,<h2>Overview</h2>
+<p>Hadoop Distributed File System (HDFS) is the primary storage layer used by Hadoop workloads. It is designed for high-throughput data access on commodity hardware and is most effective for write-once, read-many patterns.</p>
+<p>HDFS is usually not the right fit for ultra-low-latency random reads.</p>
+<h2>Architecture</h2>
+<p>HDFS follows a master-slave model with three core roles:</p>
+<ul><li>NameNode: manages namespace and metadata.</li><li>DataNode: stores data blocks and serves read/write requests.</li><li>Client: requests metadata from NameNode and streams data with DataNodes.</li></ul>
+<h3>NameNode</h3>
+<p>The NameNode handles:</p>
+<ul><li>File system tree metadata.</li><li>Block mapping and placement.</li><li>Access control and policy checks.</li></ul>
+<p>For production, run a high-availability setup to avoid single-point-of-failure risk.</p>
+<h3>DataNode</h3>
+<p>DataNodes handle:</p>
+<ul><li>Block storage.</li><li>Heartbeats to NameNode.</li><li>Block checksum validation.</li></ul>
+<h3>Client</h3>
+<p>Client responsibilities:</p>
+<ul><li>File operations.</li><li>Metadata lookup via NameNode.</li><li>Direct block transfer with DataNodes.</li></ul>
+<h2>Data Storage Model</h2>
+<h3>Block Size</h3>
+<pre><code class="language-bash"># Check block size
+hdfs dfsadmin -confKey dfs.blocksize
+
+# Common defaults
+# Hadoop 1.x: 64MB
+# Hadoop 2.x: 128MB
+# Hadoop 3.x: 128MB (can be larger)</code></pre>
+<h3>Replication</h3>
+<pre><code class="language-bash"># Check replication factor
+hdfs dfsadmin -confKey dfs.replication
+
+# Common default: 3</code></pre>
+<p>Write path summary:</p>
+<ol><li>Client streams to the first DataNode.</li><li>DataNode forwards in pipeline to other replicas.</li><li>Write is acknowledged when replica writes complete.</li></ol>
+<h2>Useful HDFS Commands</h2>
+<h3>Basic Operations</h3>
+<pre><code class="language-bash"># Create directory
+hdfs dfs -mkdir /user/hadoop
+
+# Upload file
+hdfs dfs -put localfile.txt /user/hadoop/
+
+# Download file
+hdfs dfs -get /user/hadoop/remote.txt local.txt
+
+# List files
+hdfs dfs -ls /user/hadoop/
+
+# Remove file
+hdfs dfs -rm /user/hadoop/oldfile.txt</code></pre>
+<h3>Administrative Operations</h3>
+<pre><code class="language-bash"># Set replication recursively
+hdfs dfs -setrep -R 3 /user/hadoop/
+
+# Disk usage
+hdfs dfs -du -h /user/hadoop/
+
+# Cluster report
+hdfs dfsadmin -report
+
+# Safe mode
+hdfs dfsadmin -safemode enter
+hdfs dfsadmin -safemode leave</code></pre>
+<h2>Configuration</h2>
+<h3><code>core-site.xml</code></h3>
+<pre><code class="language-xml">&lt;configuration&gt;
+  &lt;property&gt;
+    &lt;name&gt;fs.defaultFS&lt;/name&gt;
+    &lt;value&gt;hdfs://namenode:8020&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+    &lt;value&gt;/var/hadoop/tmp&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;</code></pre>
+<h3><code>hdfs-site.xml</code></h3>
+<pre><code class="language-xml">&lt;configuration&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+    &lt;value&gt;/var/hadoop/hdfs/namenode&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+    &lt;value&gt;/var/hadoop/hdfs/datanode&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.replication&lt;/name&gt;
+    &lt;value&gt;3&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.blocksize&lt;/name&gt;
+    &lt;value&gt;134217728&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;</code></pre>
+<h2>Performance Optimization</h2>
+<h3>Block Size Strategy</h3>
+<ul><li>Large files: prefer larger block sizes.</li><li>Small files: avoid large volumes of tiny files.</li><li>Align block and processing split strategy for batch jobs.</li></ul>
+<pre><code class="language-bash"># Example custom block size on upload
+hdfs dfs -D dfs.blocksize=268435456 -put largefile.dat /user/hadoop/</code></pre>
+<h3>Memory Tuning Example</h3>
+<pre><code class="language-xml">&lt;property&gt;
+  &lt;name&gt;mapreduce.map.memory.mb&lt;/name&gt;
+  &lt;value&gt;1536&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;mapreduce.reduce.memory.mb&lt;/name&gt;
+  &lt;value&gt;3072&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+<h2>Security Basics</h2>
+<h3>Authentication</h3>
+<pre><code class="language-bash">hdfs dfs -D hadoop.security.authentication=kerberos -ls /</code></pre>
+<h3>Permissions and Ownership</h3>
+<pre><code class="language-bash"># Set permissions
+hdfs dfs -chmod 750 /user/hadoop/protected
+
+# Set ownership
+hdfs dfs -chown hadoop:hadoop /user/hadoop/data
+
+# Verify permissions
+hdfs dfs -ls -la /user/hadoop/</code></pre>
+<h2>Monitoring and Maintenance</h2>
+<h3>Health Checks</h3>
+<pre><code class="language-bash"># Cluster health
+hdfs dfsadmin -report
+
+# Live DataNodes
+hdfs dfsadmin -report -live
+
+# File/block checks
+hdfs fsck /user/hadoop -locations -files -blocks</code></pre>
+<h3>Maintenance Tasks</h3>
+<pre><code class="language-bash"># Roll NameNode edits
+hdfs dfsadmin -rollEdits
+
+# Refresh DataNodes
+hdfs dfsadmin -refreshNodes
+
+# Decommission workflow
+echo &quot;datanode3.example.com&quot; &gt; decommissioning-nodes.txt
+hdfs dfsadmin -refreshNodes</code></pre>
+<h2>Common Issues</h2>
+<h3>NameNode Not Starting</h3>
+<pre><code class="language-bash">tail -f /var/hadoop/hdfs/namenode.log
+jps | grep NameNode
+hdfs dfsadmin -safemode get</code></pre>
+<h3>DataNode Connection Problems</h3>
+<pre><code class="language-bash">hdfs dfsadmin -report -dead
+tail -f /var/hadoop/hdfs/datanode.log
+rm -rf /var/hadoop/hdfs/datanode/*
+hdfs datanode -format</code></pre>
+<h3>Disk Space Pressure</h3>
+<pre><code class="language-bash">hdfs dfsadmin -report
+hdfs dfs -du / | sort -nr | head -10
+hdfs dfs -expunge</code></pre>
+<h2>Best Practices</h2>
+<ol><li>Keep large analytical files in HDFS.</li><li>Avoid too many small files.</li><li>Use compression where possible.</li><li>Organize datasets with clear partitioning strategy.</li><li>Monitor cluster health continuously.</li><li>Plan DataNode scaling in advance.</li><li>Back up critical datasets and document restore procedures.</li></ol>5:["$","div",null,{"className":"min-h-screen bg-background text-foreground flex flex-col","children":[["$","$Le",null,{}],["$","main",null,{"className":"flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center","children":["$","article",null,{"className":"w-full max-w-[45.9375rem] space-y-5 sm:space-y-6","children":[["$","header",null,{"className":"space-y-3","children":[["$","$Lf",null,{"href":"/blog","className":"inline-flex aman-eyebrow hover:text-[#5f5446] transition-colors","children":"← back to blog"}],["$","h1",null,{"className":"aman-display text-3xl sm:text-4xl text-text-primary","children":"HDFS Introduction: Architecture, Components, and Best Practices"}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 text-[0.67rem] uppercase tracking-[0.14em] text-[#8f8475]","children":[["$","time",null,{"dateTime":"2025-04-07","children":"Apr 07, 2025"}],["$","span",null,{"className":"text-[#c3b39e]","children":"•"}],["$","span",null,{"children":"3 min read"}]]}],["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span","hadoop",{"className":"swift-chip normal-case tracking-normal font-medium","children":"hadoop"}],["$","span","hdfs",{"className":"swift-chip normal-case tracking-normal font-medium","children":"hdfs"}],["$","span","big data",{"className":"swift-chip normal-case tracking-normal font-medium","children":"big data"}],["$","span","distributed systems",{"className":"swift-chip normal-case tracking-normal font-medium","children":"distributed systems"}]]}]]}],["$","section",null,{"className":"swift-surface rounded-lg p-6 sm:p-8","children":["$","div",null,{"className":"blog-content text-[0.97rem] leading-relaxed text-[#4f4538]","dangerouslySetInnerHTML":{"__html":"$10"}}]}],["$","nav",null,{"className":"grid gap-3 sm:grid-cols-2","aria-label":"Post navigation","children":[["$","div",null,{"className":"swift-surface rounded-lg p-4 min-h-[7.5rem]","children":["$","div",null,{"className":"space-y-2","children":[["$","p",null,{"className":"text-[0.65rem] uppercase tracking-[0.14em] text-[#8f8475]","children":"newer"}],["$","$Lf",null,{"href":"/blog/hdfs-reset-complete-guide-safe-recovery-and-data-protection","className":"aman-display text-[1.1rem] leading-tight text-[#3b342c] hover:text-[#2f2a24] transition-colors","children":"HDFS Reset Complete Guide: Safe Recovery and Data Protection"}]]}]}],["$","div",null,{"className":"swift-surface rounded-lg p-4 min-h-[7.5rem]","children":["$","p",null,{"className":"text-sm text-[#8f8475]","children":"No older post"}]}]]}]]}]}],["$","$L11",null,{}]]}]

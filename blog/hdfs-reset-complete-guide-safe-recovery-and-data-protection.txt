@@ -1,0 +1,100 @@
+1:"$Sreact.fragment"
+2:I[4611,[],""]
+3:I[4559,[],""]
+4:I[6648,["455","static/chunks/455-5bafb7305499e134.js","345","static/chunks/app/not-found-ceb49a3cd7bd3ee8.js"],"default"]
+6:I[3729,[],"OutletBoundary"]
+9:I[3729,[],"ViewportBoundary"]
+b:I[3729,[],"MetadataBoundary"]
+d:I[6134,[],""]
+:HL["/_next/static/css/f9685b75e38a0995.css","style"]
+:HL["/_next/static/media/fe05483fa773983d-s.p.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/_next/static/css/dddbbddd587fbcf9.css","style"]
+0:{"P":null,"b":"8Q278CBYqwqoAaP3vuoEK","p":"","c":["","blog","hdfs-reset-complete-guide-safe-recovery-and-data-protection"],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","hdfs-reset-complete-guide-safe-recovery-and-data-protection","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f9685b75e38a0995.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"antialiased","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"name\":\"Yunfeng Long\",\"jobTitle\":\"Frontend Engineer\",\"url\":\"https://yflong.dev\",\"alumniOf\":\"Monash University\",\"email\":\"teur@yflong.dev\",\"sameAs\":[\"https://www.linkedin.com/in/yunfeng-l/\",\"https://github.com/yunfenglong\"]}"}}],["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L4",null,{}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dddbbddd587fbcf9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","hdfs-reset-complete-guide-safe-recovery-and-data-protection","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5","$undefined",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dddbbddd587fbcf9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L6",null,{"children":["$L7","$L8",null]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","IL-WMZg5f2sDqNDYGPaQi",{"children":[["$","$L9",null,{"children":"$La"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],["$","$Lb",null,{"children":"$Lc"}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+8:null
+c:[["$","title","0",{"children":"HDFS Reset Complete Guide: Safe Recovery and Data Protection | YFLONG.DEV"}],["$","meta","1",{"name":"description","content":"A practical HDFS reset playbook with prerequisites, safe reset steps, verification checks, backup strategy, and risk controls."}],["$","meta","2",{"name":"application-name","content":"YFLONG.DEV"}],["$","link","3",{"rel":"author","href":"https://yflong.dev"}],["$","meta","4",{"name":"author","content":"Yunfeng Long"}],["$","meta","5",{"name":"generator","content":"Next.js"}],["$","meta","6",{"name":"keywords","content":"computer science student,software engineer portfolio,next.js portfolio,typescript,web engineering"}],["$","meta","7",{"name":"creator","content":"Yunfeng Long"}],["$","meta","8",{"name":"robots","content":"index, follow"}],["$","link","9",{"rel":"canonical","href":"https://yflong.dev/blog/hdfs-reset-complete-guide-safe-recovery-and-data-protection"}],["$","meta","10",{"property":"og:title","content":"HDFS Reset Complete Guide: Safe Recovery and Data Protection | YFLONG.DEV"}],["$","meta","11",{"property":"og:description","content":"A practical HDFS reset playbook with prerequisites, safe reset steps, verification checks, backup strategy, and risk controls."}],["$","meta","12",{"property":"og:url","content":"https://yflong.dev/blog/hdfs-reset-complete-guide-safe-recovery-and-data-protection"}],["$","meta","13",{"property":"og:site_name","content":"YFLONG.DEV"}],["$","meta","14",{"property":"og:type","content":"article"}],["$","meta","15",{"property":"article:published_time","content":"2025-04-08T00:00:00.000Z"}],["$","meta","16",{"property":"article:tag","content":"hadoop"}],["$","meta","17",{"property":"article:tag","content":"hdfs"}],["$","meta","18",{"property":"article:tag","content":"operations"}],["$","meta","19",{"name":"twitter:card","content":"summary"}],["$","meta","20",{"name":"twitter:title","content":"YFLONG.DEV"}],["$","meta","21",{"name":"twitter:description","content":"Portfolio of Yunfeng Long, a computer science student building production-minded software with Next.js and TypeScript."}],["$","link","22",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","23",{"rel":"icon","href":"/favicon.svg"}],["$","link","24",{"rel":"apple-touch-icon","href":"/favicon.svg"}]]
+e:I[2939,["455","static/chunks/455-5bafb7305499e134.js","953","static/chunks/app/blog/%5Bslug%5D/page-36cc9e945634ea79.js"],"default"]
+f:I[8410,["455","static/chunks/455-5bafb7305499e134.js","953","static/chunks/app/blog/%5Bslug%5D/page-36cc9e945634ea79.js"],""]
+11:I[9468,["455","static/chunks/455-5bafb7305499e134.js","953","static/chunks/app/blog/%5Bslug%5D/page-36cc9e945634ea79.js"],"default"]
+10:Te37,<h2>Overview</h2>
+<p>Resetting Hadoop HDFS is a high-risk operation and should be treated like an incident runbook task. It is useful for clean environment setup, corruption recovery, or broken-cluster remediation, but it can cause irreversible data loss if done incorrectly.</p>
+<p>Always complete backup and verification before deletion or format commands.</p>
+<h2>Prerequisites</h2>
+<p>Before reset:</p>
+<ol><li>Back up important data.</li><li>Stop running Hadoop services.</li><li>Record current cluster status.</li><li>Save current configuration files.</li></ol>
+<h2>Step-by-Step HDFS Reset</h2>
+<h3>1. Stop Hadoop Services</h3>
+<pre><code class="language-bash">stop-dfs.sh
+stop-yarn.sh
+mr-jobhistory-daemon.sh stop historyserver</code></pre>
+<p>Then verify no critical Hadoop processes remain:</p>
+<pre><code class="language-bash">jps</code></pre>
+<h3>2. Clear HDFS State</h3>
+<pre><code class="language-bash"># Format NameNode metadata
+hdfs namenode -format
+
+# Optional manual cleanup
+rm -rf /var/hadoop/hdfs/namenode/*
+rm -rf /var/hadoop/hdfs/datanode/*
+rm -rf /tmp/hadoop-*</code></pre>
+<p>Double-check paths before running <code>rm -rf</code>.</p>
+<h3>3. Recreate Required Directories</h3>
+<pre><code class="language-bash">mkdir -p /var/hadoop/hdfs/namenode
+mkdir -p /var/hadoop/hdfs/datanode
+mkdir -p /tmp/hadoop-$(whoami)
+
+chown -R $(whoami):$(whoami) /var/hadoop/hdfs
+chown -R $(whoami):$(whoami) /tmp/hadoop-$(whoami)</code></pre>
+<h3>4. Restart Services</h3>
+<pre><code class="language-bash">hdfs namenode -format
+start-dfs.sh
+start-yarn.sh
+mr-jobhistory-daemon.sh start historyserver</code></pre>
+<p>After startup, check service health:</p>
+<pre><code class="language-bash">jps
+hdfs dfsadmin -report</code></pre>
+<h2>Verification Checklist</h2>
+<p>Run functional validation immediately after reset:</p>
+<pre><code class="language-bash"># Cluster report
+hdfs dfsadmin -report
+
+# Root listing
+hdfs dfs -ls /
+
+# Write/read test
+hdfs dfs -mkdir /test
+hdfs dfs -put /etc/passwd /test/passwd
+hdfs dfs -cat /test/passwd</code></pre>
+<h2>Common Issues and Fixes</h2>
+<h3>NameNode Incompatible Filesystem</h3>
+<pre><code class="language-bash">stop-dfs.sh
+rm -rf /var/hadoop/hdfs/namenode/*
+rm -rf /var/hadoop/hdfs/datanode/*
+hdfs namenode -format
+start-dfs.sh</code></pre>
+<h3>Permission Denied</h3>
+<pre><code class="language-bash">sudo chown -R $(whoami):$(whoami) /var/hadoop/hdfs
+sudo chown -R $(whoami):$(whoami) /tmp/hadoop-*</code></pre>
+<h3>DataNode Registration Failure</h3>
+<pre><code class="language-bash">rm -rf /var/hadoop/hdfs/datanode/current
+stop-dfs.sh
+start-dfs.sh</code></pre>
+<h2>Backup and Recovery Strategy</h2>
+<h3>Backup</h3>
+<pre><code class="language-bash"># Backup config
+cp -r /etc/hadoop ~/hadoop-config-backup-$(date +%Y%m%d)
+
+# Backup critical HDFS paths
+hdfs dfs -cp /user/hadoop/input /user/hadoop/input-backup</code></pre>
+<h3>Recovery</h3>
+<pre><code class="language-bash"># Restore config if needed
+cp -r ~/hadoop-config-backup-*/hadoop /etc/
+
+# Restore data from backup
+hdfs dfs -cp /user/hadoop/input-backup/* /user/hadoop/input/</code></pre>
+<h2>Best Practices</h2>
+<ol><li>Never reset without tested backups.</li><li>Rehearse the reset runbook in staging first.</li><li>Keep an operator checklist for every command.</li><li>Monitor cluster behavior closely after restart.</li><li>Update runbooks after each recovery event.</li></ol>
+<h2>Safety Notes</h2>
+<p>HDFS reset can permanently remove data. Before executing destructive commands, confirm:</p>
+<ul><li>Correct target directories.</li><li>Service state (stopped vs running).</li><li>Backup completeness and restore test status.</li></ul>5:["$","div",null,{"className":"min-h-screen bg-background text-foreground flex flex-col","children":[["$","$Le",null,{}],["$","main",null,{"className":"flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center","children":["$","article",null,{"className":"w-full max-w-[45.9375rem] space-y-5 sm:space-y-6","children":[["$","header",null,{"className":"space-y-3","children":[["$","$Lf",null,{"href":"/blog","className":"inline-flex aman-eyebrow hover:text-[#5f5446] transition-colors","children":"← back to blog"}],["$","h1",null,{"className":"aman-display text-3xl sm:text-4xl text-text-primary","children":"HDFS Reset Complete Guide: Safe Recovery and Data Protection"}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 text-[0.67rem] uppercase tracking-[0.14em] text-[#8f8475]","children":[["$","time",null,{"dateTime":"2025-04-08","children":"Apr 08, 2025"}],["$","span",null,{"className":"text-[#c3b39e]","children":"•"}],["$","span",null,{"children":"2 min read"}]]}],["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span","hadoop",{"className":"swift-chip normal-case tracking-normal font-medium","children":"hadoop"}],["$","span","hdfs",{"className":"swift-chip normal-case tracking-normal font-medium","children":"hdfs"}],["$","span","operations",{"className":"swift-chip normal-case tracking-normal font-medium","children":"operations"}]]}]]}],["$","section",null,{"className":"swift-surface rounded-lg p-6 sm:p-8","children":["$","div",null,{"className":"blog-content text-[0.97rem] leading-relaxed text-[#4f4538]","dangerouslySetInnerHTML":{"__html":"$10"}}]}],["$","nav",null,{"className":"grid gap-3 sm:grid-cols-2","aria-label":"Post navigation","children":[["$","div",null,{"className":"swift-surface rounded-lg p-4 min-h-[7.5rem]","children":["$","div",null,{"className":"space-y-2","children":[["$","p",null,{"className":"text-[0.65rem] uppercase tracking-[0.14em] text-[#8f8475]","children":"newer"}],["$","$Lf",null,{"href":"/blog/monitoring-k8s-service-resource-usage-complete-guide","className":"aman-display text-[1.1rem] leading-tight text-[#3b342c] hover:text-[#2f2a24] transition-colors","children":"Monitoring K8S Service Resource Usage: A Complete Guide"}]]}]}],["$","div",null,{"className":"swift-surface rounded-lg p-4 min-h-[7.5rem]","children":["$","div",null,{"className":"space-y-2","children":[["$","p",null,{"className":"text-[0.65rem] uppercase tracking-[0.14em] text-[#8f8475]","children":"older"}],["$","$Lf",null,{"href":"/blog/hdfs-introduction-architecture-components-best-practices","className":"aman-display text-[1.1rem] leading-tight text-[#3b342c] hover:text-[#2f2a24] transition-colors","children":"HDFS Introduction: Architecture, Components, and Best Practices"}]]}]}]]}]]}]}],["$","$L11",null,{}]]}]

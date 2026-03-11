@@ -1,0 +1,191 @@
+1:"$Sreact.fragment"
+2:I[4611,[],""]
+3:I[4559,[],""]
+4:I[6648,["455","static/chunks/455-5bafb7305499e134.js","345","static/chunks/app/not-found-ceb49a3cd7bd3ee8.js"],"default"]
+6:I[3729,[],"OutletBoundary"]
+9:I[3729,[],"ViewportBoundary"]
+b:I[3729,[],"MetadataBoundary"]
+d:I[6134,[],""]
+:HL["/_next/static/css/f9685b75e38a0995.css","style"]
+:HL["/_next/static/media/fe05483fa773983d-s.p.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/_next/static/css/dddbbddd587fbcf9.css","style"]
+0:{"P":null,"b":"8Q278CBYqwqoAaP3vuoEK","p":"","c":["","blog","monitoring-k8s-service-resource-usage-complete-guide"],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","monitoring-k8s-service-resource-usage-complete-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f9685b75e38a0995.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"antialiased","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"name\":\"Yunfeng Long\",\"jobTitle\":\"Frontend Engineer\",\"url\":\"https://yflong.dev\",\"alumniOf\":\"Monash University\",\"email\":\"teur@yflong.dev\",\"sameAs\":[\"https://www.linkedin.com/in/yunfeng-l/\",\"https://github.com/yunfenglong\"]}"}}],["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L4",null,{}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dddbbddd587fbcf9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","monitoring-k8s-service-resource-usage-complete-guide","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5","$undefined",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dddbbddd587fbcf9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L6",null,{"children":["$L7","$L8",null]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","OHEyA4-dawmyK-GUv5sRP",{"children":[["$","$L9",null,{"children":"$La"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],["$","$Lb",null,{"children":"$Lc"}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+8:null
+c:[["$","title","0",{"children":"Monitoring K8S Service Resource Usage: A Complete Guide | YFLONG.DEV"}],["$","meta","1",{"name":"description","content":"A practical Kubernetes resource monitoring guide using kubectl, Metrics Server, Prometheus/Grafana, alert scripts, and optimization practices."}],["$","meta","2",{"name":"application-name","content":"YFLONG.DEV"}],["$","link","3",{"rel":"author","href":"https://yflong.dev"}],["$","meta","4",{"name":"author","content":"Yunfeng Long"}],["$","meta","5",{"name":"generator","content":"Next.js"}],["$","meta","6",{"name":"keywords","content":"computer science student,software engineer portfolio,next.js portfolio,typescript,web engineering"}],["$","meta","7",{"name":"creator","content":"Yunfeng Long"}],["$","meta","8",{"name":"robots","content":"index, follow"}],["$","link","9",{"rel":"canonical","href":"https://yflong.dev/blog/monitoring-k8s-service-resource-usage-complete-guide"}],["$","meta","10",{"property":"og:title","content":"Monitoring K8S Service Resource Usage: A Complete Guide | YFLONG.DEV"}],["$","meta","11",{"property":"og:description","content":"A practical Kubernetes resource monitoring guide using kubectl, Metrics Server, Prometheus/Grafana, alert scripts, and optimization practices."}],["$","meta","12",{"property":"og:url","content":"https://yflong.dev/blog/monitoring-k8s-service-resource-usage-complete-guide"}],["$","meta","13",{"property":"og:site_name","content":"YFLONG.DEV"}],["$","meta","14",{"property":"og:type","content":"article"}],["$","meta","15",{"property":"article:published_time","content":"2025-07-15T00:00:00.000Z"}],["$","meta","16",{"property":"article:tag","content":"kubernetes"}],["$","meta","17",{"property":"article:tag","content":"k8s"}],["$","meta","18",{"property":"article:tag","content":"devops"}],["$","meta","19",{"property":"article:tag","content":"container"}],["$","meta","20",{"name":"twitter:card","content":"summary"}],["$","meta","21",{"name":"twitter:title","content":"YFLONG.DEV"}],["$","meta","22",{"name":"twitter:description","content":"Portfolio of Yunfeng Long, a computer science student building production-minded software with Next.js and TypeScript."}],["$","link","23",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","24",{"rel":"icon","href":"/favicon.svg"}],["$","link","25",{"rel":"apple-touch-icon","href":"/favicon.svg"}]]
+e:I[2939,["455","static/chunks/455-5bafb7305499e134.js","953","static/chunks/app/blog/%5Bslug%5D/page-36cc9e945634ea79.js"],"default"]
+f:I[8410,["455","static/chunks/455-5bafb7305499e134.js","953","static/chunks/app/blog/%5Bslug%5D/page-36cc9e945634ea79.js"],""]
+11:I[9468,["455","static/chunks/455-5bafb7305499e134.js","953","static/chunks/app/blog/%5Bslug%5D/page-36cc9e945634ea79.js"],"default"]
+10:T182d,<h2>Overview</h2>
+<p>Monitoring Kubernetes resource usage is required for reliability, performance, and cost control. This guide covers baseline checks, deeper analysis, and simple automation scripts for daily operations.</p>
+<h2>Basic Resource Monitoring</h2>
+<h3><code>kubectl top</code></h3>
+<pre><code class="language-bash"># Pod usage
+kubectl top pods
+
+# Node usage
+kubectl top nodes
+
+# Real-time watch
+kubectl top pods --watch
+
+# Namespace scope
+kubectl top pods -n namespace-name
+
+# Sort by usage
+kubectl top pods --sort-by=memory
+kubectl top pods --sort-by=cpu</code></pre>
+<h3>Quotas and Limits</h3>
+<pre><code class="language-bash"># Namespace quotas
+kubectl get quota -n namespace-name
+
+# Limits in namespace
+kubectl get limits -n namespace-name
+
+# Pod requests/limits
+kubectl get pods -o custom-columns=NAME:.metadata.name,CPU:.spec.containers[*].resources.requests.cpu,MEM:.spec.containers[*].resources.requests.memory,CPULIMIT:.spec.containers[*].resources.limits.cpu,MEMLIMIT:.spec.containers[*].resources.limits.memory</code></pre>
+<h2>Advanced Resource Analysis</h2>
+<h3>Pod-Level Details</h3>
+<pre><code class="language-bash">kubectl get pods -o yaml | grep -E &quot;(resources|requests|limits)&quot;
+kubectl top pods --containers</code></pre>
+<h3>Node-Level Details</h3>
+<pre><code class="language-bash">kubectl describe nodes
+
+kubectl get nodes -o custom-columns=NAME:.metadata.name,ALLOCATABLECPU:.status.allocatable.cpu,ALLOCATABLEMEM:.status.allocatable.memory,ALLOCATEDCPU:.status.capacity.cpu,ALLOCATEDMEM:.status.capacity.memory
+
+kubectl get nodes -o jsonpath=&#039;{.items[*].status.capacity}{&quot;\n&quot;}&#039;
+kubectl get nodes -o jsonpath=&#039;{.items[*].status.allocatable}{&quot;\n&quot;}&#039;</code></pre>
+<h2>Metrics Server</h2>
+<h3>Install and Verify</h3>
+<pre><code class="language-bash">kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+kubectl get deployment -n kube-system metrics-server
+kubectl get pods -n kube-system
+
+kubectl top nodes
+kubectl top pods</code></pre>
+<h3>Debug Metrics Server</h3>
+<pre><code class="language-bash">kubectl logs -n kube-system deployment/metrics-server
+kubectl edit deployment -n kube-system metrics-server</code></pre>
+<h2>Prometheus and Grafana</h2>
+<h3>Prometheus Config Example</h3>
+<pre><code class="language-yaml">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: monitoring
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 15s
+      evaluation_interval: 15s
+    scrape_configs:
+      - job_name: kubernetes-pods
+        kubernetes_sd_configs:
+          - role: pod</code></pre>
+<h3>Grafana Quick Setup</h3>
+<pre><code class="language-bash">helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install grafana grafana/grafana
+kubectl port-forward svc/grafana 3000:80</code></pre>
+<h2>Critical Checks</h2>
+<h3>Hotspot Detection</h3>
+<pre><code class="language-bash">kubectl top pods --sort-by=cpu | head -10
+kubectl top pods --sort-by=memory | head -10
+
+kubectl get pods --field-selector=status.phase=Pending</code></pre>
+<h3>Efficiency Review</h3>
+<pre><code class="language-bash">kubectl top nodes | awk &#039;
+{
+  cpu_usage = $3
+  cpu_total = $4
+  mem_usage = $5
+  mem_total = $6
+  cpu_util = cpu_usage / cpu_total * 100
+  mem_util = mem_usage / mem_total * 100
+  printf &quot;Node: %s - CPU: %.1f%% Memory: %.1f%%\n&quot;, $1, cpu_util, mem_util
+}&#039;</code></pre>
+<h2>Resource Governance Best Practices</h2>
+<h3>Requests and Limits Example</h3>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: resource-demo
+spec:
+  containers:
+    - name: frontend
+      image: nginx
+      resources:
+        requests:
+          memory: &quot;64Mi&quot;
+          cpu: &quot;250m&quot;
+        limits:
+          memory: &quot;128Mi&quot;
+          cpu: &quot;500m&quot;
+    - name: backend
+      image: redis
+      resources:
+        requests:
+          memory: &quot;128Mi&quot;
+          cpu: &quot;500m&quot;
+        limits:
+          memory: &quot;256Mi&quot;
+          cpu: &quot;1000m&quot;</code></pre>
+<h3>HPA Example</h3>
+<pre><code class="language-bash">kubectl autoscale deployment my-app --cpu-percent=70 --min=2 --max=10
+kubectl get hpa
+kubectl describe hpa my-app</code></pre>
+<h2>Troubleshooting</h2>
+<pre><code class="language-bash"># Evicted pods
+kubectl get pods --all-namespaces | grep Evicted
+
+# Node pressure indicators
+kubectl describe node &lt;node-name&gt; | grep -i pressure
+
+# Scheduling failures
+kubectl get events --field-selector=reason=FailedScheduling -A</code></pre>
+<h2>Automation Scripts</h2>
+<h3>Daily Report Script</h3>
+<pre><code class="language-bash">#!/bin/bash
+
+echo &quot;=== K8S Resource Usage Report ===&quot;
+echo &quot;Date: $(date)&quot;
+echo &quot;&quot;
+
+echo &quot;=== Node Resource Usage ===&quot;
+kubectl top nodes | column -t
+echo &quot;&quot;
+
+echo &quot;=== Top CPU Pods ===&quot;
+kubectl top pods --sort-by=cpu | head -10
+echo &quot;&quot;
+
+echo &quot;=== Top Memory Pods ===&quot;
+kubectl top pods --sort-by=memory | head -10
+echo &quot;&quot;
+
+echo &quot;=== Pending Pods ===&quot;
+kubectl get pods --field-selector=status.phase=Pending</code></pre>
+<h3>Threshold Alert Script</h3>
+<pre><code class="language-bash">#!/bin/bash
+
+NAMESPACES=(&quot;production&quot; &quot;staging&quot; &quot;development&quot;)
+CPU_THRESHOLD=80
+MEMORY_THRESHOLD=85
+
+for namespace in &quot;${NAMESPACES[@]}&quot;; do
+  echo &quot;Checking namespace: $namespace&quot;
+
+  kubectl top nodes --no-headers | while read -r name cpu mem rest; do
+    cpu_usage=$(echo &quot;$cpu&quot; | sed &#039;s/%//&#039;)
+    mem_usage=$(echo &quot;$mem&quot; | sed &#039;s/%//&#039;)
+
+    if (( $(echo &quot;$cpu_usage &gt; $CPU_THRESHOLD&quot; | bc -l) )) || (( $(echo &quot;$mem_usage &gt; $MEMORY_THRESHOLD&quot; | bc -l) )); then
+      echo &quot;WARNING: $name CPU=$cpu Memory=$mem&quot;
+    fi
+  done
+
+done</code></pre>
+<h2>Closing Notes</h2>
+<p>Track trends, not just snapshots. The combination of requests/limits governance, metrics collection, and automated reports creates a reliable foundation for proactive cluster operations.</p>5:["$","div",null,{"className":"min-h-screen bg-background text-foreground flex flex-col","children":[["$","$Le",null,{}],["$","main",null,{"className":"flex-1 px-[5%] pt-[calc(env(safe-area-inset-top)+8rem)] pb-[7dvh] flex items-start justify-center","children":["$","article",null,{"className":"w-full max-w-[45.9375rem] space-y-5 sm:space-y-6","children":[["$","header",null,{"className":"space-y-3","children":[["$","$Lf",null,{"href":"/blog","className":"inline-flex aman-eyebrow hover:text-[#5f5446] transition-colors","children":"← back to blog"}],["$","h1",null,{"className":"aman-display text-3xl sm:text-4xl text-text-primary","children":"Monitoring K8S Service Resource Usage: A Complete Guide"}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 text-[0.67rem] uppercase tracking-[0.14em] text-[#8f8475]","children":[["$","time",null,{"dateTime":"2025-07-15","children":"Jul 15, 2025"}],["$","span",null,{"className":"text-[#c3b39e]","children":"•"}],["$","span",null,{"children":"3 min read"}]]}],["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span","kubernetes",{"className":"swift-chip normal-case tracking-normal font-medium","children":"kubernetes"}],["$","span","k8s",{"className":"swift-chip normal-case tracking-normal font-medium","children":"k8s"}],["$","span","devops",{"className":"swift-chip normal-case tracking-normal font-medium","children":"devops"}],["$","span","container",{"className":"swift-chip normal-case tracking-normal font-medium","children":"container"}]]}]]}],["$","section",null,{"className":"swift-surface rounded-lg p-6 sm:p-8","children":["$","div",null,{"className":"blog-content text-[0.97rem] leading-relaxed text-[#4f4538]","dangerouslySetInnerHTML":{"__html":"$10"}}]}],["$","nav",null,{"className":"grid gap-3 sm:grid-cols-2","aria-label":"Post navigation","children":[["$","div",null,{"className":"swift-surface rounded-lg p-4 min-h-[7.5rem]","children":["$","div",null,{"className":"space-y-2","children":[["$","p",null,{"className":"text-[0.65rem] uppercase tracking-[0.14em] text-[#8f8475]","children":"newer"}],["$","$Lf",null,{"href":"/blog/introduction-to-static-site-hosting","className":"aman-display text-[1.1rem] leading-tight text-[#3b342c] hover:text-[#2f2a24] transition-colors","children":"Introduction to Static Site Hosting"}]]}]}],["$","div",null,{"className":"swift-surface rounded-lg p-4 min-h-[7.5rem]","children":["$","div",null,{"className":"space-y-2","children":[["$","p",null,{"className":"text-[0.65rem] uppercase tracking-[0.14em] text-[#8f8475]","children":"older"}],["$","$Lf",null,{"href":"/blog/hdfs-reset-complete-guide-safe-recovery-and-data-protection","className":"aman-display text-[1.1rem] leading-tight text-[#3b342c] hover:text-[#2f2a24] transition-colors","children":"HDFS Reset Complete Guide: Safe Recovery and Data Protection"}]]}]}]]}]]}]}],["$","$L11",null,{}]]}]

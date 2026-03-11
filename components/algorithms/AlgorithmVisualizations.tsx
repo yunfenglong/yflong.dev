@@ -21,7 +21,7 @@ export function ArrayBarVisualization({
           const isInRange = valueIndex >= rangeStart && valueIndex <= rangeEnd
           const heightPercentage = Math.max((value / maxValue) * 100, 16)
 
-          let barClassName = "border-[#d7ccbc] bg-[#e9decd] text-[#4f4538]"
+          let barClassName = "border-border bg-[#e9decd] text-text-secondary"
 
           if (!isInRange) {
             barClassName = "border-[#e7ded1] bg-[#f5efe6] text-[#9e907d]"
@@ -48,7 +48,7 @@ export function ArrayBarVisualization({
               >
                 <span className="max-w-full truncate pb-2 sm:pb-3">{value}</span>
               </div>
-              <span className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-[#8f8475] sm:text-[0.66rem] sm:tracking-[0.14em]">
+              <span className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-muted sm:text-[0.66rem] sm:tracking-[0.14em]">
                 idx {valueIndex}
               </span>
             </div>
@@ -74,7 +74,7 @@ export function ArrayCardVisualization({
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-2 text-[0.66rem] uppercase tracking-[0.14em] text-[#8f8475]">
+      <div className="flex flex-wrap items-center gap-2 text-[0.66rem] uppercase tracking-[0.14em] text-muted">
         {typeof targetValue === "number" ? <span className="swift-chip">target {targetValue}</span> : null}
         <span className="swift-chip">range {rangeStart}–{rangeEnd}</span>
       </div>
@@ -86,7 +86,7 @@ export function ArrayCardVisualization({
           const isActive = activeSet.has(valueIndex)
           const isFound = foundSet.has(valueIndex)
 
-          let cardClassName = "border-[#d7ccbc] bg-[#f7f1e8] text-[#4f4538]"
+          let cardClassName = "border-border bg-[#f7f1e8] text-text-secondary"
 
           if (!isInRange) {
             cardClassName = "border-[#ebe2d7] bg-[#fbf7f2] text-[#a09381]"
@@ -135,33 +135,41 @@ export function GraphVisualization({
 
   return (
     <div className="space-y-4">
-      <div className="relative h-[18.5rem] overflow-hidden rounded-lg border border-[#ddd2c1] bg-[radial-gradient(circle_at_top,#fbf8f2_0%,#f4ede3_60%,#f1e9dd_100%)] sm:h-[22rem] lg:h-[24rem]">
+      <div className="relative h-[18.5rem] overflow-hidden rounded-lg border border-border-inner bg-[radial-gradient(circle_at_top,#fbf8f2_0%,#f4ede3_60%,#f1e9dd_100%)] sm:h-[22rem] lg:h-[24rem]">
         <AlgorithmGraphFlow graph={graph} step={step} />
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {graphState?.queue ? (
-          <div className="rounded-md border border-[#ddd2c1] bg-[#f8f3eb] p-3">
-            <p className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-[#8f8475] sm:text-[0.66rem] sm:tracking-[0.14em]">queue</p>
-            <p className="mt-2 text-sm leading-relaxed text-[#4f4538]">
+          <div className="rounded-md border border-border-inner bg-surface-inner p-3">
+            <p className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-muted sm:text-[0.66rem] sm:tracking-[0.14em]">queue</p>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
               {graphState.queue.length > 0 ? graphState.queue.join(" → ") : "empty"}
             </p>
           </div>
         ) : null}
         {graphState?.stack ? (
-          <div className="rounded-md border border-[#ddd2c1] bg-[#f8f3eb] p-3">
-            <p className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-[#8f8475] sm:text-[0.66rem] sm:tracking-[0.14em]">stack</p>
-            <p className="mt-2 text-sm leading-relaxed text-[#4f4538]">
+          <div className="rounded-md border border-border-inner bg-surface-inner p-3">
+            <p className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-muted sm:text-[0.66rem] sm:tracking-[0.14em]">stack</p>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
               {graphState.stack.length > 0 ? graphState.stack.join(" → ") : "empty"}
             </p>
           </div>
         ) : null}
-        <div className="rounded-md border border-[#ddd2c1] bg-[#f8f3eb] p-3">
-          <p className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-[#8f8475] sm:text-[0.66rem] sm:tracking-[0.14em]">current node</p>
-          <p className="mt-2 text-sm leading-relaxed text-[#4f4538]">
+        <div className="rounded-md border border-border-inner bg-surface-inner p-3">
+          <p className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-muted sm:text-[0.66rem] sm:tracking-[0.14em]">current node</p>
+          <p className="mt-2 text-sm leading-relaxed text-text-secondary">
             {graphState?.currentNodeId ?? "none"}
           </p>
         </div>
+        {graphState?.pathNodeIds?.length ? (
+          <div className="rounded-md border border-border-inner bg-surface-inner p-3 sm:col-span-2 lg:col-span-1">
+            <p className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-muted sm:text-[0.66rem] sm:tracking-[0.14em]">final route</p>
+            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+              {graphState.pathNodeIds.join(" → ")}
+            </p>
+          </div>
+        ) : null}
       </div>
     </div>
   )

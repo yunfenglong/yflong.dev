@@ -132,18 +132,18 @@ function NativeTerminal() {
   return (
     <div ref={rootRef} className="w-full space-y-10">
       <div ref={introRef} className="w-full max-w-[61.25rem] mx-auto px-0">
-        <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-[#8f8475] mb-1">intro</p>
-        <h1 className="aman-display text-[1.625rem] sm:text-[1.875rem] leading-none text-[#3b342c] mb-2">
+        <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-muted mb-1">intro</p>
+        <h1 className="aman-display text-[1.625rem] sm:text-[1.875rem] leading-none text-text-primary mb-2">
           {introTitle}
         </h1>
-        <div className="space-y-1 text-sm sm:text-[0.9375rem] leading-relaxed text-[#5f5446]">
+        <div className="space-y-1 text-sm sm:text-[0.9375rem] leading-relaxed text-text-muted-dark">
           <p>
             Third-year computer science student at{" "}
             <a
               href="https://www.monash.edu/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-[#3b342c] transition-colors"
+              className="underline underline-offset-4 hover:text-text-primary transition-colors"
             >
               Monash University
             </a>
@@ -203,23 +203,23 @@ function NativeTerminal() {
       {!showTerminal && (
         <section className="w-full max-w-[45.9375rem] mx-auto swift-surface rounded-lg p-5 sm:p-6 space-y-4">
           <div className="space-y-1">
-            <p className="text-[0.67rem] uppercase tracking-[0.14em] text-[#8f8475]">quick overview</p>
-            <h2 className="aman-display text-[1.35rem] leading-tight text-[#3b342c]">
+            <p className="text-[0.67rem] uppercase tracking-[0.14em] text-muted">quick overview</p>
+            <h2 className="aman-display text-[1.35rem] leading-tight text-text-primary">
               Portfolio Snapshot
             </h2>
-            <p className="text-sm text-[#5f5446] leading-relaxed">
+            <p className="text-sm text-text-muted-dark leading-relaxed">
               Use the quick links below to review projects and contact details.
             </p>
           </div>
 
           <div className="space-y-2">
             {projectCaseStudies.slice(0, 2).map((project) => (
-              <article key={project.id} className="rounded-md border border-[#d7ccbc] bg-[#f7f2e9] p-3">
-                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-[#8f8475]">
+              <article key={project.id} className="rounded-md border border-border bg-[#f7f2e9] p-3">
+                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">
                   {project.status}
                 </p>
                 <p className="text-sm font-medium text-[#3f372e]">{project.title}</p>
-                <p className="text-xs text-[#5f5446] mt-1">{project.summary}</p>
+                <p className="text-xs text-text-muted-dark mt-1">{project.summary}</p>
               </article>
             ))}
           </div>

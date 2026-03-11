@@ -15,7 +15,7 @@ export function SegmentedControl<T extends string>({
 }) {
   return (
     <div className="space-y-2">
-      <p className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-[#8f8475] sm:text-[0.66rem] sm:tracking-[0.14em]">{label}</p>
+      <p className="max-w-full truncate text-[0.55rem] uppercase tracking-[0.12em] text-muted sm:text-[0.66rem] sm:tracking-[0.14em]">{label}</p>
       <div className="flex flex-wrap gap-2">
         {options.map((option) => {
           const isActive = option.value === value
@@ -28,7 +28,7 @@ export function SegmentedControl<T extends string>({
               className={`rounded-full border px-3 py-1.5 text-[0.66rem] uppercase tracking-[0.12em] transition-colors ${
                 isActive
                   ? "border-[#b3997a] bg-[#eadfcd] text-[#3f3528]"
-                  : "border-[#d7ccbc] bg-[#f8f3eb] text-[#5b5143] hover:bg-[#eee5d7]"
+                  : "border-border bg-surface-inner text-[#5b5143] hover:bg-surface-hover"
               }`}
             >
               {option.label}
@@ -59,7 +59,7 @@ export function ToggleControl({
       className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[0.66rem] uppercase tracking-[0.12em] transition-colors ${
         enabled
           ? "border-[#b3997a] bg-[#eadfcd] text-[#3f3528]"
-          : "border-[#d7ccbc] bg-[#f8f3eb] text-[#5b5143] hover:bg-[#eee5d7]"
+          : "border-border bg-surface-inner text-[#5b5143] hover:bg-surface-hover"
       } disabled:cursor-not-allowed disabled:opacity-45`}
     >
       <span>{label}</span>

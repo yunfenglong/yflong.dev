@@ -320,7 +320,7 @@ const StatusDashboard: React.FC = () => {
         <p className="aman-eyebrow">service status</p>
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="space-y-1">
-            <h1 className="aman-display text-3xl sm:text-4xl text-[#3b342c]">System Status</h1>
+            <h1 className="aman-display text-3xl sm:text-4xl text-text-primary">System Status</h1>
             <p className="text-sm text-[#6f6558] max-w-[48ch]">
               Demonstration telemetry: availability, performance metrics, incidents, and maintenance
               updates for portfolio projects.
@@ -345,12 +345,12 @@ const StatusDashboard: React.FC = () => {
       >
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-sm text-[#4f4538]">{overallStatus.message}</p>
-            <p className="mt-1 text-[0.68rem] uppercase tracking-[0.14em] text-[#8f8475]">
+            <p className="text-sm text-text-secondary">{overallStatus.message}</p>
+            <p className="mt-1 text-[0.68rem] uppercase tracking-[0.14em] text-muted">
               Last updated: {formatDateTime(overallStatus.lastUpdated)}
             </p>
           </div>
-          <div className="inline-flex items-center gap-2 rounded-md border border-[#d7ccbc] bg-[#f8f3ea] px-2.5 py-1.5">
+          <div className="inline-flex items-center gap-2 rounded-md border border-border bg-[#f8f3ea] px-2.5 py-1.5">
             <Clock3 className="h-3.5 w-3.5 text-[#7b705f]" />
             <span className="text-xs text-[#6a5f50]">
               Snapshot taken {formatRelativeTime(snapshotTime, new Date())}
@@ -359,30 +359,30 @@ const StatusDashboard: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          <div className="rounded-md border border-[#d7ccbc] bg-[#f8f3ea] p-3">
+          <div className="rounded-md border border-border bg-[#f8f3ea] p-3">
             <div className="flex items-center justify-between">
-              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-[#8f8475]">90d uptime</span>
+              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-muted">90d uptime</span>
               <CheckCircle2 className="h-3.5 w-3.5 text-[#607758]" />
             </div>
             <p className="mt-1 text-lg font-semibold text-[#3f372e]">{ninetyDayAvailability.toFixed(3)}%</p>
           </div>
-          <div className="rounded-md border border-[#d7ccbc] bg-[#f8f3ea] p-3">
+          <div className="rounded-md border border-border bg-[#f8f3ea] p-3">
             <div className="flex items-center justify-between">
-              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-[#8f8475]">Avg response</span>
+              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-muted">Avg response</span>
               <Gauge className="h-3.5 w-3.5 text-[#75614b]" />
             </div>
             <p className="mt-1 text-lg font-semibold text-[#3f372e]">{avgResponseTime}ms</p>
           </div>
-          <div className="rounded-md border border-[#d7ccbc] bg-[#f8f3ea] p-3">
+          <div className="rounded-md border border-border bg-[#f8f3ea] p-3">
             <div className="flex items-center justify-between">
-              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-[#8f8475]">P95 response</span>
+              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-muted">P95 response</span>
               <ServerCog className="h-3.5 w-3.5 text-[#75614b]" />
             </div>
             <p className="mt-1 text-lg font-semibold text-[#3f372e]">{p95ResponseTime}ms</p>
           </div>
-          <div className="rounded-md border border-[#d7ccbc] bg-[#f8f3ea] p-3">
+          <div className="rounded-md border border-border bg-[#f8f3ea] p-3">
             <div className="flex items-center justify-between">
-              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-[#8f8475]">Operational services</span>
+              <span className="text-[0.65rem] uppercase tracking-[0.12em] text-muted">Operational services</span>
               <ShieldAlert className="h-3.5 w-3.5 text-[#75614b]" />
             </div>
             <p className="mt-1 text-lg font-semibold text-[#3f372e]">
@@ -441,7 +441,7 @@ const StatusDashboard: React.FC = () => {
         <div className="overflow-x-auto">
           <table className="w-full min-w-[46rem] text-left">
             <thead>
-              <tr className="border-b border-[#d7ccbc] text-[0.65rem] uppercase tracking-[0.12em] text-[#8f8475]">
+              <tr className="border-b border-border text-[0.65rem] uppercase tracking-[0.12em] text-muted">
                 <th className="py-2 pr-3 font-medium">Component</th>
                 <th className="py-2 pr-3 font-medium">Status</th>
                 <th className="py-2 pr-3 font-medium">90d Uptime</th>
@@ -466,8 +466,8 @@ const StatusDashboard: React.FC = () => {
                         {config.label}
                       </span>
                     </td>
-                    <td className="py-3 pr-3 text-sm text-[#4f4538]">{service.uptime.toFixed(2)}%</td>
-                    <td className="py-3 pr-3 text-sm text-[#4f4538]">{service.responseTime}ms</td>
+                    <td className="py-3 pr-3 text-sm text-text-secondary">{service.uptime.toFixed(2)}%</td>
+                    <td className="py-3 pr-3 text-sm text-text-secondary">{service.responseTime}ms</td>
                     <td className="py-3 text-sm text-[#6f6558]">{service.lastIncident ?? "No incidents in last 30 days"}</td>
                   </tr>
                 )
@@ -486,7 +486,7 @@ const StatusDashboard: React.FC = () => {
         <div className="swift-surface rounded-lg p-4 sm:p-5 space-y-3">
           <div className="flex items-center justify-between gap-3">
             <h2 className="aman-eyebrow">active incidents</h2>
-            <span className="text-[0.68rem] uppercase tracking-[0.12em] text-[#8f8475]">
+            <span className="text-[0.68rem] uppercase tracking-[0.12em] text-muted">
               {activeIncidents.length} open
             </span>
           </div>
@@ -505,7 +505,7 @@ const StatusDashboard: React.FC = () => {
             )
 
             return (
-              <div key={incident.id} className="rounded-md border border-[#d7ccbc] bg-[#f7f2e9] p-3 space-y-2">
+              <div key={incident.id} className="rounded-md border border-border bg-[#f7f2e9] p-3 space-y-2">
                 <div className="flex flex-wrap items-center gap-2">
                   <span
                     className={`inline-flex items-center rounded-full px-2 py-1 text-[0.66rem] font-semibold ${status.badge} ${status.text}`}
@@ -521,11 +521,11 @@ const StatusDashboard: React.FC = () => {
 
                 <h3 className="text-sm font-semibold text-[#3f372e]">{incident.title}</h3>
                 <p className="text-xs text-[#6f6558]">{incident.description}</p>
-                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-[#8f8475]">
+                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">
                   Started: {formatDateTime(incident.createdAt)}
                 </p>
 
-                <div className="space-y-2 border-l border-[#d7ccbc] pl-3">
+                <div className="space-y-2 border-l border-border pl-3">
                   {updates.slice(0, 3).map((update) => (
                     <div key={update.id}>
                       <div className="flex items-center gap-2">
@@ -533,7 +533,7 @@ const StatusDashboard: React.FC = () => {
                           {formatDateTime(update.timestamp)}
                         </span>
                       </div>
-                      <p className="text-xs text-[#5f5446]">{update.message}</p>
+                      <p className="text-xs text-text-muted-dark">{update.message}</p>
                     </div>
                   ))}
                 </div>
@@ -548,13 +548,13 @@ const StatusDashboard: React.FC = () => {
             <Wrench className="h-4 w-4 text-[#8a7451]" />
           </div>
           {maintenanceWindows.map((window) => (
-            <div key={window.id} className="rounded-md border border-[#d7ccbc] bg-[#f7f2e9] p-3 space-y-1.5">
+            <div key={window.id} className="rounded-md border border-border bg-[#f7f2e9] p-3 space-y-1.5">
               <p className="text-sm font-semibold text-[#3f372e]">{window.title}</p>
               <p className="text-xs text-[#6f6558]">{window.detail}</p>
-              <p className="text-[0.66rem] uppercase tracking-[0.12em] text-[#8f8475]">
+              <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">
                 Starts: {formatDateTime(window.startsAt)} ({formatRelativeTime(window.startsAt, snapshotTime)})
               </p>
-              <p className="text-[0.66rem] uppercase tracking-[0.12em] text-[#8f8475]">
+              <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">
                 Duration: {formatDuration(window.durationMinutes)}
               </p>
               <div className="flex flex-wrap gap-1.5 pt-1">
@@ -586,7 +586,7 @@ const StatusDashboard: React.FC = () => {
             {resolvedIncidents.map((incident) => (
               <div
                 key={incident.id}
-                className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-[#d7ccbc] bg-[#f7f2e9] p-3"
+                className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-border bg-[#f7f2e9] p-3"
               >
                 <div className="space-y-1">
                   <p className="text-sm font-semibold text-[#3f372e]">{incident.title}</p>
@@ -609,9 +609,9 @@ const StatusDashboard: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.24 }}
-        className="border-t border-[#d7ccbc] pt-6 pb-2 text-center space-y-1"
+        className="border-t border-border pt-6 pb-2 text-center space-y-1"
       >
-        <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[#8f8475]">
+        <p className="text-[0.68rem] uppercase tracking-[0.14em] text-muted">
           Last synced: {formatDateTime(snapshotTime)}
         </p>
         <p className="text-xs text-[#7b6f60]">

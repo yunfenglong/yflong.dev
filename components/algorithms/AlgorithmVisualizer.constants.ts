@@ -4,7 +4,7 @@ import type { FilterValue, GroupBy, ToolbarOption } from "@/types/algorithm-visu
 export const storageKey = "yflong:alg:visualizer:preferences:v3"
 
 export const controlClassName =
-  "inline-flex items-center justify-center rounded-md border border-[#d7ccbc] bg-[#f6f1e8] px-3 py-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#4f4538] transition-colors hover:bg-[#eee5d7] disabled:cursor-not-allowed disabled:opacity-45"
+  "inline-flex items-center justify-center rounded-md border border-border bg-surface-inner-strong px-3 py-2 text-[0.68rem] uppercase tracking-[0.12em] text-text-secondary transition-colors hover:bg-surface-hover disabled:cursor-not-allowed disabled:opacity-45"
 
 export const speedOptions = [
   { label: "0.75x", intervalMs: 1200 },

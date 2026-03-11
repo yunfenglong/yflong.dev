@@ -17,13 +17,13 @@ export default function SiteFooter() {
             © {currentYear} {profileConfig.name}
           </p>
           <div className="flex items-center gap-4 flex-wrap justify-end">
-            <Link href="/contact" className="swift-pill hover:text-[#2f2a24] transition-colors">
+            <Link href="/contact" className="swift-pill hover:text-foreground transition-colors">
               contact
             </Link>
-            <Link href="/status" className="swift-pill hover:text-[#2f2a24] transition-colors hidden sm:inline-flex">
+            <Link href="/status" className="swift-pill hover:text-foreground transition-colors hidden sm:inline-flex">
               status
             </Link>
-            <Link href="/privacy" className="swift-pill hover:text-[#2f2a24] transition-colors">
+            <Link href="/privacy" className="swift-pill hover:text-foreground transition-colors">
               privacy
             </Link>
           </div>

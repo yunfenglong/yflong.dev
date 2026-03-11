@@ -46,7 +46,7 @@ const trendConfig = {
   },
   stable: {
     icon: Minus,
-    color: "text-[#8f8475]",
+    color: "text-muted",
     label: "Stable",
   },
 }
@@ -74,7 +74,7 @@ const SystemMetrics: React.FC<SystemMetricsProps> = ({ metrics }) => {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-[0.6875rem] uppercase tracking-[0.12em] text-[#8f8475]">{metric.name}</h3>
+                  <h3 className="text-[0.6875rem] uppercase tracking-[0.12em] text-muted">{metric.name}</h3>
                   <div className={`p-1 rounded-full border ${statusConf.bgColor} ${statusConf.borderColor}`}>
                     <StatusIcon className={`w-3 h-3 ${statusConf.color}`} />
                   </div>
@@ -82,7 +82,7 @@ const SystemMetrics: React.FC<SystemMetricsProps> = ({ metrics }) => {
 
                 <div className="flex items-baseline gap-2">
                   <span className="text-lg font-semibold text-[#3f372e]">{metric.value.toLocaleString()}</span>
-                  {metric.unit && <span className="text-xs text-[#8f8475]">{metric.unit}</span>}
+                  {metric.unit && <span className="text-xs text-muted">{metric.unit}</span>}
                 </div>
 
                 <div className="flex items-center gap-1.5">

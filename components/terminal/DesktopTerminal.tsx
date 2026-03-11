@@ -59,7 +59,7 @@ export default function DesktopTerminal({
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="flex items-center justify-between px-4 py-2 border-b border-[#d7ccbc]">
+        <div className="flex items-center justify-between px-4 py-2 border-b border-border">
           <div className="macos-traffic-lights" aria-hidden="true">
             <div className="macos-traffic-light close" />
             <div className="macos-traffic-light minimize" />

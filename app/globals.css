@@ -19,6 +19,15 @@
   --danger: #914840;
   --info: #75614b;
   --radius: 0.625rem;
+  --text-primary: #3b342c;
+  --text-body: #554b3e;
+  --text-secondary: #4f4538;
+  --text-muted-dark: #5f5446;
+  --surface-inner: #f8f3eb;
+  --surface-inner-strong: #f6f1e8;
+  --surface-hover: #eee5d7;
+  --surface-hover-alt: #f2eadf;
+  --border-inner: #ddd2c1;
   --font-display-stack: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
   --font-sans-stack: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono-stack: "SF Mono", "ui-monospace", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
@@ -36,6 +45,17 @@
   --radius-md: calc(var(--radius) - 0.125rem);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 0.125rem);
+  --color-text-primary: var(--text-primary);
+  --color-text-body: var(--text-body);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted-dark: var(--text-muted-dark);
+  --color-surface-inner: var(--surface-inner);
+  --color-surface-inner-strong: var(--surface-inner-strong);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-hover-alt: var(--surface-hover-alt);
+  --color-border-inner: var(--border-inner);
+  --color-surface-strong: var(--surface-strong);
+  --color-muted-soft: var(--muted-soft);
 }
 
 @layer base {

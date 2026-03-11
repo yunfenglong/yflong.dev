@@ -38,12 +38,12 @@ function GithubIcon() {
 
 function DesktopLinks() {
   return (
-    <div className="hidden sm:flex items-center gap-6 text-[0.6875rem] font-medium text-[#5f5446]">
+    <div className="hidden sm:flex items-center gap-6 text-[0.6875rem] font-medium text-text-muted-dark">
       {internalLinks.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className="swift-pill hover:text-[#2f2a24] transition-colors"
+          className="swift-pill hover:text-foreground transition-colors"
         >
           {link.label}
         </Link>
@@ -52,7 +52,7 @@ function DesktopLinks() {
         href={githubRepoUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="swift-pill hover:text-[#2f2a24] transition-colors"
+        className="swift-pill hover:text-foreground transition-colors"
         aria-label="GitHub"
       >
         <GithubIcon />
@@ -87,7 +87,7 @@ function MobileMenu() {
         aria-expanded={isOpen}
         aria-controls="mobile-navigation-menu"
         onClick={() => setIsOpen((open) => !open)}
-        className="swift-pill inline-flex items-center gap-2 text-[0.6875rem] font-medium text-[#5f5446] hover:text-[#2f2a24] transition-colors"
+        className="swift-pill inline-flex items-center gap-2 text-[0.6875rem] font-medium text-text-muted-dark hover:text-foreground transition-colors"
       >
         menu
         <svg
@@ -107,13 +107,13 @@ function MobileMenu() {
           id="mobile-navigation-menu"
           className="absolute right-0 top-[calc(100%+0.6rem)] min-w-[10rem] rounded-md border border-[#d2c4b1] bg-[#f8f4ec] px-4 py-3 shadow-[0_1rem_2rem_-1rem_rgba(30,24,17,0.45)]"
         >
-          <div className="flex flex-col items-start gap-3 text-[0.6875rem] font-medium text-[#5f5446]">
+          <div className="flex flex-col items-start gap-3 text-[0.6875rem] font-medium text-text-muted-dark">
             {internalLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="swift-pill hover:text-[#2f2a24] transition-colors"
+                className="swift-pill hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
@@ -123,7 +123,7 @@ function MobileMenu() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="swift-pill inline-flex items-center gap-2 whitespace-nowrap hover:text-[#2f2a24] transition-colors"
+              className="swift-pill inline-flex items-center gap-2 whitespace-nowrap hover:text-foreground transition-colors"
             >
               github 
               <GithubIcon />
@@ -147,7 +147,7 @@ export default function SiteNavigation() {
           <div className="swift-nav flex items-center justify-between pb-3">
             <Link
               href="/"
-              className={`${shadowsIntoLight.className} text-xl text-[#3b342c] tracking-[0.08em]`}
+              className={`${shadowsIntoLight.className} text-xl text-text-primary tracking-[0.08em]`}
             >
               wAn
             </Link>
